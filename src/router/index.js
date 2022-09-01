@@ -6,6 +6,7 @@ import About from '@/components/About.vue';
 import Login from '@/components/Login.vue';
 import Screenlock from '@/components/Screenlock.vue';
 import Profile from '@/components/Profile.vue';
+import ArticlePage from '@/components/content/ArticlePage.vue';
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,11 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: Profile,
+  },
+  {
+    path: '/article',
+    name: 'article',
+    component: ArticlePage,
   },
 ];
 
