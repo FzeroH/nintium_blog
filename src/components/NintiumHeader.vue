@@ -8,6 +8,7 @@
     <router-link to="/about">About</router-link>
       <label for="search">
         <!--TODO: Добавить скрывашку и раскрывашку для поиска!-->
+        <!--TODO: Правильно расположить input и кнопку login!-->
         <input type="text" id="search"/>
       </label>
     <router-link to="/login" class="login">Login</router-link>

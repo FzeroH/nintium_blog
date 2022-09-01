@@ -31,6 +31,12 @@ export default {
 </script>
 
 <style scoped>
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .footer {
   display: flex;
   flex-direction: row;

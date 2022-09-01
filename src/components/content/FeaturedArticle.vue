@@ -36,7 +36,7 @@ export default {
   background-image: url("@/assets/articles/first_article_image.svg");
   width: 1316px;
   height: 592px;
-  margin: 50px 25px;
+  margin: 50px auto;
 }
 
 .article-content {
