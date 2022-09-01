@@ -1,29 +1,34 @@
 <template>
   <div class="profile-container">
-    <div class="autor">
+    <div class="author">
       <img :src="require(`../assets/profile/${profileData.image}.svg`)" alt="profile_picture">
-      <div class="autor-info">
+      <div class="author-info">
         <h2>{{ profileData.name }}</h2>
         <span>@{{ profileData.username }}</span>
         <p>{{ profileData.information }}</p>
+        <div class="social-networks">
+          <div class="website">
+            <img src="@/assets/profile/link.svg" alt="web-site" class="link">
+            <a :href="`http://${profileData.website}`" target="_blank">{{ profileData.website }}</a>
+          </div>
+          <a :href="`${profileData.linkedin}`" target="_blank">
+            <img src="@/assets/profile/linkedin.svg" alt="linkedin">
+          </a>
+          <a :href="`${profileData.instagram}`" target="_blank">
+            <img src="@/assets/profile/instagram.svg" alt="instagram">
+          </a>
+          <a :href="`${profileData.twitter}`" target="_blank">
+            <img src="@/assets/profile/twitter.svg" alt="twitter">
+          </a>
+        </div>
       </div>
     </div>
-    <div class="social-networks">
-      <div class="website">
-        <img src="@/assets/profile/link.svg" alt="web-site" class="link">
-        <a :href="`http://${profileData.website}`" target="_blank">{{ profileData.website }}</a>
-      </div>
-      <a :href="`${profileData.linkedin}`" target="_blank">
-        <img src="@/assets/profile/linkedin.svg" alt="linkedin">
-      </a>
-      <a :href="`${profileData.instagram}`" target="_blank">
-        <img src="@/assets/profile/instagram.svg" alt="instagram">
-      </a>
-      <a :href="`${profileData.twitter}`" target="_blank">
-        <img src="@/assets/profile/twitter.svg" alt="twitter">
-      </a>
-    </div>
-    <FeaturedArticle/>
+    <FeaturedArticle
+              :tag="featuredArticle.tag"
+              :article-title="featuredArticle.articleTitle"
+              :about-article="featuredArticle.aboutArticle"
+              :article-text="featuredArticle.articleText"
+              :image="featuredArticle.image"/>
     <RpArticle v-for="(article, index) in articles" :key="index"
                :tag="article.tag"
                :article-title="article.articleTitle"
@@ -52,6 +57,13 @@ export default {
       linkedin: '',
       instagram: '',
       twitter: '',
+    };
+    const featuredArticle = {
+      tag: 'Featured Article',
+      articleTitle: 'World’s Most Dangerous Technology Ever Made.',
+      articleText: 'Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.',
+      aboutArticle: { author: 'Ralph Hawkins', date: 'May 7, 2019 (10 mins read)' },
+      image: 'first_article_image',
     };
     const articles = [
       {
@@ -83,7 +95,7 @@ export default {
         image: 'colorful',
       },
     ];
-    return { profileData, articles };
+    return { profileData, articles, featuredArticle };
   },
 };
 </script>
@@ -96,7 +108,7 @@ export default {
   align-items: center;
 }
 
-.autor {
+.author {
   display: flex;
   flex-direction: row;
   width: 718px;
@@ -104,17 +116,17 @@ export default {
   margin-top: 174px;
 }
 
-.autor > img {
+.author > img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
 }
 
-.autor-info {
+.author-info {
   margin-left: 75px;
 }
 
-.autor-info > h2 {
+.author-info > h2 {
   font-family: 'Libre Baskerville',serif;
   font-style: normal;
   font-weight: 700;
@@ -122,7 +134,7 @@ export default {
   margin: 0 ;
 }
 
-.autor-info > span {
+.author-info > span {
   font-family: 'Open Sans',serif;
   font-style: normal;
   font-weight: 400;
@@ -131,18 +143,18 @@ export default {
   margin: 5px 0 8px 0;
 }
 
-.autor-info > p {
+.author-info > p {
   font-family: 'Open Sans',serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   color: #1C1C1C;
 }
-/*TODO: Исправить отступы в social-network и website*/
+
 .social-networks {
   display: flex;
   flex-direction: row;
-  margin-left: 210px;
+
 }
 
 .social-networks > a > img {

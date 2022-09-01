@@ -1,12 +1,12 @@
 <template>
-  <div class="article-container">
+  <div class="article-container" :style="{
+    backgroundImage: 'url(' + require(`../../assets/articles/${ image }.svg`) + ')'}">
     <div class="article-content">
-      <!--TODO: Разобраться, как добавить в background-image значение из переменной!-->
       <h3>{{ tag }}</h3>
       <h2> {{ articleTitle }}</h2>
       <div class="about-article">
         <h4>{{ aboutArticle.author }}</h4>
-        <!--TODO: Добавить разделитель!-->
+        <div class="dot"></div>
         <h4>{{ aboutArticle.date }}</h4>
       </div>
       <p>{{ articleText }}</p>
@@ -18,14 +18,12 @@
 export default {
   // TODO: Перевести data на пропсы
   name: 'FeaturedArticle',
-  data() {
-    const tag = 'Featured Article';
-    const articleTitle = 'World’s Most Dangerous Technology Ever Made.';
-    const articleText = 'Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.';
-    const aboutArticle = { author: 'Ralph Hawkins', date: 'May 7, 2019 (10 mins read)' };
-    return {
-      tag, articleTitle, articleText, aboutArticle,
-    };
+  props: {
+    tag: String,
+    articleTitle: String,
+    aboutArticle: Object,
+    articleText: String,
+    image: String,
   },
 };
 </script>
@@ -33,7 +31,6 @@ export default {
 <style scoped>
 .article-container {
   display: flex;
-  background-image: url("@/assets/articles/first_article_image.svg");
   width: 1316px;
   height: 592px;
   margin: 50px auto;
@@ -80,6 +77,14 @@ export default {
 .about-article > h4 {
   color: rgba(28, 28, 28, 0.5);
   margin-left: 10px;
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  background: rgba(28, 28, 28, 0.5);;
+  border-radius: 50%;
+  margin: auto 10px;
 }
 
 .article-content > p {

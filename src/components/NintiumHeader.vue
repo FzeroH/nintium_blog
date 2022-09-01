@@ -1,33 +1,61 @@
 <template>
-  <header>
+  <header :class="{ screenlock: $route.path === '/screenlock'}">
     <img src="@/assets/logo.svg" alt="logo">
-    <!--TODO: Добавить изменение стилей Home, Tags и About-->
     <!--TODO: Доделать header для всех страниц-->
-    <router-link to="/">Home</router-link>
-    <router-link to="/tags">Tags</router-link>
-    <router-link to="/about">About</router-link>
-      <label for="search">
-        <!--TODO: Добавить скрывашку и раскрывашку для поиска!-->
-        <!--TODO: Правильно расположить input и кнопку login!-->
-        <input type="text" id="search"/>
-      </label>
-    <router-link to="/login" class="login">Login</router-link>
+    <router-link to="/"
+                 :class="{ active: $route.path  === '/'}"
+                 v-if="$route.path !== '/screenlock'">
+      Home
+    </router-link>
+    <router-link to="/tags"
+                 :class="{ active: $route.path === '/tags'}"
+                 v-if="$route.path !== '/screenlock'">
+      Tags
+    </router-link>
+    <router-link to="/about"
+                 :class="{ active: $route.path === '/about'}"
+                 v-if="$route.path !== '/screenlock'">
+      About
+    </router-link>
+    <div class="search-container" v-if="$route.path !== '/screenlock'">
+          <!--TODO: Добавить скрывашку и раскрывашку для поиска! Создать div position relative. -->
+    <!-- eslint-disable-next-line -->
+      <input type="text" id="search"/>
+      <img src="@/assets/search.svg" alt="">
+    </div>
+    <router-link to="/login" class="login" v-if="$route.path !== '/screenlock'">Login</router-link>
   </header>
 </template>
 
 <script>
+import { useRoute } from 'vue-router/composables';
 
 export default {
   name: 'NintiumHeader',
+  data() {
+    return { path: String };
+  },
+  mounted() {
+    const route = useRoute();
+    this.path = route.path;
+  },
 };
 </script>
 
 <style scoped>
 header{
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0;
+  justify-content: center;
+}
+.screenlock {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 header > img {
@@ -56,21 +84,25 @@ header > a {
   text-decoration: none;
 }
 
-header > label {
+.search-container {
+  position: relative;
   margin-top: 35px;
   margin-left: 344px;
 }
 
-header > label > input {
+.search-container > input {
   outline: none;
-  width: 363px;
+  width: 100%;
   height: 46px;
   font-size: 20px;
   border: solid 2px #1C1C1C;
   border-radius: 10px;
-  background-image: url("@/assets/search.svg");
-  background-repeat: no-repeat;
-  background-position: 325px center;
+}
+
+.search-container > img {
+  position: absolute;
+  left: 218px;
+  top: 11px;
 }
 
 header > .login {

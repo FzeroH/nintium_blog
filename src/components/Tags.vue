@@ -3,7 +3,7 @@
     <label for="search">
       <input type="text" id="search" v-model="articleTag"/>
     </label>
-    <div class="tags-container">
+    <div class="tags-container" v-if="!articleTag">
       <button v-for="(tag, index) in tags"
               :key="index" @click="clickTag(`${index}`)">#{{ tag }}
       </button>
@@ -77,7 +77,7 @@ export default {
           (article) => article.tag.toLowerCase() === this.articleTag.toLowerCase(),
         );
       }
-      return this.articles;
+      return null;
     },
   },
 };

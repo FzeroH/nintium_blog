@@ -1,8 +1,18 @@
 <template>
   <div>
-    <FeaturedArticle/>
+    <FeaturedArticle
+          :tag="featuredArticle.tag"
+          :article-title="featuredArticle.articleTitle"
+          :about-article="featuredArticle.aboutArticle"
+          :article-text="featuredArticle.articleText"
+          :image="featuredArticle.image"/>
     <EditorsPicks />
-    <FeaturedArticle/>
+    <FeaturedArticle
+          :tag="articleInterior.tag"
+          :article-title="articleInterior.articleTitle"
+          :about-article="articleInterior.aboutArticle"
+          :article-text="articleInterior.articleText"
+          :image="articleInterior.image"/>
     <div class="footer">
       <RecentPost/>
       <ul>
@@ -22,10 +32,24 @@ export default {
   name: 'MainPage',
   components: { RecentPost, FeaturedArticle, EditorsPicks },
   data() {
+    const featuredArticle = {
+      tag: 'Featured Article',
+      articleTitle: 'World’s Most Dangerous Technology Ever Made.',
+      articleText: 'Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.',
+      aboutArticle: { author: 'Ralph Hawkins', date: 'May 7, 2019 (10 mins read)' },
+      image: 'first_article_image',
+    };
+    const articleInterior = {
+      tag: 'Interior',
+      articleTitle: 'Laborum Ullamco Sunt id ut Sunt',
+      articleText: 'Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.',
+      aboutArticle: { author: 'Bessie Hawkins', date: 'May 7, 2019 (10 mins read)' },
+      image: 'interior',
+    };
     const tags = ['Technology', 'Open Source', 'JavaScript', 'Minimalism', 'Self-help', 'Animals',
       'Herbivores', 'HTML', 'CSS', 'PHP', 'Web Technologies', 'Career', 'Life', 'Spirituality',
       'Food', 'Cooking', 'Sports', 'Racing', 'Mountain Hiking', 'Cruising'];
-    return { tags };
+    return { tags, featuredArticle, articleInterior };
   },
 };
 </script>

@@ -16,11 +16,6 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Libre Baskerville',serif;
-  font-style: normal;
-}
-
 body {
   margin: 0;
   padding: 0;

@@ -6,7 +6,7 @@
       <h2> {{ articleTitle }}</h2>
       <div class="about-article">
         <h4>{{ aboutArticle.author }}</h4>
-        <!--TODO: Добавить разделитель!-->
+        <div class="dot"></div>
         <h4>{{ aboutArticle.date }}</h4>
       </div>
       <p>{{ articleText }}</p>
@@ -89,5 +89,13 @@ export default {
   font-weight: 400;
   font-size: 16px;
   margin: 14px 40px;
+}
+
+.dot {
+  width: 3px;
+  height: 3px;
+  background: rgba(28, 28, 28, 0.5);;
+  border-radius: 50%;
+  margin: auto 10px;
 }
 </style>

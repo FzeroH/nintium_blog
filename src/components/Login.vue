@@ -16,7 +16,7 @@
       <router-link to="/" class="forgot-password">Forgot Password?</router-link>
     </div>
     <button>Login</button>
-    <!--TODO: Вынести See screenlock page в правый нижний угол! -->
+    <!--TODO: Вынести See screenlock page в правый нижний угол! (position: absolute) -->
     <router-link to="/screenlock" class="screenlock">See screenlock page</router-link>
   </div>
 </template>
@@ -34,6 +34,7 @@ div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 174px;
 }
 
 div > h1 {
@@ -89,6 +90,7 @@ a {
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
+  margin-top: 11px;
 }
 
 .forgot-password {
@@ -125,6 +127,9 @@ div > button {
 }
 
 .screenlock {
+  position: absolute;
+  top: 700px;
+  right: 50px;
   font-family: 'Open Sans',serif;
   font-style: normal;
   font-weight: 400;
