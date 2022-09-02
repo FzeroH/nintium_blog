@@ -1,5 +1,5 @@
 <template>
-  <header :class="{ screenlock: $route.path === '/screenlock'}">
+  <header :class="{ 'screenlock-header': $route.path === '/screenlock'}">
     <img src="@/assets/logo.svg" alt="logo">
     <!--TODO: Доделать header для всех страниц-->
     <router-link to="/"
@@ -21,7 +21,7 @@
           <!--TODO: Добавить скрывашку и раскрывашку для поиска! Создать div position relative. -->
     <!-- eslint-disable-next-line -->
       <input type="text" id="search"/>
-      <img src="@/assets/search.svg" alt="">
+      <img src="@/assets/search.svg" alt="search" class="search-img">
     </div>
     <router-link to="/login" class="login" v-if="$route.path !== '/screenlock'">Login</router-link>
   </header>
@@ -42,15 +42,33 @@ export default {
 };
 </script>
 
-<style scoped>
-header{
+<style lang="scss" scoped>
+header {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+
+  img:nth-child(1) {
+    width: 178px;
+    height: 57px;
+    margin-top: 31px;
+    margin-left: 25px;
+  }
+
+  a {
+    font-weight: 400;
+    font-size: 20px;
+    color: black;
+    margin: 49px 0 0 31px;
+    text-align: center;
+    height: fit-content;
+    text-decoration: none;
+  }
 }
-.screenlock {
+
+.screenlock-header {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -58,22 +76,6 @@ header{
   justify-content: flex-start;
 }
 
-header > img {
-  width: 178px;
-  height: 57px;
-  margin-top: 31px;
-  margin-left: 25px;
-}
-
-header > a {
-  font-weight: 400;
-  font-size: 20px;
-  color: black;
-  margin: 49px 0 0 31px;
-  text-align: center;
-  height: fit-content;
-  text-decoration: none;
-}
 .active {
   font-weight: 700;
   font-size: 20px;
@@ -88,24 +90,24 @@ header > a {
   position: relative;
   margin-top: 35px;
   margin-left: 344px;
+
+  input {
+    outline: none;
+    width: 100%;
+    height: 46px;
+    font-size: 20px;
+    border: solid 2px #1C1C1C;
+    border-radius: 10px;
+  }
+
+  .search-img {
+    position: absolute;
+    left: 218px;
+    top: 11px;
+  }
 }
 
-.search-container > input {
-  outline: none;
-  width: 100%;
-  height: 46px;
-  font-size: 20px;
-  border: solid 2px #1C1C1C;
-  border-radius: 10px;
-}
-
-.search-container > img {
-  position: absolute;
-  left: 218px;
-  top: 11px;
-}
-
-header > .login {
+.login {
   display: flex;
   justify-content: center;
   align-items: center;

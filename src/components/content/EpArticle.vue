@@ -27,18 +27,18 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .article-container {
   display: flex;
   flex-direction: row;
   margin: 50px 25px;
   width: 100%;
-}
 
-.article-container > img {
-  width: 370px;
-  height: 300px;
-  margin-top: 54px;
+  img {
+    width: 370px;
+    height: 300px;
+    margin-top: 54px;
+  }
 }
 
 .article-content {
@@ -47,25 +47,33 @@ export default {
   width: 856px;
   height: 311px;
   margin: 54px 0;
-}
 
-.article-content > h3 {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  color: rgba(28, 28, 28, 0.5);
-  margin-left: 39px;
-  text-transform: uppercase;
-}
+  h3 {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(28, 28, 28, 0.5);
+    margin-left: 39px;
+    text-transform: uppercase;
+  }
 
-.article-content > h2 {
-  font-family: 'Libre Baskerville',serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 33px;
-  color: black;
-  margin: 0 40px 12px 40px;
+  h2 {
+    font-family: 'Libre Baskerville',serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    color: black;
+    margin: 0 40px 12px 40px;
+  }
+
+  p {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 14px 40px;
+  }
 }
 
 .about-article {
@@ -76,19 +84,11 @@ export default {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-}
 
-.about-article > h4 {
-  color: rgba(28, 28, 28, 0.5);
-  margin-left: 10px;
-}
-
-.article-content > p {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  margin: 14px 40px;
+  h4 {
+    color: rgba(28, 28, 28, 0.5);
+    margin-left: 10px;
+  }
 }
 
 .dot {

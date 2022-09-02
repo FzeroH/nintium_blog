@@ -28,29 +28,46 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 174px;
-}
 
-div > h1 {
-  font-family: 'Libre Baskerville',serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 33px;
-  margin-bottom: 14px;
-}
+  h1 {
+    font-family: 'Libre Baskerville',serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    margin-bottom: 14px;
+  }
 
-div > p {
-  font-family: 'Open Sans', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  margin: 14px 0 23px 0;
+  p {
+    font-family: 'Open Sans', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 14px 0 23px 0;
+  }
+
+  button {
+    width: 323px;
+    height: 58px;
+    margin-top: 13px;
+    border: solid 2px #1C1C1C;
+    border-radius: 10px;
+    font-family: 'Libre Baskerville', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    background: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 input[type = text], input[type = password] {
@@ -103,27 +120,14 @@ a {
   justify-content: center;
   align-items: center;
   margin-right: 105px;
-}
 
-.remember-me > input[type=checkbox] {
-  margin: 0 5px;
-}
+  input[type=checkbox] {
+    margin: 0 5px;
+  }
 
-.remember-me > span {
-  color: rgba(28, 28, 28, 0.5);
-}
-
-div > button {
-  width: 323px;
-  height: 58px;
-  margin-top: 13px;
-  border: solid 2px #1C1C1C;
-  border-radius: 10px;
-  font-family: 'Libre Baskerville', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  background: white;
+  span {
+    color: rgba(28, 28, 28, 0.5);
+  }
 }
 
 .screenlock {

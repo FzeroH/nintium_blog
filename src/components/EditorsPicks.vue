@@ -49,26 +49,29 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .ep-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.ep-title > h2 {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 42px;
-  color: black;
-  margin: 50px 0 17px 0;
-  text-align: center;
+.ep-title {
+  h2 {
+    font-family: 'Open Sans', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    color: black;
+    margin: 50px 0 17px 0;
+    text-align: center;
+  }
+
+  hr {
+    width: 190px;
+    height: 0;
+    border: 5px solid #1C1C1C;
+  }
 }
 
-.ep-title > hr {
-  width: 190px;
-  height: 0;
-  border: 5px solid #1C1C1C;
-}
 </style>

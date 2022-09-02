@@ -100,7 +100,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .profile-container {
   display: flex;
   flex-direction: column;
@@ -114,52 +114,53 @@ export default {
   width: 718px;
   height: 200px;
   margin-top: 174px;
-}
 
-.author > img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
 }
 
 .author-info {
   margin-left: 75px;
-}
 
-.author-info > h2 {
-  font-family: 'Libre Baskerville',serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 42px;
-  margin: 0 ;
-}
+  h2 {
+    font-family: 'Libre Baskerville',serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    margin: 0 ;
+  }
 
-.author-info > span {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: rgba(28, 28, 28, 0.5);
-  margin: 5px 0 8px 0;
-}
+  span {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(28, 28, 28, 0.5);
+    margin: 5px 0 8px 0;
+  }
 
-.author-info > p {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: #1C1C1C;
+  p {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1C1C1C;
+  }
 }
 
 .social-networks {
   display: flex;
   flex-direction: row;
 
-}
-
-.social-networks > a > img {
-  width: 24px;
-  height: 24px;
+  a {
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 
 .website {
@@ -167,19 +168,19 @@ export default {
   flex-direction: row;
   align-items: center;
   margin-right: 177px;
-}
 
-.website > img {
-  width: 24px;
-  height: 24px;
-}
+  img {
+    width: 24px;
+    height: 24px;
+  }
 
-.website > a {
-  text-decoration: none;
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: black;
+  a {
+    text-decoration: none;
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: black;
+  }
 }
 </style>

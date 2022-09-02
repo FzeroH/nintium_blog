@@ -52,10 +52,6 @@ export default {
 };
 </script>
 
-<style scoped>
-.rp-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+<style lang="scss" scoped>
+
 </style>

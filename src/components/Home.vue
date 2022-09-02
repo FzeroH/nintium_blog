@@ -16,7 +16,7 @@
     <div class="footer">
       <RecentPost/>
       <ul>
-        <p>tags.</p>
+        <li>tags.</li>
         <li v-for="(tag, index) in tags" :key="index">{{ tag }}</li>
       </ul>
     </div>
@@ -54,7 +54,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 div {
   display: flex;
   flex-direction: column;
@@ -65,27 +65,28 @@ div {
   display: flex;
   flex-direction: row;
   justify-content: center;
+
+  ul {
+    margin-top: 94px;
+
+    li {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    li:nth-child(1) {
+      font-family: 'Open Sans',serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      color: #1C1C1C;
+      margin-bottom: 10px;
+    }
+
+    li:not(:first-child):hover {
+      cursor: pointer;
+    }
+  }
 }
 
-.footer > ul {
-  margin-top: 94px;
-}
-
-.footer > ul > p {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  color: #1C1C1C;
-  margin-bottom: 10px;
-}
-
-.footer > ul > li {
-  list-style: none;
-  margin-top: 10px;
-}
-
-.footer > ul > li:hover {
-  cursor: pointer;
-}
 </style>

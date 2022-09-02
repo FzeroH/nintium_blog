@@ -2,7 +2,7 @@
   <div class="article-container" :style="{
     backgroundImage: 'url(' + require(`../../assets/articles/${ image }.svg`) + ')'}">
     <div class="article-content">
-      <h3>{{ tag }}</h3>
+      <span>{{ tag }}</span>
       <h2> {{ articleTitle }}</h2>
       <div class="about-article">
         <h4>{{ aboutArticle.author }}</h4>
@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .article-container {
   display: flex;
   width: 1316px;
@@ -43,25 +43,33 @@ export default {
   width: 509px;
   height: 483px;
   margin: 0 0 109px 45px;
-}
 
-.article-content > h3 {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  color: rgba(28, 28, 28, 0.5);
-  margin: 76px 0 0 39px;
-  text-transform: uppercase;
-}
+  span {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(28, 28, 28, 0.5);
+    margin: 76px 0 0 39px;
+    text-transform: uppercase;
+  }
 
-.article-content > h2 {
-  font-family: 'Libre Baskerville',serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 33px;
-  color: black;
-  margin: 0 40px 12px 40px;
+  h2 {
+    font-family: 'Libre Baskerville',serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    color: black;
+    margin: 0 40px 12px 40px;
+  }
+
+  p {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 14px 40px;
+  }
 }
 
 .about-article {
@@ -72,11 +80,11 @@ export default {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-}
 
-.about-article > h4 {
-  color: rgba(28, 28, 28, 0.5);
-  margin-left: 10px;
+  h4 {
+    color: rgba(28, 28, 28, 0.5);
+    margin-left: 10px;
+  }
 }
 
 .dot {
@@ -85,13 +93,5 @@ export default {
   background: rgba(28, 28, 28, 0.5);;
   border-radius: 50%;
   margin: auto 10px;
-}
-
-.article-content > p {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  margin: 14px 40px;
 }
 </style>

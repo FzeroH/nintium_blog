@@ -22,8 +22,8 @@
     </div>
     <div class="pagination">
       <router-link to="/"><img src="@/assets/back_button.svg" alt="back"></router-link>
-      <span>Go back: <h6>Boom boom pow is et Letstrade.</h6></span>
-      <span>Next up: <h6>Lorem ipsum so Ceat Riak</h6></span>
+      <p>Go back: <span>Boom boom pow is et Letstrade.</span></p>
+      <p>Next up: <span>Lorem ipsum so Ceat Riak</span></p>
       <router-link to="/"><img src="@/assets/next_button.svg" alt="back"></router-link>
     </div>
   </div>
@@ -62,39 +62,38 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .article-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 62px;
-}
 
-.article-container > img {
-  width: 1316px;
-  height: 592px;
-}
+  img {
+    width: 1316px;
+    height: 592px;
+  }
 
-.article-container > h1 {
-  font-family: 'Libre Baskerville',serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 42px;
-  margin: 54px 0 17px 0;
-}
+  h1 {
+    font-family: 'Libre Baskerville',serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    margin: 54px 0 17px 0;
+  }
 
-.article-container > h3 {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  margin-top: 0;
-  color: rgba(28, 28, 28, 0.5);
-}
-
-.article-container > p {
-  width: 652px;
+  h3 {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 0;
+    color: rgba(28, 28, 28, 0.5);
+  }
+  p {
+    width: 652px;
+  }
 }
 
 .about-article {
@@ -105,11 +104,11 @@ export default {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-}
 
-.about-article > h4 {
-  color: rgba(28, 28, 28, 0.5);
-  margin-left: 10px;
+  h4 {
+    color: rgba(28, 28, 28, 0.5);
+    margin-left: 10px;
+  }
 }
 
 .dot {
@@ -125,16 +124,16 @@ export default {
   flex-direction: column;
   width: 718px;
   height: 200px;
-}
 
-.about-the-author > h2 {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  color: rgba(28, 28, 28, 0.5);
-  text-transform: uppercase;
-  margin-bottom: 15px;
+  h2 {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(28, 28, 28, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
 }
 
 .author {
@@ -142,41 +141,41 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
 
-.author > img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
 }
 
 .author-info {
   margin-left: 75px;
-}
 
-.author-info > h2 {
-  font-family: 'Libre Baskerville',serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 42px;
-  margin: 0 ;
-}
+  h2 {
+    font-family: 'Libre Baskerville',serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    margin: 0 ;
+  }
 
-.author-info > span {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: rgba(28, 28, 28, 0.5);
-  margin: 5px 0 8px 0;
-}
+  span {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(28, 28, 28, 0.5);
+    margin: 5px 0 8px 0;
+  }
 
-.author-info > p {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  color: #1C1C1C;
+  p {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #1C1C1C;
+  }
 }
 
 .pagination {
@@ -185,28 +184,30 @@ export default {
   justify-content: center;
   align-items: center;
   margin-top: 163px;
+
+  a {
+    img {
+      width: 150px;
+      height: 150px;
+    }
+  }
+
+  p, p  span {
+    font-family: 'Libre Baskerville',serif;
+    font-style: normal;
+    font-size: 20px;
+  }
+  p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+
+    span {
+      font-weight: 700;
+    }
+  }
 }
 
-.pagination > a >img {
-  width: 150px;
-  height: 150px;
-}
-
-.pagination > span, .pagination > span >h6 {
-  font-family: 'Libre Baskerville',serif;
-  font-style: normal;
-  font-size: 20px;
-}
-
-.pagination > span {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  font-weight: 400;
-}
-
-.pagination > h6 {
-  font-weight: 700;
-}
 </style>

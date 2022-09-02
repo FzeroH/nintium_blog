@@ -27,26 +27,25 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .article-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 812px;
   height: 177px;
-}
 
-.article-container:first-child {
-  margin: 104px 0 0 39px;
-}
+  &:first-child {
+    margin: 104px 0 0 39px;
+  }
+  &:not(:first-child) {
+    margin: 66px 0 0 39px;
+  }
 
-.article-container:not(:first-child){
-  margin: 66px 0 0 39px;
-}
-
-.article-container > img {
-  width: 237px;
-  height: 177px;
+  img {
+    width: 237px;
+    height: 177px;
+  }
 }
 
 .article-content {
@@ -56,25 +55,33 @@ export default {
   width: 856px;
   height: 311px;
   margin: 0 0 0 37px;
-}
 
-.article-content > h3 {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  color: rgba(28, 28, 28, 0.5);
-  text-transform: uppercase;
-  margin: 0 37px;
-}
+  h3 {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(28, 28, 28, 0.5);
+    text-transform: uppercase;
+    margin: 0 37px;
+  }
 
-.article-content > h2 {
-  font-family: 'Libre Baskerville',serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 33px;
-  color: black;
-  margin: 4px 40px 3px 37px;
+  h2 {
+    font-family: 'Libre Baskerville',serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 33px;
+    color: black;
+    margin: 4px 40px 3px 37px;
+  }
+
+  p {
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin: 14px 40px;
+  }
 }
 
 .about-article {
@@ -85,23 +92,15 @@ export default {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-}
 
-.about-article > h4 {
-  color: rgba(28, 28, 28, 0.5);
-  margin: 0;
-}
+  h4 {
+    color: rgba(28, 28, 28, 0.5);
+    margin: 0;
 
-.about-article > h4:not(:first-child) {
-  margin-left: 37px;
-}
-
-.article-content > p {
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  margin: 14px 40px;
+    &:not(:first-child) {
+      margin-left: 37px;
+    }
+  }
 }
 
 .dot {

@@ -22,40 +22,59 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-div > img {
-  width: 150px;
-  height: 150px;
-  margin-top: 124px;
-  border-radius: 50%;
-}
+  img {
+    width: 150px;
+    height: 150px;
+    margin-top: 124px;
+    border-radius: 50%;
+  }
 
-input {
-  outline: none;
-  max-width: 324px;
-  height: 58px;
-  border-radius: 10px;
-  border: solid 1px #F8F8F8;
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  padding-left: 54px;
-  background-image: url("@/assets/key.svg");
-  background-repeat: no-repeat;
-  background-position: 18px center;
-  margin-top: 14px;
-}
+  label {
+    input {
+      outline: none;
+      max-width: 324px;
+      height: 58px;
+      border-radius: 10px;
+      border: solid 1px #F8F8F8;
+      font-family: 'Open Sans',serif;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      padding-left: 54px;
+      background-image: url("@/assets/key.svg");
+      background-repeat: no-repeat;
+      background-position: 18px center;
+      margin-top: 14px;
+    }
+  }
 
-a {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    width: 323px;
+    height: 58px;
+    margin-top: 13px;
+    border: solid 2px #1C1C1C;
+    border-radius: 10px;
+    font-family: 'Libre Baskerville', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    background: white;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .under-fields {
@@ -77,31 +96,14 @@ a {
   justify-content: center;
   align-items: center;
   margin-right: 105px;
-}
 
-.remember-me > input[type=checkbox] {
-  margin: 0 5px;
-}
+  input[type=checkbox] {
+    margin: 0 5px;
+  }
 
-.remember-me > span {
-  color: rgba(28, 28, 28, 0.5);
-  height: fit-content;
-}
-
-div > button {
-  width: 323px;
-  height: 58px;
-  margin-top: 13px;
-  border: solid 2px #1C1C1C;
-  border-radius: 10px;
-  font-family: 'Libre Baskerville', serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  background: white;
-}
-
-div > button:hover {
-  cursor: pointer;
+  span {
+    color: rgba(28, 28, 28, 0.5);
+    height: fit-content;
+  }
 }
 </style>
