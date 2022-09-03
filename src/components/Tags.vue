@@ -56,6 +56,35 @@ export default {
         articleText: 'Amet ipsum occaecat aliqua aute nisi laboris nostrud culpa est do. Aliqua esse velit in excepteur esse qui voluptate laboris adipisicing qui irure elit amet excepteur.',
         image: 'colorful',
       },
+      {
+        tag: 'Minimalism',
+        articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
+        aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
+        articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
+        image: 'minimalism',
+      },
+      {
+        tag: 'Technology',
+        articleTitle: 'Amet non Ex Officia nulla Cupidatat',
+        aboutArticle: { author: 'Jacob Henry', date: 'September 27, 2017 (8 mins read)' },
+        articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
+        image: 'technology',
+      },
+      {
+        tag: 'Minimalism',
+        articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
+        aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
+        articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
+        image: 'article',
+      },
+      {
+        tag: 'Technology',
+        articleTitle: 'Duis aute irure dolor in reprehenderit',
+        aboutArticle: { author: 'Jacob Henry', date: 'September 29, 2017 (4 mins read)' },
+        articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
+        image: 'technology2',
+      },
+
     ];
     const articleTag = null;
     return { tags, articleTag, articles };
