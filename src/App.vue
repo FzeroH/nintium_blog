@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NintiumHeader/>
+    <nintium-header/>
     <router-view/>
   </div>
 </template>
