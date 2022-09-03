@@ -1,6 +1,6 @@
 <template>
   <div class="article-container">
-    <img :src="require(`../../assets/articles/${ article.image }.svg`)" alt="article">
+    <img :src="require(`../../assets/images/articles/${ article.image }.svg`)" alt="article">
     <h1>{{ article.articleTitle }}</h1>
     <div class="about-article">
       <h4>{{ article.aboutArticle.author }}</h4>
@@ -12,7 +12,8 @@
     <div class="about-the-author">
       <h2>About the author</h2>
       <div class="author">
-      <img :src="require(`../../assets/profile/${ profileData.image }.svg`)" alt="profile">
+      <img :src="require(`../../assets/images/profile/${ profileData.image }.svg`)"
+           alt="profile">
         <div class="author-info">
           <h2>{{ profileData.name }}</h2>
           <span>@{{ profileData.username }}</span>
@@ -21,10 +22,10 @@
       </div>
     </div>
     <div class="pagination">
-      <router-link to="/"><img src="@/assets/back_button.svg" alt="back"></router-link>
+      <router-link to="/"><img src="@/assets/images/back_button.svg" alt="back"></router-link>
       <p>Go back: <span>Boom boom pow is et Letstrade.</span></p>
       <p>Next up: <span>Lorem ipsum so Ceat Riak</span></p>
-      <router-link to="/"><img src="@/assets/next_button.svg" alt="back"></router-link>
+      <router-link to="/"><img src="@/assets/images/next_button.svg" alt="back"></router-link>
     </div>
   </div>
 </template>

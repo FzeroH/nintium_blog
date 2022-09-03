@@ -84,13 +84,13 @@ input[type = text], input[type = password] {
 }
 
 input[type = text] {
-  background-image: url("@/assets/user.svg");
+  background-image: url("@/assets/images/user.svg");
   background-repeat: no-repeat;
   background-position: 18px center;
 }
 
 input[type = password] {
-  background-image: url("@/assets/key.svg");
+  background-image: url("@/assets/images/key.svg");
   background-repeat: no-repeat;
   background-position: 18px center;
   margin-top: 14px;

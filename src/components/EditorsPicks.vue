@@ -4,11 +4,7 @@
     <h2>Editor's Picks</h2>
     <hr>
     <EpArticle v-for="(article, index) in articles" :key="index"
-      :tag="article.tag"
-      :article-title="article.articleTitle"
-      :about-article="article.aboutArticle"
-      :article-text="article.articleText"
-      :image="article.image"
+      :article="article"
     />
   </div>
 </div>
@@ -56,6 +52,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 .ep-title {
   h2 {
     font-family: 'Open Sans', serif;

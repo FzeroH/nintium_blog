@@ -9,11 +9,7 @@
       </button>
     </div>
     <RpArticle v-for="(article, index) in filter" :key="index"
-               :tag="article.tag"
-               :article-title="article.articleTitle"
-               :about-article="article.aboutArticle"
-               :article-text="article.articleText"
-               :image="article.image"
+               :article="article"
     />
   </div>
 </template>
@@ -99,7 +95,7 @@ div {
       font-size: 20px;
       border: solid 2px #1C1C1C;
       border-radius: 10px;
-      background-image: url("@/assets/search.svg");
+      background-image: url("@/assets/images/search.svg");
       background-repeat: no-repeat;
       background-position: 655px center;
     }

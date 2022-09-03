@@ -1,11 +1,7 @@
 <template>
   <div class="rp-container">
       <RpArticle v-for="(article, index) in articles" :key="index"
-                 :tag="article.tag"
-                 :article-title="article.articleTitle"
-                 :about-article="article.aboutArticle"
-                 :article-text="article.articleText"
-                 :image="article.image"
+                 :article="article"
       />
   </div>
 </template>

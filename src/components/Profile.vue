@@ -1,40 +1,32 @@
 <template>
   <div class="profile-container">
     <div class="author">
-      <img :src="require(`../assets/profile/${profileData.image}.svg`)" alt="profile_picture">
+      <img :src="require(`../../src/assets/images/profile/${profileData.image}.svg`)" alt="profile">
       <div class="author-info">
         <h2>{{ profileData.name }}</h2>
         <span>@{{ profileData.username }}</span>
         <p>{{ profileData.information }}</p>
         <div class="social-networks">
           <div class="website">
-            <img src="@/assets/profile/link.svg" alt="web-site" class="link">
+            <img src="@/assets/images/profile/link.svg" alt="web-site" class="link">
             <a :href="`http://${profileData.website}`" target="_blank">{{ profileData.website }}</a>
           </div>
           <a :href="`${profileData.linkedin}`" target="_blank">
-            <img src="@/assets/profile/linkedin.svg" alt="linkedin">
+            <img src="@/assets/images/profile/linkedin.svg" alt="linkedin">
           </a>
           <a :href="`${profileData.instagram}`" target="_blank">
-            <img src="@/assets/profile/instagram.svg" alt="instagram">
+            <img src="@/assets/images/profile/instagram.svg" alt="instagram">
           </a>
           <a :href="`${profileData.twitter}`" target="_blank">
-            <img src="@/assets/profile/twitter.svg" alt="twitter">
+            <img src="@/assets/images/profile/twitter.svg" alt="twitter">
           </a>
         </div>
       </div>
     </div>
     <FeaturedArticle
-              :tag="featuredArticle.tag"
-              :article-title="featuredArticle.articleTitle"
-              :about-article="featuredArticle.aboutArticle"
-              :article-text="featuredArticle.articleText"
-              :image="featuredArticle.image"/>
+              :article="featuredArticle"/>
     <RpArticle v-for="(article, index) in articles" :key="index"
-               :tag="article.tag"
-               :article-title="article.articleTitle"
-               :about-article="article.aboutArticle"
-               :article-text="article.articleText"
-               :image="article.image"/>
+               :article="article"/>
   </div>
 </template>
 

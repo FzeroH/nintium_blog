@@ -1,6 +1,6 @@
 <template>
   <header :class="{ 'screenlock-header': $route.path === '/screenlock'}">
-    <img src="@/assets/logo.svg" alt="logo">
+    <img src="@/assets/images/logo.svg" alt="logo">
     <!--TODO: Доделать header для всех страниц-->
     <router-link to="/"
                  :class="{ active: $route.path  === '/'}"
@@ -21,7 +21,7 @@
           <!--TODO: Добавить скрывашку и раскрывашку для поиска! Создать div position relative. -->
     <!-- eslint-disable-next-line -->
       <input type="text" id="search"/>
-      <img src="@/assets/search.svg" alt="search" class="search-img">
+      <img src="@/assets/images/search.svg" alt="search" class="search-img">
     </div>
     <router-link to="/login" class="login" v-if="$route.path !== '/screenlock'">Login</router-link>
   </header>

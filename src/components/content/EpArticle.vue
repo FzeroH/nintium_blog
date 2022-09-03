@@ -1,15 +1,14 @@
 <template>
   <div class="article-container">
-    <img :src="require(`../../assets/articles/${ image }.svg`)" alt="">
+    <img :src="require(`../../assets/images/articles/${ article.image }.svg`)" alt="">
     <div class="article-content">
-      <h3>{{ tag }}</h3>
-      <h2> {{ articleTitle }}</h2>
-      <div class="about-article">
-        <h4>{{ aboutArticle.author }}</h4>
-        <div class="dot"></div>
-        <h4>{{ aboutArticle.date }}</h4>
+      <span class="tag">{{ article.tag }}</span>
+      <h2> {{ article.articleTitle }}</h2>
+      <div class="about-article-container">
+        <span class="about-article">{{ article.aboutArticle.author }}</span>
+        <span class="about-article">{{ article.aboutArticle.date }}</span>
       </div>
-      <p>{{ articleText }}</p>
+      <p>{{ article.articleText }}</p>
     </div>
   </div>
 </template>
@@ -18,11 +17,7 @@
 export default {
   name: 'EpArticle',
   props: {
-    tag: String,
-    articleTitle: String,
-    aboutArticle: Object,
-    articleText: String,
-    image: String,
+    article: Object,
   },
 };
 </script>
@@ -31,8 +26,8 @@ export default {
 .article-container {
   display: flex;
   flex-direction: row;
-  margin: 50px 25px;
-  width: 100%;
+  margin: 3.125rem 1.56rem;
+  width: 53.6rem;
 
   img {
     width: 370px;
@@ -48,13 +43,13 @@ export default {
   height: 311px;
   margin: 54px 0;
 
-  h3 {
+  .tag {
     font-family: 'Open Sans',serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     color: rgba(28, 28, 28, 0.5);
-    margin-left: 39px;
+    margin-left: 55px;
     text-transform: uppercase;
   }
 
@@ -64,7 +59,8 @@ export default {
     font-weight: 700;
     font-size: 33px;
     color: black;
-    margin: 0 40px 12px 40px;
+    margin: 0 55px;
+    line-height: 41px;
   }
 
   p {
@@ -72,30 +68,32 @@ export default {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    margin: 14px 40px;
+    line-height: 24px;
+    margin: 0.9rem 3.44rem;
   }
+
 }
 
-.about-article {
+.about-article-container {
   display: flex;
   flex-direction: row;
-  margin-left: 40px;
+  margin: 12px 0 14px 55px;
   font-family: 'Open Sans',serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
 
-  h4 {
+  .about-article {
     color: rgba(28, 28, 28, 0.5);
-    margin-left: 10px;
-  }
-}
 
-.dot {
-  width: 3px;
-  height: 3px;
-  background: rgba(28, 28, 28, 0.5);;
-  border-radius: 50%;
-  margin: auto 10px;
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    &:first-child::after {
+      content: '•';
+      margin-left: 10px;
+    }
+  }
 }
 </style>

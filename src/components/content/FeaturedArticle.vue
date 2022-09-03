@@ -1,29 +1,23 @@
 <template>
   <div class="article-container" :style="{
-    backgroundImage: 'url(' + require(`../../assets/articles/${ image }.svg`) + ')'}">
+   backgroundImage: 'url(' + require(`../../assets/images/articles/${ article.image }.svg`) + ')'}">
     <div class="article-content">
-      <span>{{ tag }}</span>
-      <h2> {{ articleTitle }}</h2>
-      <div class="about-article">
-        <h4>{{ aboutArticle.author }}</h4>
-        <div class="dot"></div>
-        <h4>{{ aboutArticle.date }}</h4>
+      <span class="tag">{{ article.tag }}</span>
+      <h2> {{ article.articleTitle }}</h2>
+      <div class="about-article-container">
+        <span class="about-article">{{ article.aboutArticle.author }}</span>
+        <span class="about-article">{{ article.aboutArticle.date }}</span>
       </div>
-      <p>{{ articleText }}</p>
+      <p>{{ article.articleText }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  // TODO: Перевести data на пропсы
   name: 'FeaturedArticle',
   props: {
-    tag: String,
-    articleTitle: String,
-    aboutArticle: Object,
-    articleText: String,
-    image: String,
+    article: Object,
   },
 };
 </script>
@@ -44,7 +38,7 @@ export default {
   height: 483px;
   margin: 0 0 109px 45px;
 
-  span {
+  .tag {
     font-family: 'Open Sans',serif;
     font-style: normal;
     font-weight: 400;
@@ -72,7 +66,7 @@ export default {
   }
 }
 
-.about-article {
+.about-article-container{
   display: flex;
   flex-direction: row;
   margin-left: 40px;
@@ -81,17 +75,19 @@ export default {
   font-weight: 400;
   font-size: 16px;
 
-  h4 {
+  .about-article {
     color: rgba(28, 28, 28, 0.5);
     margin-left: 10px;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    &:first-child::after {
+      content: '•';
+      margin-left: 10px;
+    }
   }
 }
 
-.dot {
-  width: 3px;
-  height: 3px;
-  background: rgba(28, 28, 28, 0.5);;
-  border-radius: 50%;
-  margin: auto 10px;
-}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src="@/assets/profile_picture.svg" alt="profile_picture">
+    <img src="@/assets/images/profile_picture.svg" alt="profile_picture">
     <label for="password">
       <input type="password" id="password" placeholder="Password">
     </label>
@@ -48,7 +48,7 @@ div {
       font-weight: 400;
       font-size: 16px;
       padding-left: 54px;
-      background-image: url("@/assets/key.svg");
+      background-image: url("@/assets/images/key.svg");
       background-repeat: no-repeat;
       background-position: 18px center;
       margin-top: 14px;

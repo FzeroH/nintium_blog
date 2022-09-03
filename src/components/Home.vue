@@ -1,19 +1,11 @@
 <template>
   <div>
     <FeaturedArticle
-          :tag="featuredArticle.tag"
-          :article-title="featuredArticle.articleTitle"
-          :about-article="featuredArticle.aboutArticle"
-          :article-text="featuredArticle.articleText"
-          :image="featuredArticle.image"/>
+          :article="featuredArticle"/>
     <EditorsPicks />
     <FeaturedArticle
-          :tag="articleInterior.tag"
-          :article-title="articleInterior.articleTitle"
-          :about-article="articleInterior.aboutArticle"
-          :article-text="articleInterior.articleText"
-          :image="articleInterior.image"/>
-    <div class="footer">
+          :article="articleInterior"/>
+    <div class="recent-posts">
       <RecentPost/>
       <ul>
         <li>tags.</li>
@@ -61,7 +53,7 @@ div {
   justify-content: center;
 }
 
-.footer {
+.recent-posts {
   display: flex;
   flex-direction: row;
   justify-content: center;
