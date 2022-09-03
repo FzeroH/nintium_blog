@@ -2,12 +2,14 @@
   <div>
     <h1>Welcome back!</h1>
     <p>Sign in to get the most out of nintium.</p>
-    <label for="login">
-      <input type="text" id="login" placeholder="Username">
-    </label>
-    <label for="password">
-      <input type="password" id="password" placeholder="Password">
-    </label>
+    <form>
+      <label for="login">
+        <input type="text" id="login" placeholder="Username">
+      </label>
+      <label for="password">
+        <input type="password" id="password" placeholder="Password">
+      </label>
+    </form>
     <div class="under-fields">
       <label for="remember-me" class="remember-me">
         <input type="checkbox" id="remember-me">
@@ -69,31 +71,35 @@ div {
     }
   }
 }
+form {
+  display: flex;
+  flex-direction: column;
 
-input[type = text], input[type = password] {
-  outline: none;
-  max-width: 324px;
-  height: 58px;
-  border-radius: 10px;
-  border: solid 1px #F8F8F8;
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  padding-left: 54px;
-}
+  input[type = text], input[type = password] {
+    outline: none;
+    max-width: 324px;
+    height: 58px;
+    border-radius: 10px;
+    border: solid 1px #F8F8F8;
+    font-family: 'Open Sans',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    padding-left: 54px;
+  }
 
-input[type = text] {
-  background-image: url("@/assets/images/user.svg");
-  background-repeat: no-repeat;
-  background-position: 18px center;
-}
+  input[type = text] {
+    background-image: url("@/assets/images/user.svg");
+    background-repeat: no-repeat;
+    background-position: 18px center;
+  }
 
-input[type = password] {
-  background-image: url("@/assets/images/key.svg");
-  background-repeat: no-repeat;
-  background-position: 18px center;
-  margin-top: 14px;
+  input[type = password] {
+    background-image: url("@/assets/images/key.svg");
+    background-repeat: no-repeat;
+    background-position: 18px center;
+    margin-top: 14px;
+  }
 }
 
 a {

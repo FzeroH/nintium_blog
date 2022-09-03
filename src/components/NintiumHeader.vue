@@ -1,6 +1,8 @@
 <template>
   <header :class="{ 'screenlock-header': $route.path === '/screenlock'}">
-    <img src="@/assets/images/logo.svg" alt="logo">
+    <router-link to="/" class="logo">
+      <img src="@/assets/images/logo.svg" alt="logo" class="logo">
+    </router-link>
     <!--TODO: Доделать header для всех страниц-->
     <router-link to="/"
                  :class="{ active: $route.path  === '/'}"
@@ -50,11 +52,15 @@ header {
   align-items: center;
   justify-content: center;
 
-  img:nth-child(1) {
+  .logo {
     width: 178px;
     height: 57px;
     margin-top: 31px;
     margin-left: 25px;
+
+    img {
+      margin: 0;
+    }
   }
 
   a {
@@ -63,7 +69,6 @@ header {
     color: black;
     margin: 49px 0 0 31px;
     text-align: center;
-    height: fit-content;
     text-decoration: none;
   }
 }
@@ -98,11 +103,12 @@ header {
     font-size: 20px;
     border: solid 2px #1C1C1C;
     border-radius: 10px;
+    padding-right: 37px;
   }
 
   .search-img {
     position: absolute;
-    left: 218px;
+    left: 288px;
     top: 11px;
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="rp-container">
-      <RpArticle v-for="(article, index) in articles" :key="index"
+      <rp-article v-for="(article, index) in articles" :key="index"
                  :article="article"
       />
   </div>

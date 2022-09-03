@@ -3,7 +3,7 @@
   <div class="ep-title">
     <h2>Editor's Picks</h2>
     <hr>
-    <EpArticle v-for="(article, index) in articles" :key="index"
+    <ep-article v-for="(article, index) in articles" :key="index"
       :article="article"
     />
   </div>

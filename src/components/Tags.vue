@@ -8,7 +8,7 @@
               :key="index" @click="clickTag(`${index}`)">#{{ tag }}
       </button>
     </div>
-    <RpArticle v-for="(article, index) in filter" :key="index"
+    <rp-article v-for="(article, index) in filter" :key="index"
                :article="article"
     />
   </div>

@@ -23,9 +23,9 @@
         </div>
       </div>
     </div>
-    <FeaturedArticle
+    <featured-article
               :article="featuredArticle"/>
-    <RpArticle v-for="(article, index) in articles" :key="index"
+    <rp-article v-for="(article, index) in articles" :key="index"
                :article="article"/>
   </div>
 </template>

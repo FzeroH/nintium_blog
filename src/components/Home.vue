@@ -1,12 +1,12 @@
 <template>
   <div>
-    <FeaturedArticle
+    <featured-article
           :article="featuredArticle"/>
-    <EditorsPicks />
-    <FeaturedArticle
+    <editors-picks />
+    <featured-article
           :article="articleInterior"/>
     <div class="recent-posts">
-      <RecentPost/>
+      <recent-post/>
       <ul>
         <li>tags.</li>
         <li v-for="(tag, index) in tags" :key="index">{{ tag }}</li>
