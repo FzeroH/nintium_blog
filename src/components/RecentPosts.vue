@@ -1,8 +1,8 @@
 <template>
   <div class="rp-container">
-      <rp-article v-for="(article, index) in articles" :key="index"
-                 :article="article"
-      />
+    <router-link :to="`/article/${index}2`" v-for="(article, index) in articles" :key="index">
+      <rp-article :article="article"/>
+    </router-link>
   </div>
 </template>
 
@@ -49,5 +49,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.rp-container {
+  a {
+    &:first-child {
+      margin: 104px 0 0 39px;
+    }
+    &:not(:first-child) {
+      margin: 66px 0 0 39px;
+    }
+  }
+}
 
 </style>

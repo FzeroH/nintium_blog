@@ -23,10 +23,15 @@
         </div>
       </div>
     </div>
-    <featured-article
-              :article="featuredArticle"/>
-    <rp-article v-for="(article, index) in articles" :key="index"
-               :article="article"/>
+    <router-link :to="`/article/56345637`" class="articles">
+      <featured-article :article="featuredArticle"/>
+    </router-link>
+    <router-link :to="`/article/${index}3`"
+                 v-for="(article, index) in articles"
+                 :key="index"
+                 class="articles">
+      <rp-article :article="article"/>
+    </router-link>
   </div>
 </template>
 
@@ -98,81 +103,84 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.author {
-  display: flex;
-  flex-direction: row;
-  width: 718px;
-  height: 200px;
-  margin-top: 174px;
-
-  img {
-    width: 200px;
+  .author {
+    display: flex;
+    flex-direction: row;
+    width: 718px;
     height: 200px;
-    border-radius: 50%;
-  }
-}
+    margin-top: 174px;
 
-.author-info {
-  margin-left: 75px;
-
-  h2 {
-    font-family: 'Libre Baskerville',serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 42px;
-    margin: 0 ;
-  }
-
-  span {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    color: rgba(28, 28, 28, 0.5);
-    margin: 5px 0 8px 0;
-  }
-
-  p {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    color: #1C1C1C;
-  }
-}
-
-.social-networks {
-  display: flex;
-  flex-direction: row;
-
-  a {
     img {
-      width: 24px;
-      height: 24px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+
+    .author-info {
+      margin-left: 75px;
+
+      h2 {
+        font-family: 'Libre Baskerville',serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 42px;
+        margin: 0 ;
+      }
+
+      //.username {
+      //  font-size: 16px;
+      //  color: rgba(28, 28, 28, 0.5);
+      //  margin: 5px 0 8px 0;
+      //}
+
+      p {
+        font-size: 16px;
+        color: #1C1C1C;
+      }
+
+      .social-networks {
+        display: flex;
+        flex-direction: row;
+
+        a {
+          margin-right: 1rem;
+          img {
+            width: 24px;
+            height: 24px;
+          }
+        }
+      }
+
+      .website {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 177px;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+
+        a {
+          text-decoration: none;
+          font-family: 'Open Sans',serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          color: black;
+        }
+      }
+    }
+  }
+
+  .articles {
+    margin-top: 3.9rem;
+    &:last-child {
+      margin-bottom: 4.5rem;
     }
   }
 }
 
-.website {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-right: 177px;
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
-
-  a {
-    text-decoration: none;
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    color: black;
-  }
-}
 </style>

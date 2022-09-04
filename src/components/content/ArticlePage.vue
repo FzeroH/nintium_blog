@@ -3,20 +3,19 @@
     <img :src="require(`../../assets/images/articles/${ article.image }.svg`)" alt="article">
     <h1>{{ article.articleTitle }}</h1>
     <div class="about-article">
-      <h4>{{ article.aboutArticle.author }}</h4>
-      <div class="dot"></div>
-      <h4>{{ article.aboutArticle.date }}</h4>
+      <span>{{ article.aboutArticle.author }}</span>
+      <span>{{ article.aboutArticle.date }}</span>
     </div>
-    <h3>{{ article.tag }}</h3>
+    <span class="tag">{{ article.tag }}</span>
     <p>{{ article.articleText }}</p>
     <div class="about-the-author">
-      <h2>About the author</h2>
-      <div class="author">
+      <span>About the author</span>
+      <div class="author-profile">
       <img :src="require(`../../assets/images/profile/${ profileData.image }.svg`)"
            alt="profile">
         <div class="author-info">
           <h2>{{ profileData.name }}</h2>
-          <span>@{{ profileData.username }}</span>
+          <span class="username">@{{ profileData.username }}</span>
           <p>{{ profileData.information }}</p>
         </div>
       </div>
@@ -25,7 +24,7 @@
       <router-link to="/"><img src="@/assets/images/back_button.svg" alt="back"></router-link>
       <p>Go back: <span>Boom boom pow is et Letstrade.</span></p>
       <p>Next up: <span>Lorem ipsum so Ceat Riak</span></p>
-      <router-link to="/"><img src="@/assets/images/next_button.svg" alt="back"></router-link>
+      <router-link to="/"><img src="@/assets/images/next_button.svg" alt="next"></router-link>
     </div>
   </div>
 </template>
@@ -84,12 +83,12 @@ export default {
     margin: 54px 0 17px 0;
   }
 
-  h3 {
+  .tag {
     font-family: 'Open Sans',serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    margin-top: 0;
+    margin-top: 0.9rem;
     color: rgba(28, 28, 28, 0.5);
   }
   p {
@@ -106,18 +105,19 @@ export default {
   font-weight: 400;
   font-size: 16px;
 
-  h4 {
+  span {
     color: rgba(28, 28, 28, 0.5);
     margin-left: 10px;
-  }
-}
 
-.dot {
-  width: 3px;
-  height: 3px;
-  background: rgba(28, 28, 28, 0.5);;
-  border-radius: 50%;
-  margin: auto 10px;
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    &:first-child::after {
+      content: '•';
+      margin-left: 10px;
+    }
+  }
 }
 
 .about-the-author {
@@ -125,8 +125,9 @@ export default {
   flex-direction: column;
   width: 718px;
   height: 200px;
+  margin-top: 75px;
 
-  h2 {
+  span {
     font-family: 'Open Sans',serif;
     font-style: normal;
     font-weight: 400;
@@ -137,15 +138,14 @@ export default {
   }
 }
 
-.author {
+.author-profile {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
 
   img {
-    width: 200px;
-    height: 200px;
+    width: 11.8rem;
+    height: 11.8rem;
     border-radius: 50%;
   }
 }
@@ -174,15 +174,17 @@ export default {
     font-family: 'Open Sans',serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     color: #1C1C1C;
+    width: 27rem;
   }
 }
 
 .pagination {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
   margin-top: 163px;
 

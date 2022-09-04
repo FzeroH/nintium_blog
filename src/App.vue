@@ -15,7 +15,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+
 body {
   margin: 0;
   padding: 0;

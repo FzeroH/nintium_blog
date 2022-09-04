@@ -7,6 +7,7 @@ import Login from '@/components/Login.vue';
 import Screenlock from '@/components/Screenlock.vue';
 import Profile from '@/components/Profile.vue';
 import ArticlePage from '@/components/content/ArticlePage.vue';
+import Dashboard from '@/components/Dashboard.vue';
 
 Vue.use(VueRouter);
 
@@ -42,9 +43,14 @@ const routes = [
     component: Profile,
   },
   {
-    path: '/article',
+    path: '/article/:id',
     name: 'article',
     component: ArticlePage,
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: Dashboard,
   },
 ];
 

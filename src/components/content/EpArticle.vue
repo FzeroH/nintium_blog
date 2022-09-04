@@ -32,7 +32,6 @@ export default {
   img {
     width: 370px;
     height: 300px;
-    margin-top: 54px;
   }
 }
 
@@ -41,7 +40,6 @@ export default {
   flex-direction: column;
   width: 856px;
   height: 311px;
-  margin: 54px 0;
 
   .tag {
     font-family: 'Open Sans',serif;
@@ -70,6 +68,7 @@ export default {
     font-size: 16px;
     line-height: 24px;
     margin: 0.9rem 3.44rem;
+    color: black;
   }
 
 }

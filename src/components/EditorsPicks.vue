@@ -3,10 +3,10 @@
   <div class="ep-title">
     <h2>Editor's Picks</h2>
     <hr>
-    <ep-article v-for="(article, index) in articles" :key="index"
-      :article="article"
-    />
   </div>
+  <router-link :to="`/article/${index}1`" v-for="(article, index) in articles" :key="index">
+    <ep-article :article="article"/>
+  </router-link>
 </div>
 </template>
 
@@ -51,24 +51,28 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-.ep-title {
-  h2 {
-    font-family: 'Open Sans', serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 42px;
-    color: black;
-    margin: 50px 0 17px 0;
-    text-align: center;
+  .ep-title {
+
+    h2 {
+      font-family: 'Open Sans', serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 42px;
+      color: black;
+      margin: 50px 0 17px 0;
+      text-align: center;
+    }
+
+    hr {
+      width: 190px;
+      height: 0;
+      border: 5px solid #1C1C1C;
+    }
   }
 
-  hr {
-    width: 190px;
-    height: 0;
-    border: 5px solid #1C1C1C;
+  a {
+    margin: 54px 0;
   }
 }
-
 </style>

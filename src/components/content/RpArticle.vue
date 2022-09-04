@@ -30,13 +30,6 @@ export default {
   width: 812px;
   height: 177px;
 
-  &:first-child {
-    margin: 104px 0 0 39px;
-  }
-  &:not(:first-child) {
-    margin: 66px 0 0 39px;
-  }
-
   img {
     width: 237px;
     height: 177px;
@@ -48,7 +41,6 @@ export default {
   flex-direction: column;
   justify-content: center;
   width: 856px;
-  height: 311px;
   margin: 0 0 0 37px;
 
   .tag {
@@ -76,6 +68,7 @@ export default {
     font-weight: 400;
     font-size: 16px;
     margin: 14px 40px;
+    color: black;
   }
 }
 

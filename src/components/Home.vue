@@ -1,10 +1,12 @@
 <template>
   <div>
-    <featured-article
-          :article="featuredArticle"/>
+     <router-link :to="`/article/${'112315431'}`">
+       <featured-article :article="featuredArticle"/>
+     </router-link>
     <editors-picks />
-    <featured-article
-          :article="articleInterior"/>
+    <router-link :to="`/article/${'1123155'}`">
+      <featured-article :article="articleInterior"/>
+    </router-link>
     <div class="recent-posts">
       <recent-post/>
       <ul>
@@ -51,32 +53,36 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
 
-.recent-posts {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  a {
+    align-self: center;
+    margin: 3rem 0;
+  }
 
-  ul {
-    margin-top: 94px;
+  .recent-posts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
-    li {
-      list-style: none;
-      margin-top: 10px;
-    }
+    ul {
+      margin-top: 94px;
 
-    li:nth-child(1) {
-      font-family: 'Open Sans',serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 20px;
-      color: #1C1C1C;
-      margin-bottom: 10px;
-    }
+      li {
+        margin-top: 10px;
+      }
 
-    li:not(:first-child):hover {
-      cursor: pointer;
+      li:nth-child(1) {
+        font-family: 'Open Sans',serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        color: #1C1C1C;
+        margin-bottom: 10px;
+      }
+
+      li:not(:first-child):hover {
+        cursor: pointer;
+      }
     }
   }
 }

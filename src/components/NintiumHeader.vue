@@ -1,6 +1,7 @@
 <template>
-  <header :class="{ 'screenlock-header': $route.path === '/screenlock'}">
-    <router-link to="/" class="logo">
+  <header :class="{ 'screenlock-header': $route.path === '/screenlock'}"
+          v-if="$route.path !== '/dashboard'">
+    <router-link to="/" class="logo" v-if="$route.path !== '/dashboard'">
       <img src="@/assets/images/logo.svg" alt="logo" class="logo">
     </router-link>
     <!--TODO: Доделать header для всех страниц-->
@@ -74,10 +75,6 @@ header {
 }
 
 .screenlock-header {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: flex-start;
 }
 
@@ -93,6 +90,7 @@ header {
 
 .search-container {
   position: relative;
+  width: 21.4rem;
   margin-top: 35px;
   margin-left: 344px;
 
@@ -108,7 +106,7 @@ header {
 
   .search-img {
     position: absolute;
-    left: 288px;
+    left: 351px;
     top: 11px;
   }
 }
@@ -121,7 +119,7 @@ header {
   color: black;
   width: 135px;
   height: 46px;
-  margin: 35px 0 0 25px;
+  margin: 35px 0 0 50px;
   border: solid 2px #1C1C1C;
   border-radius: 10px;
   font-weight: 400;

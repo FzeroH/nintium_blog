@@ -27,7 +27,6 @@ export default {
   display: flex;
   width: 1316px;
   height: 592px;
-  margin: 50px auto;
 }
 
 .article-content {
@@ -63,6 +62,7 @@ export default {
     font-weight: 400;
     font-size: 16px;
     margin: 14px 40px;
+    color: black;
   }
 }
 

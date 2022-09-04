@@ -122,11 +122,12 @@ div {
       width: 707px;
       height: 60px;
       font-size: 20px;
+      padding-right: 38px;
       border: solid 2px #1C1C1C;
       border-radius: 10px;
       background-image: url("@/assets/images/search.svg");
       background-repeat: no-repeat;
-      background-position: 655px center;
+      background-position: 709px center;
     }
   }
 }
