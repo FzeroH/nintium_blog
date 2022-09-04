@@ -1,5 +1,15 @@
 @import url("variables.scss");
 
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("@/assets/fonts/librebaskerville.ttf");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("@/assets/fonts/OpenSans.ttf");
+}
+
 ul {
   li {
     list-style: none;
