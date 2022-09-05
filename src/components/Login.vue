@@ -117,6 +117,8 @@ a {
 }
 
 .forgot-password {
+  font-family: 'Open Sans',serif !important;
+  font-size: 12px;
   color: rgba(28, 28, 28, 0.5);
 }
 
@@ -140,9 +142,7 @@ a {
   position: absolute;
   top: 700px;
   right: 50px;
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: 'Open Sans',serif !important;
   font-size: 16px;
   color: black;
   width: fit-content;

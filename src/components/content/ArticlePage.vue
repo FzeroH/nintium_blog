@@ -15,7 +15,7 @@
            alt="profile">
         <div class="author-info">
           <h2>{{ profileData.name }}</h2>
-          <span class="username">@{{ profileData.username }}</span>
+          <span>@{{ profileData.username }}</span>
           <p>{{ profileData.information }}</p>
         </div>
       </div>
@@ -166,6 +166,7 @@ export default {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
+    text-transform: none !important;
     color: rgba(28, 28, 28, 0.5);
     margin: 5px 0 8px 0;
   }
