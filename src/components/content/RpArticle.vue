@@ -27,8 +27,9 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 812px;
-  height: 177px;
+  width: 50.75rem;
+  height: 11rem;
+  margin: 0 !important;
 
   img {
     width: 237px;

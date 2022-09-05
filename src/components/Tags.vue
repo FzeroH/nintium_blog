@@ -8,9 +8,9 @@
               :key="index" @click="clickTag(`${index}`)">#{{ tag }}
       </button>
     </div>
-    <rp-article v-for="(article, index) in filter" :key="index"
-               :article="article"
-    />
+    <router-link :to="`/article/${ index }4`" v-for="(article, index) in filter" :key="index">
+      <rp-article :article="article"/>
+    </router-link>
   </div>
 </template>
 
@@ -130,6 +130,10 @@ div {
       background-position: 709px center;
     }
   }
+
+  a {
+    margin-top: 7.3rem;
+  }
 }
 
 .tags-container {
@@ -151,4 +155,5 @@ div {
     font-size: 16px;
   }
 }
+
 </style>
