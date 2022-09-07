@@ -55,20 +55,24 @@
           :card-name="'Most Viewed Article'"
           :count="'The Most Awesome Article Man Has Ever Written'"/>
       </div>
-      <h2>Total Views</h2>
-      <Line :width="400" :height="400"/>
+      <Chart :chartName="'Total Views'" :user-data="data"/>
     </div>
   </div>
 </template>
 
 <script>
-import StatCards from '@/components/StatCards.vue';
-import { Line } from 'vue-chartjs/legacy';
+import StatCards from '@/components/dashboard/StatCards.vue';
+import Chart from '@/components/dashboard/Chart.vue';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Dashboard',
-  components: { StatCards, Line },
+  components: { StatCards, Chart },
+  data() {
+    return {
+      data: [200, 119, 50, 40, 164, 33, 98, 40, 164, 33, 98, 500],
+    };
+  },
 
 };
 </script>
@@ -139,18 +143,17 @@ export default {
         margin-top: 107px;
 
         h2 {
-          font-family: 'Libre Baskerville', serif;
-          font-style: normal;
+          font-size: 1.6rem;
           font-weight: 400;
-          font-size: 26px;
-          line-height: 32px;
-          margin: 1.2rem 2.6rem;
+          line-height: 2rem;
+          margin: 1.2rem 2.6rem !important;
         }
 
         button {
           border: 2px solid #1C1C1C;
           border-radius: 5px;
           padding: 0.5rem 0.6rem;
+          background: white;
           width: 7rem;
           height: 2.6rem;
           margin: 1.2rem 3rem;
@@ -168,16 +171,6 @@ export default {
         flex-direction: row;
         justify-content: space-around;
       }
-
-      h2 {
-        font-family: 'Libre Baskerville',serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 26px;
-        line-height: 32px;
-        margin: 2.5rem 0 0 2rem;
-      }
-
     }
   }
 </style>
