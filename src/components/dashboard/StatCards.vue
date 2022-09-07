@@ -2,7 +2,8 @@
   <div class="cards-container">
     <p>{{ cardName }}</p>
     <div class="count-container">
-      <img :src="require(`../assets/images/${ image }.svg`)" alt="card" v-if="image.length !== 0">
+      <img :src="require(`../../assets/images/${ image }.svg`)" alt="card"
+           v-if="image.length !== 0">
       <p class="count"
          :class="{ 'most-viewed-article': cardName === 'Most Viewed Article' }">
         {{ count }}
