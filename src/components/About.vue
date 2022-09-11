@@ -23,18 +23,13 @@
       <div class="vertical-left"></div>
       <div class="vertical-right"></div>
 <!--      <div class="carousel">-->
-<!--        <VueSlickCarousel-->
-<!--          :centerMode=true-->
-<!--          :centerPadding=20-->
-<!--          :focusOnSelect= true-->
-<!--          :infinite= true-->
-<!--          :slidesToShow= 3-->
-<!--          :speed= 500-->
-<!--        class="slick">-->
-<!--          <img src="@/assets/images/about/cat.svg" alt="cat">-->
-<!--          <img src="@/assets/images/about/boy.svg" alt="boy">-->
-<!--          <img src="@/assets/images/about/man.svg" alt="man">-->
-<!--        </VueSlickCarousel>-->
+<!--        <swiper-->
+<!--          :slides-per-view="3"-->
+<!--          :space-between="50">-->
+<!--          <swiper-slide><img src="@/assets/images/about/cat.svg" alt="cat"></swiper-slide>-->
+<!--          <swiper-slide><img src="@/assets/images/about/boy.svg" alt="boy"></swiper-slide>-->
+<!--          <swiper-slide><img src="@/assets/images/about/man.svg" alt="man"></swiper-slide>-->
+<!--        </swiper>-->
 <!--      </div>-->
     </div>
     <div class="under-main">
@@ -61,7 +56,7 @@
 </template>
 
 <script>
-// import VueSlickCarousel from 'vue-slick-carousel';
+// import { Swiper, SwiperSlide } from 'swiper/vue';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -228,6 +223,8 @@ div {
 }
 
 .carousel {
+  display: flex;
+  flex-direction: row;
   margin-top: 76px;
   margin-left: 296px;
 
