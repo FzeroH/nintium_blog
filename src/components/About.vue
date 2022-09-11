@@ -62,19 +62,6 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'About',
   components: {},
-  data() {
-    return {
-      settings: {
-        dots: true,
-        infinite: true,
-        initialSlide: 2,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        swipeToSlide: true,
-      },
-    };
-  },
 };
 </script>
 
