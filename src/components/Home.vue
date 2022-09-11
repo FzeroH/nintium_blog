@@ -1,11 +1,20 @@
 <template>
   <div>
-     <router-link :to="`/article/${'112315431'}`">
+     <router-link
+       :to="{ name:'article',
+         params: {
+            article: featuredArticle,
+          },
+          query: { 'id': '14513451345' }}">
        <featured-article :article="featuredArticle"/>
      </router-link>
     <editors-picks />
-    <router-link :to="`/article/${'1123155'}`">
-      <featured-article :article="articleInterior"/>
+    <router-link :to="{ name:'article',
+         params: {
+            article: articleInterior,
+          },
+          query: { 'id': '12351' }}">
+      <featured-article :article="articleInterior" :position="'right'"/>
     </router-link>
     <div class="recent-posts">
       <recent-post/>
@@ -54,7 +63,7 @@ div {
   flex-direction: column;
   justify-content: center;
 
-  a {
+  >a {
     align-self: center;
     margin: 3rem 0;
   }

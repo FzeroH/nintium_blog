@@ -1,6 +1,13 @@
 <template>
   <div class="rp-container">
-    <router-link :to="`/article/${index}2`" v-for="(article, index) in articles" :key="index">
+    <router-link :to="{
+         name:'article',
+         params: {
+            article: article,
+          },
+          query: { 'id': `${ index }2` }}"
+                 v-for="(article, index) in articles"
+                 :key="index">
       <rp-article :article="article"/>
     </router-link>
   </div>

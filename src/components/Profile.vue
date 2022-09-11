@@ -23,10 +23,19 @@
         </div>
       </div>
     </div>
-    <router-link :to="`/article/56345637`" class="articles">
+    <router-link :to="{
+         name:'article',
+         params: {
+            article: featuredArticle,
+          },
+          query: { 'id': `1241242` }}" class="articles">
       <featured-article :article="featuredArticle"/>
     </router-link>
-    <router-link :to="`/article/${index}3`"
+    <router-link :to="{ name:'article',
+         params: {
+            article: article,
+          },
+          query: { 'id': `${ index }3` }}"
                  v-for="(article, index) in articles"
                  :key="index"
                  class="articles">

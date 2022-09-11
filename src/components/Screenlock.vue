@@ -55,10 +55,6 @@ div {
     }
   }
 
-  a {
-    text-decoration: none;
-  }
-
   button {
     width: 323px;
     height: 58px;
@@ -87,7 +83,9 @@ div {
 }
 
 .forgot-password {
+  font-family: 'Open Sans', serif;
   color: rgba(28, 28, 28, 0.5);
+  font-size: 0.75rem;
 }
 
 .remember-me {

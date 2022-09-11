@@ -4,7 +4,14 @@
     <h2>Editor's Picks</h2>
     <hr>
   </div>
-  <router-link :to="`/article/${index}1`" v-for="(article, index) in articles" :key="index">
+  <router-link :to="{
+         name:'article',
+         params: {
+            article: article,
+          },
+          query: { 'id': `${ index }1` }}"
+               v-for="(article, index) in articles"
+               :key="index">
     <ep-article :article="article"/>
   </router-link>
 </div>

@@ -8,7 +8,12 @@
               :key="index" @click="clickTag(`${index}`)">#{{ tag }}
       </button>
     </div>
-    <router-link :to="`/article/${ index }4`" v-for="(article, index) in filter" :key="index">
+    <router-link :to="{
+         name:'article',
+         params: {
+            article: article,
+          },
+          query: { 'id': `${ index }4` }}" v-for="(article, index) in filter" :key="index">
       <rp-article :article="article"/>
     </router-link>
   </div>
@@ -114,20 +119,21 @@ div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 213px;
+  margin-top: 13.3rem;
 
   label {
     input {
       outline: none;
-      width: 707px;
-      height: 60px;
-      font-size: 20px;
-      padding-right: 38px;
-      border: solid 2px #1C1C1C;
-      border-radius: 10px;
+      width: 44.2rem;
+      height: 3.75rem;
+      font-size: 1.25rem;
+      padding-right: 2.4rem;
+      padding-left: 1.25rem;
+      border: solid 0.125rem #1C1C1C;
+      border-radius: 0.6rem;
       background-image: url("@/assets/images/search.svg");
       background-repeat: no-repeat;
-      background-position: 709px center;
+      background-position: 44.3rem center;
     }
   }
 
@@ -140,19 +146,19 @@ div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin:60px 0;
+  margin: 3.75rem 0;
 
   button {
     border: 1px solid black;
-    border-radius: 50px;
+    border-radius: 3rem;
     background: white;
-    margin-top: 5px;
-    margin-left: 16px;
-    padding: 11px 15px;
+    margin-top: 0.3rem;
+    margin-left: 1rem;
+    padding: 0.7rem 0.9rem;
     font-family: 'Libre Baskerville',serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 

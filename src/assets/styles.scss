@@ -10,6 +10,11 @@
   src: url("@/assets/fonts/OpenSans.ttf");
 }
 
+h1,h2,h3,h4,h5,h6,ul,li {
+  margin: 0;
+  padding: 0;
+}
+
 ul {
   li {
     list-style: none;
@@ -35,6 +40,10 @@ a {
   text-decoration: none;
   width: fit-content;
   height: fit-content;
+
+  &:visited {
+    color: #1C1C1C;
+  }
 }
 
 p, span {
