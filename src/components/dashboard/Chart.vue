@@ -4,8 +4,7 @@
     <LineChartGenerator
       :chart-options="chartOptions"
       :chart-data="chartData"
-      :width="width"
-      :height="height"/>
+      ref="line"/>
   </div>
 </template>
 
@@ -44,16 +43,8 @@ export default {
       default: '',
     },
     userData: {
-      type: Array,
-      default: () => [],
-    },
-    width: {
-      type: Number,
-      default: 1058,
-    },
-    height: {
-      type: Number,
-      default: 267,
+      type: Object,
+      default: null,
     },
   },
   data() {
@@ -75,7 +66,7 @@ export default {
         ],
         datasets: [
           {
-            label: 'TotalViews',
+            label: this.$props.chartName,
             backgroundColor: '#000000',
             borderColor: '#000000',
             pointBorderColor: 'black',
@@ -88,7 +79,7 @@ export default {
         ],
       },
       chartOptions: {
-        responsive: false,
+        responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: {
@@ -105,13 +96,21 @@ export default {
       },
     };
   },
+
+  watch: {
+    userData() {
+      this.chartData.datasets[0].data = this.$props.userData;
+      this.chartData.datasets[0].label = this.$props.chartName;
+      this.$refs.line.updateChart();
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 div {
   margin: 2.6rem;
-  //width: 66rem;
+  width: 66rem;
   height: 16.7rem;
 
   h2 {

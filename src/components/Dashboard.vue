@@ -41,39 +41,55 @@
         <button>Customize</button>
       </div>
       <div class="stat-cards">
-        <stat-cards
-          :card-name="'Total Posts'"
-          :image="'total-posts'"
-          :count="'214K'"/>
-
+        <router-link :to="{
+          name: 'chart',
+          params: {
+            chartName: 'Total Posts',
+            'user-data': dataPosts,
+          },
+          query: { name: 'total-posts' }
+        }">
+          <stat-cards
+            ref="totalPosts"
+            :card-name="'Total Posts'"
+            :image="'total-posts'"
+            :count="'214'"/>
+        </router-link>
+        <router-link :to="{
+          name: 'chart',
+          params: {
+            chartName: 'Total Views',
+            'user-data': dataViews,
+          },
+          query: { name: 'total-views' }
+        }">
         <stat-cards
           :card-name="'Total Views'"
           :image="'total-views'"
           :count="'113K'"/>
-
+        </router-link>
         <stat-cards
           :card-name="'Most Viewed Article'"
           :count="'The Most Awesome Article Man Has Ever Written'"/>
       </div>
-      <Chart :chartName="'Total Views'" :user-data="data"/>
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
 import StatCards from '@/components/dashboard/StatCards.vue';
-import Chart from '@/components/dashboard/Chart.vue';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Dashboard',
-  components: { StatCards, Chart },
+  components: { StatCards },
   data() {
     return {
-      data: [200, 119, 50, 40, 164, 33, 98, 40, 164, 33, 98, 500],
+      dataPosts: [200, 119, 50, 40, 164, 33, 98, 40, 164, 33, 98, 500],
+      dataViews: [100, 20, 90, 112, 666, 76, 29, 34, 55, 58, 12, 700],
     };
   },
-
 };
 </script>
 
@@ -99,13 +115,14 @@ export default {
         li {
           display: flex;
           align-items: center;
+          padding: 1rem 4.2rem 0.75rem 1.6rem;
 
           &:first-child {
             margin-top: 3.2rem;
           }
 
-          &:not(:first-child) {
-            margin-top: 2.1rem;
+          &:nth-child(3) {
+            padding-right: 3.9rem;
           }
 
           &:hover {
