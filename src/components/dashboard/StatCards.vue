@@ -45,6 +45,11 @@ export default {
   margin: 0 1.5rem;
 
   p {
+    font-family: 'Roboto',serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1rem;
     align-self: start;
     margin: 0.6rem;
   }
@@ -63,7 +68,6 @@ export default {
 
 .count-container {
   display: flex;
-  align-self: center;
   flex-direction: row;
   align-items: center;
   margin: 0 auto;
