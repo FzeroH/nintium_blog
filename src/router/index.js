@@ -7,7 +7,7 @@ import Login from '@/components/Login.vue';
 import Screenlock from '@/components/Screenlock.vue';
 import Profile from '@/components/Profile.vue';
 import ArticlePage from '@/components/content/ArticlePage.vue';
-import Dashboard from '@/components/Dashboard.vue';
+import Dashboard from '@/components/dashboard/Dashboard.vue';
 import Chart from '@/components/dashboard/Chart.vue';
 
 Vue.use(VueRouter);

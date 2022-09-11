@@ -70,7 +70,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 auto;
+  margin: 0 3.2rem 0 0.9rem;
 
   img {
     width: 1.7rem;
