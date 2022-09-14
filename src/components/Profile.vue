@@ -54,54 +54,55 @@ export default {
   components: { FeaturedArticle, RpArticle },
 
   data() {
-    const profileData = {
-      image: 'profile_picture',
-      name: 'Arthur Black',
-      information: 'Ipsum adipisicing culpa est nisi consequat ex amet magna culpa veniam tempor irure ea. Reprehenderit labore do tempor eiusmod in consectetur ex sunt id mollit commodo ipsum deserunt quis.',
-      username: 'arhur_black',
-      website: 'arthurblack.com',
-      linkedin: '',
-      instagram: '',
-      twitter: '',
+    return {
+      profileData: {
+        image: 'profile_picture',
+        name: 'Arthur Black',
+        information: 'Ipsum adipisicing culpa est nisi consequat ex amet magna culpa veniam tempor irure ea. Reprehenderit labore do tempor eiusmod in consectetur ex sunt id mollit commodo ipsum deserunt quis.',
+        username: 'arhur_black',
+        website: 'arthurblack.com',
+        linkedin: '',
+        instagram: '',
+        twitter: '',
+      },
+      articles: [
+        {
+          tag: 'Nature',
+          articleTitle: 'Tempor deserunt Sunt Qui',
+          aboutArticle: { author: 'Connie Robertson', date: 'November 3, 2012' },
+          articleText: 'Ea qui dolor aute cupidatat ad pariatur proident. Mollit nulla tempor aute reprehenderit ut dolore mollit nisi consequat excepteur ex officia pariatur irure.',
+          image: 'nature',
+        },
+        {
+          tag: 'Plants',
+          articleTitle: 'Occaecat Anim eu Qui',
+          aboutArticle: { author: 'Eleanor Williamson', date: 'September 28, 2014' },
+          articleText: 'Qui ipsum consectetur ad incididunt et aliquip exercitation laboris nisi reprehenderit. Et excepteur commodo esse enim ea aliqua officia reprehenderit.',
+          image: 'plants',
+        },
+        {
+          tag: 'Food',
+          articleTitle: 'Fugiat Incididunt Voluptate Consequat',
+          aboutArticle: { author: 'Bessie Watson', date: 'June 13, 2012' },
+          articleText: 'Mollit ea culpa ipsum pariatur eiusmod. Irure et.',
+          image: 'food',
+        },
+        {
+          tag: 'Colorful',
+          articleTitle: 'Occaecat Anim eu Qui',
+          aboutArticle: { author: 'Ted Simmmons', date: 'June 21, 2015' },
+          articleText: 'Amet ipsum occaecat aliqua aute nisi laboris nostrud culpa est do. Aliqua esse velit in excepteur esse qui voluptate laboris adipisicing qui irure elit amet excepteur.',
+          image: 'colorful',
+        },
+      ],
+      featuredArticle: {
+        tag: 'Featured Article',
+        articleTitle: 'World’s Most Dangerous Technology Ever Made.',
+        articleText: 'Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.',
+        aboutArticle: { author: 'Ralph Hawkins', date: 'May 7, 2019 (10 mins read)' },
+        image: 'first_article_image',
+      },
     };
-    const featuredArticle = {
-      tag: 'Featured Article',
-      articleTitle: 'World’s Most Dangerous Technology Ever Made.',
-      articleText: 'Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.',
-      aboutArticle: { author: 'Ralph Hawkins', date: 'May 7, 2019 (10 mins read)' },
-      image: 'first_article_image',
-    };
-    const articles = [
-      {
-        tag: 'Nature',
-        articleTitle: 'Tempor deserunt Sunt Qui',
-        aboutArticle: { author: 'Connie Robertson', date: 'November 3, 2012' },
-        articleText: 'Ea qui dolor aute cupidatat ad pariatur proident. Mollit nulla tempor aute reprehenderit ut dolore mollit nisi consequat excepteur ex officia pariatur irure.',
-        image: 'nature',
-      },
-      {
-        tag: 'Plants',
-        articleTitle: 'Occaecat Anim eu Qui',
-        aboutArticle: { author: 'Eleanor Williamson', date: 'September 28, 2014' },
-        articleText: 'Qui ipsum consectetur ad incididunt et aliquip exercitation laboris nisi reprehenderit. Et excepteur commodo esse enim ea aliqua officia reprehenderit.',
-        image: 'plants',
-      },
-      {
-        tag: 'Food',
-        articleTitle: 'Fugiat Incididunt Voluptate Consequat',
-        aboutArticle: { author: 'Bessie Watson', date: 'June 13, 2012' },
-        articleText: 'Mollit ea culpa ipsum pariatur eiusmod. Irure et.',
-        image: 'food',
-      },
-      {
-        tag: 'Colorful',
-        articleTitle: 'Occaecat Anim eu Qui',
-        aboutArticle: { author: 'Ted Simmmons', date: 'June 21, 2015' },
-        articleText: 'Amet ipsum occaecat aliqua aute nisi laboris nostrud culpa est do. Aliqua esse velit in excepteur esse qui voluptate laboris adipisicing qui irure elit amet excepteur.',
-        image: 'colorful',
-      },
-    ];
-    return { profileData, articles, featuredArticle };
   },
 };
 </script>
@@ -116,35 +117,27 @@ export default {
   .author {
     display: flex;
     flex-direction: row;
-    width: 718px;
-    height: 200px;
-    margin-top: 174px;
+    width: 44.875rem;
+    height: 12.5rem;
+    margin-top: 10.875rem;
 
     img {
-      width: 200px;
-      height: 200px;
+      width: 12.5rem;
+      height: 12.5rem;
       border-radius: 50%;
     }
 
     .author-info {
-      margin-left: 75px;
+      margin-left: 4.7rem;
 
       h2 {
-        font-family: 'Libre Baskerville',serif;
-        font-style: normal;
         font-weight: 700;
-        font-size: 42px;
+        font-size: 2.6rem;
         margin: 0 ;
       }
 
-      //.username {
-      //  font-size: 16px;
-      //  color: rgba(28, 28, 28, 0.5);
-      //  margin: 5px 0 8px 0;
-      //}
-
       p {
-        font-size: 16px;
+        font-size: 1rem;
         color: #1C1C1C;
       }
 
@@ -155,8 +148,8 @@ export default {
         a {
           margin-right: 1rem;
           img {
-            width: 24px;
-            height: 24px;
+            width: 1.5rem;
+            height: 1.5rem;
           }
         }
       }
@@ -165,19 +158,17 @@ export default {
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-right: 177px;
+        margin-right: 11.1rem;
 
         img {
-          width: 24px;
-          height: 24px;
+          width: 1.5rem;
+          height: 1.5rem;
         }
 
         a {
           text-decoration: none;
           font-family: 'Open Sans',serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
+          font-size: 1rem;
           color: black;
         }
       }

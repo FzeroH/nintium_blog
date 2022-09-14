@@ -11,7 +11,7 @@
       </label>
       <router-link to="/" class="forgot-password">Forgot Password?</router-link>
     </div>
-    <button>Login</button>
+    <router-link to="/" class="button-login">Login</router-link>
   </div>
 </template>
 
@@ -30,41 +30,35 @@ div {
   align-items: center;
 
   img {
-    width: 150px;
-    height: 150px;
-    margin-top: 124px;
+    width: 9.4rem;
+    height: 9.4rem;
+    margin-top: 7.8rem;
     border-radius: 50%;
   }
 
   label {
     input {
       outline: none;
-      max-width: 324px;
-      height: 58px;
-      border-radius: 10px;
+      max-width: 20.25rem;
+      height: 3.6rem;
+      border-radius: 0.6rem;
       border: solid 1px #F8F8F8;
-      font-family: 'Open Sans',serif;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 16px;
-      padding-left: 54px;
+      padding-left: 3.4rem;
       background-image: url("@/assets/images/key.svg");
       background-repeat: no-repeat;
-      background-position: 18px center;
-      margin-top: 14px;
+      background-position: 1.125rem center;
+      margin-top: 0.85rem;
     }
   }
 
-  button {
-    width: 323px;
-    height: 58px;
-    margin-top: 13px;
-    border: solid 2px #1C1C1C;
-    border-radius: 10px;
-    font-family: 'Libre Baskerville', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
+  .button-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.125rem 5.35rem;
+    margin-top: 0.8rem;
+    border: solid 0.125rem #1C1C1C;
+    border-radius: 0.6rem;
     background: white;
 
     &:hover {
@@ -76,14 +70,10 @@ div {
 .under-fields {
   display: flex;
   flex-direction: row;
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .forgot-password {
-  font-family: 'Open Sans', serif;
   color: rgba(28, 28, 28, 0.5);
   font-size: 0.75rem;
 }
@@ -93,10 +83,10 @@ div {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-right: 105px;
+  margin-right: 6.6rem;
 
   input[type=checkbox] {
-    margin: 0 5px;
+    margin: 0 0.3rem;
   }
 
   span {

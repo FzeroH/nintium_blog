@@ -36,37 +36,27 @@ div {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 174px;
+  margin-top: 10.8rem;
 
   h1 {
-    font-family: 'Libre Baskerville',serif;
-    font-style: normal;
     font-weight: 700;
-    font-size: 33px;
-    margin-bottom: 14px;
+    font-size: 2.1rem;
+    margin-bottom: 0.9rem;
   }
 
   p {
-    font-family: 'Open Sans', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    margin: 14px 0 23px 0;
+    font-size: 1rem;
+    margin: 0.9rem 0 1.4rem 0;
   }
 
   .button-login {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 323px;
-    height: 58px;
-    margin-top: 13px;
-    border: solid 2px #1C1C1C;
-    border-radius: 10px;
-    font-family: 'Libre Baskerville', serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
+    padding: 1.125rem 5.35rem;
+    margin-top: 0.8rem;
+    border: solid 0.125rem #1C1C1C;
+    border-radius: 0.6rem;
     background: white;
 
     &:hover {
@@ -80,28 +70,24 @@ form {
 
   input[type = text], input[type = password] {
     outline: none;
-    max-width: 324px;
-    height: 58px;
-    border-radius: 10px;
+    max-width: 20.25rem;
+    height: 3.6rem;
+    border-radius: 0.6rem;
     border: solid 1px #F8F8F8;
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    padding-left: 54px;
+    padding-left: 3.4rem;
   }
 
   input[type = text] {
     background-image: url("@/assets/images/user.svg");
     background-repeat: no-repeat;
-    background-position: 18px center;
+    background-position: 1.125rem center;
   }
 
   input[type = password] {
     background-image: url("@/assets/images/key.svg");
     background-repeat: no-repeat;
-    background-position: 18px center;
-    margin-top: 14px;
+    background-position: 1.125rem center;
+    margin-top: 0.875rem;
   }
 }
 
@@ -112,16 +98,15 @@ a {
 .under-fields {
   display: flex;
   flex-direction: row;
-  font-family: 'Open Sans',serif;
-  font-style: normal;
+
   font-weight: 400;
-  font-size: 12px;
-  margin-top: 11px;
+  font-size: 0.75rem;
+  margin-top: 0.7rem;
 }
 
 .forgot-password {
   font-family: 'Open Sans',serif !important;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: rgba(28, 28, 28, 0.5);
 }
 
@@ -130,10 +115,10 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-right: 105px;
+  margin-right: 6.6rem;
 
   input[type=checkbox] {
-    margin: 0 5px;
+    margin: 0 0.3rem;
   }
 
   span {
@@ -143,10 +128,10 @@ a {
 
 .screenlock {
   position: absolute;
-  top: 700px;
-  right: 50px;
+  top: 43.75rem;
+  right: 3.125rem;
   font-family: 'Open Sans',serif !important;
-  font-size: 16px;
+  font-size: 1rem;
   color: black;
   width: fit-content;
   height: fit-content;

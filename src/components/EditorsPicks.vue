@@ -24,30 +24,31 @@ export default {
   name: 'EditorsPicks',
   components: { EpArticle },
   data() {
-    const articles = [
-      {
-        tag: 'Minimalism',
-        articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
-        aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
-        articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
-        image: 'minimalism',
-      },
-      {
-        tag: 'Technology',
-        articleTitle: 'Amet non Ex Officia nulla Cupidatat',
-        aboutArticle: { author: 'Jacob Henry', date: 'September 27, 2017 (8 mins read)' },
-        articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
-        image: 'technology',
-      },
-      {
-        tag: 'Minimalism',
-        articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
-        aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
-        articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
-        image: 'article',
-      },
-    ];
-    return { articles };
+    return {
+      articles: [
+        {
+          tag: 'Minimalism',
+          articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
+          aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
+          articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
+          image: 'minimalism',
+        },
+        {
+          tag: 'Technology',
+          articleTitle: 'Amet non Ex Officia nulla Cupidatat',
+          aboutArticle: { author: 'Jacob Henry', date: 'September 27, 2017 (8 mins read)' },
+          articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
+          image: 'technology',
+        },
+        {
+          tag: 'Minimalism',
+          articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
+          aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
+          articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
+          image: 'article',
+        },
+      ],
+    };
   },
 };
 </script>

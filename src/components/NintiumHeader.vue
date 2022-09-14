@@ -1,7 +1,7 @@
 <template>
   <header :class="{ 'screenlock-header': $route.path === '/screenlock'}"
           v-if="$route.path !== '/dashboard' && $route.path !== '/dashboard/chart'">
-    <div class="header-section">
+    <section class="header-section">
       <router-link to="/" class="logo">
         <img src="@/assets/images/logo.svg" alt="logo" class="logo">
       </router-link>
@@ -20,8 +20,8 @@
                    v-if="$route.path !== '/screenlock'">
         About
       </router-link>
-    </div>
-    <div class="header-section" v-if="$route.path !== '/screenlock'">
+    </section>
+    <section class="header-section" v-if="$route.path !== '/screenlock'">
       <form action="">
         <!--eslint-disable-next-line-->
         <input type="text"/>
@@ -40,36 +40,20 @@
       <img src="@/assets/images/profile/profile_picture.svg"
            alt="profile"
            class="profile-img"
-           v-if="isAuth"
-           @click="isVisible">
-    </div>
-    <div class="profile-menu" :class="{ 'profile-menu-active': isVisibleMenu === true }">
-      <p>Arthur Black</p>
-      <span>@arthurblack</span>
-      <hr/>
-      <ul>
-        <!--eslint-disable-next-line-->
-        <li @click="isVisible">
-          <router-link to="/dashboard">Dashboard</router-link>
-        </li>
-        <!--eslint-disable-next-line-->
-        <li @click="isVisible">
-          <router-link to="/">Write a post</router-link>
-        </li>
-        <!--eslint-disable-next-line-->
-        <li @click="isVisible">
-          <router-link to="/">Settings</router-link>
-        </li>
-        <!--eslint-disable-next-line-->
-        <li @click="isVisible">
-          <router-link to="/">Help</router-link>
-        </li>
-        <!--eslint-disable-next-line-->
-        <li @click="isAuthorithation">
-          <router-link to="/login">Sign out</router-link>
-        </li>
-      </ul>
-    </div>
+           v-if="isAuth">
+      <div class="profile-menu">
+        <p>Arthur Black</p>
+        <span>@arthurblack</span>
+        <ul>
+          <!--eslint-disable-next-line-->
+          <li @click="isVisible(index)" v-for="(menuItem, index) in menuItems" :key="index">
+            {{ menuItem }}
+          </li>
+          <!--eslint-disable-next-line-->
+          <li @click="signOut">Sign out</li>
+        </ul>
+      </div>
+    </section>
   </header>
 </template>
 
@@ -84,17 +68,20 @@ export default {
     },
   },
   data() {
-    // eslint-disable-next-line
-    let isVisibleMenu = false;
-    return { isVisibleMenu };
+    return {
+      menuItems: ['Dashboard', 'Write a post', 'Settings', 'Help'],
+      router: null,
+    };
   },
   methods: {
-    isVisible() {
-      this.isVisibleMenu = !this.isVisibleMenu;
+    isVisible(index) {
+      const menuItems = this.menuItems.map((elem) => elem.replaceAll(' ', '-'));
+      const menuItem = menuItems[index].toLowerCase();
+      this.$router.push({ path: `/${menuItem}` });
     },
-    isAuthorithation() {
-      this.isVisibleMenu = !this.isVisibleMenu;
+    signOut() {
       this.$props.isAuth = false;
+      this.$router.push({ name: 'login' });
     },
   },
 };
@@ -144,9 +131,9 @@ header {
 
 .active {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: black;
-  margin: 49px 0 0 31px;
+  margin: 3rem 0 0 1.9rem;
   padding: 0;
   text-align: center;
   text-decoration: none;
@@ -156,14 +143,14 @@ form {
   position: relative;
   transform: translate(0, 20%);
   transition: all 1s;
-  right: 60px;
-  width: 30px;
-  height: 30px;
-  margin-right: 21px;
+  right: 3.75rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-right: 1.3rem;
   background: none;
   box-sizing: border-box;
-  border-radius: 25px;
-  border: 4px solid white;
+  border-radius: 1.6rem;
+  border: 0.25rem solid white;
 
   input {
     position: relative;
@@ -172,12 +159,12 @@ form {
     top: 0;
     left: 0;
     width: 100%;
-    height: 46px;
+    height: 2.9rem;
     outline: none;
     border: none;
-    font-size: 16px;
-    border-radius: 10px;
-    padding: 0 50px 0 20px;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+    padding: 0 3.13rem 0 1.25rem;
   }
 
   button {
@@ -186,11 +173,11 @@ form {
     justify-content: center;
     box-sizing: border-box;
     float: right;
-    width: 30px;
-    height: 30px;
+    width: 1.9rem;
+    height: 1.9rem;
     position: absolute;
-    top: 8px;
-    right: -60px;
+    top: 0.5rem;
+    right: -3.75rem;
     border-radius: 50%;
     border: none;
     text-align: center;
@@ -199,13 +186,13 @@ form {
   }
 
   &:hover {
-    width: 200px;
+    width: 12.5rem;
     cursor: pointer;
   }
 
   &:hover input {
     display: block;
-    border: 2px solid #1C1C1C;
+    border: 0.125rem solid #1C1C1C;
   }
 
   &:hover img {
@@ -215,17 +202,13 @@ form {
 }
 
 .login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: white;
   color: black;
-  width: 135px;
-  height: 46px;
-  margin: 35px 25px 0 9px !important;
-  border: solid 2px #1C1C1C;
-  border-radius: 10px;
-  font-size: 20px;
+  padding: 0.75rem 4.2rem;
+  margin: 2.2rem 1.6rem 0 0.6rem !important;
+  border: 0.125rem solid #1C1C1C;
+  border-radius: 0.6rem;
+  font-size: 1.25rem;
 }
 
 .notification-img {
@@ -240,6 +223,15 @@ form {
   height: 3.75rem;
   margin: 1.81rem 1.56rem 0 0;
   cursor: pointer;
+
+  &:hover +.profile-menu {
+      position: absolute;
+      top: 6.2rem;
+      right: 1.6rem;
+      transform: translateY(0%);
+      visibility: visible;
+      opacity: 1;
+  }
 }
 
 .profile-menu {
@@ -247,13 +239,22 @@ form {
   background: white;
   width: 10.6rem;
   height: 13.9rem;
-  top: 99px;
-  right: 25px;
+  top: 6.2rem;
+  right: 1.6rem;
   border-radius: 0.95rem;
   transform: translateY(20%);
   visibility: hidden;
   opacity: 0;
   transition: all 0.5s ease;
+
+  &:hover {
+    position: absolute;
+    top: 6.2rem;
+    right: 1.6rem;
+    transform: translateY(0%);
+    visibility: visible;
+    opacity: 1;
+  }
 
   p {
     font-weight: 700;
@@ -267,51 +268,25 @@ form {
     font-size: 0.9rem;
     line-height: 1.2rem;
     color: rgba(28, 28, 28, 0.8);
-    margin-left: 1.4rem;
-    margin-right: 3.7rem;
-  }
-
-  hr {
-    margin: 0.45rem 0;
-    width: 1px;
-    color: rgba(28, 28, 28, 0.1);
+    margin: 0 3.7rem 0 1.4rem;
   }
 
   ul {
-    margin-left: 1.4rem;
-    margin-right: 3.1rem;
+    margin-top: 0.5rem;
+    padding: 0 3.1rem 0 1.4rem;
+    border-top: 1px solid rgba(28, 28, 28, 0.1);
     width: 98px;
-    height: 130px;
+    height: 8.1rem;
 
     li {
       height: 1.4rem;
-      margin: 5px 0;
-      a {
-        font-family: 'Open Sans',serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1rem;
-        line-height: 1.4rem;
-        color: #1C1C1C;
-      }
+      margin: 0.3rem 0;
 
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
   }
-}
-
-.profile-menu-active {
-  position: absolute;
-  background: white;
-  width: 10.6rem;
-  height: 13.9rem;
-  top: 99px;
-  right: 25px;
-  display: block;
-  border-radius: 0.95rem;
-  transform: translateY(0%);
-  visibility: visible;
-  opacity: 1;
-  transition: all 0.5s ease;
 }
 </style>

@@ -3,23 +3,23 @@
     <img src="@/assets/images/logo.svg" alt="logo">
     <p>A publishing company that focuses on the essentials.</p>
     <div class="main-info">
-      <div class="main-info-section">
+      <section class="main-info-section">
         <h2>We tell stories that drives the heart.</h2>
         <!-- eslint-disable-next-line -->
         <p>Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor nisi qui dolor cillum fugiat ad. Id sit mollit labore sunt sit culpa qui minim pariatur et officia elit id. Tempor cupidatat veniam esse ad veniam dolore excepteur tempor dolor consectetur ut id.</p>
-      </div>
+      </section>
       <img src="@/assets/images/about/people.svg" alt="people" class="people">
       <img src="@/assets/images/about/angel.svg" alt="people" class="angel">
-      <div class="main-info-section">
+      <section class="main-info-section">
         <h2>We tell the news that makes the most impact.</h2>
         <!-- eslint-disable-next-line -->
         <p>Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor nisi qui dolor cillum fugiat ad. Id sit mollit labore sunt sit culpa qui minim pariatur et officia elit id. Tempor cupidatat veniam esse ad veniam dolore excepteur tempor dolor consectetur ut id.</p>
-      </div>
-      <div class="main-info-section">
+      </section>
+      <section class="main-info-section">
         <h2>We share the little moments that shows we’re alive.</h2>
         <!-- eslint-disable-next-line -->
         <p>Laboris consectetur sunt nulla eiusmod voluptate eiusmod dolor nisi qui dolor cillum fugiat ad. Id sit mollit labore sunt sit culpa qui minim pariatur et officia elit id. Tempor cupidatat veniam esse ad veniam dolore excepteur tempor dolor consectetur ut id.</p>
-      </div>
+      </section>
       <div class="vertical-left"></div>
       <div class="vertical-right"></div>
 <!--      <div class="carousel">-->
@@ -164,8 +164,8 @@ div {
       font-family: 'Open Sans',serif !important;
       color: white;
       text-align: start;
-      line-height: 24px;
-      font-size: 16px;
+      line-height: 1.5rem;
+      font-size: 1rem;
     }
   }
 
@@ -173,18 +173,18 @@ div {
     align-self: start;
     width: 35rem;
     height: 24rem;
-    margin-top: 52px;
+    margin-top: 3.25rem;
     margin-left: 24.25rem;
     z-index: 2;
   }
 
   .angel {
     position: absolute;
-    top: 146px;
+    top: 9.125rem;
     right: 9rem;
     width: 35.6rem;
     height: 26.19rem;
-    margin-top: 52px;
+    margin-top: 3.25rem;
     z-index: 1;
   }
 }
@@ -212,12 +212,12 @@ div {
 .carousel {
   display: flex;
   flex-direction: row;
-  margin-top: 76px;
-  margin-left: 296px;
+  margin-top: 4.75rem;
+  margin-left: 18.5rem;
 
   img {
-    width: 350px;
-    height: 350px;
+    width: 21.9rem;
+    height: 21.9rem;
   }
 }
 
@@ -233,7 +233,7 @@ div {
   h2 {
     font-weight: 400;
     font-size: 2rem;
-    line-height: 52px;
+    line-height: 3.25rem;
     text-align: center;
     width: 26.7rem;
     height: 6.4rem;

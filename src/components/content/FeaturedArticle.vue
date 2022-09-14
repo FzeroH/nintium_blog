@@ -30,43 +30,35 @@ export default {
 .article-container {
   display: flex;
   position: relative;
-  width: 1316px;
-  height: 592px;
+  width: 82.25rem;
+  height: 37rem;
 }
 
 .article-content {
   background: white;
   display: flex;
   flex-direction: column;
-  width: 509px;
-  height: 483px;
-  margin: 0 0 109px 45px;
+  width: 31.8rem;
+  height: 30.2rem;
+  margin: 0 0 6.8rem 2.8rem;
 
   .tag {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: rgba(28, 28, 28, 0.5);
-    margin: 76px 0 0 39px;
+    margin: 4.75rem 0 0 2.4rem;
     text-transform: uppercase;
   }
 
   h2 {
-    font-family: 'Libre Baskerville',serif;
-    font-style: normal;
     font-weight: 700;
-    font-size: 33px;
+    font-size: 2.1rem;
     color: black;
-    margin: 0 40px 12px 40px;
+    margin: 0 2.5rem 12px 2.5rem;
   }
 
   p {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    margin: 14px 40px;
+    font-size: 1rem;
+    margin: 0.875rem 2.5rem;
     color: black;
   }
 }
@@ -75,62 +67,25 @@ export default {
   position: absolute;
   top: 3.4rem;
   right: 4.9rem;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  width: 509px;
-  height: 483px;
-  margin: 0 0 109px 45px;
-
-  .tag {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    color: rgba(28, 28, 28, 0.5);
-    margin: 76px 0 0 39px;
-    text-transform: uppercase;
-  }
-
-  h2 {
-    font-family: 'Libre Baskerville',serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 33px;
-    color: black;
-    margin: 0 40px 12px 40px;
-  }
-
-  p {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    margin: 14px 40px;
-    color: black;
-  }
 }
 
 .about-article-container{
   display: flex;
   flex-direction: row;
-  margin-left: 40px;
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
+  margin-left: 2.5rem;
+  font-size: 1rem;
 
   .about-article {
     color: rgba(28, 28, 28, 0.5);
-    margin-left: 10px;
+    margin-left: 0.6rem;
 
     &:not(:first-child) {
-      margin-left: 10px;
+      margin-left: 0.6rem;
     }
 
     &:first-child::after {
       content: '•';
-      margin-left: 10px;
+      margin-left: 0.6rem;
     }
   }
 }

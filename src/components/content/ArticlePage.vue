@@ -39,36 +39,18 @@ export default {
     },
   },
   data() {
-    // const article = {
-    //   tag: '#technology #tech #career',
-    //   articleTitle: 'The World’s Most Dangerous Technology Ever Made.',
-    // eslint-disable-next-line max-len
-    //   articleText: 'Commodo labore ut nisi laborum amet eu qui magna ullamco ut labore. Aliquip consectetur labore consectetur dolor exercitation est minim quis. Magna non irure qui ex est laborum nulla excepteur qui. Anim Lorem dolore cupidatat pariatur ex tempor. Duis ea excepteur proident ex commodo irure est.\n'
-    //     + '\n'
-    // eslint-disable-next-line max-len
-    //     + 'Nisi commodo qui pariatur enim sint laborum consequat enim in officia. Officia fugiat incididunt commodo et mollit aliqua non aute. Enim dolor eiusmod aliqua amet ipsum in enim eiusmod. Quis exercitation sit velit duis.\n'
-    //     + '\n'
-    // eslint-disable-next-line max-len
-    //     + 'Est Lorem labore consectetur minim sit eu eiusmod mollit velit. Consectetur voluptate ex amet id eiusmod laborum irure. Aliquip ad qui id exercitation irure amet commodo nisi quis. Occaecat minim incididunt eiusmod nostrud veniam quis culpa.\n'
-    // eslint-disable-next-line max-len
-    //     + 'Nisi ipsum et consequat id deserunt excepteur. Cillum non pariatur culpa ut occaecat laboris eu. Ullamco ad Lorem et elit laboris eu qui irure nulla qui culpa et. Cupidatat sunt ipsum proident aute exercitation do tempor aliqua cupidatat quis non exercitation. Adipisicing do minim dolore nulla mollit. Adipisicing incididunt irure ipsum et in esse ipsum elit tempor.\n'
-    //     + '\n'
-    // eslint-disable-next-line max-len
-    //     + 'Aliquip mollit sunt qui irure. Irure ullamco Lorem excepteur dolor qui ea ad quis. Enim fugiat cillum enim ad occaecat sint qui elit labore mollit sunt laborum fugiat consequat. Voluptate labore sunt duis eu deserunt. Occaecat do ut ut labore cillum enim dolore ad enim enim id. Aliquip do veniam ad excepteur ad cillum qui deserunt nostrud sunt aliqua duis sunt occaecat. Laborum incididunt commodo ullamco proident quis.',
-    //   aboutArticle: { author: 'Ralph Hawkins', date: 'May 7, 2019 (10 mins read)' },
-    //   image: 'first_article_image',
-    // };
-    const profileData = {
-      image: 'profile_picture',
-      name: 'Arthur Black',
-      information: 'Ipsum adipisicing culpa est nisi consequat ex amet magna culpa veniam tempor irure ea. Reprehenderit labore do tempor eiusmod in consectetur ex sunt id mollit commodo ipsum deserunt quis.',
-      username: 'arhur_black',
-      website: 'arthurblack.com',
-      linkedin: '',
-      instagram: '',
-      twitter: '',
+    return {
+      profileData: {
+        image: 'profile_picture',
+        name: 'Arthur Black',
+        information: 'Ipsum adipisicing culpa est nisi consequat ex amet magna culpa veniam tempor irure ea. Reprehenderit labore do tempor eiusmod in consectetur ex sunt id mollit commodo ipsum deserunt quis.',
+        username: 'arhur_black',
+        website: 'arthurblack.com',
+        linkedin: '',
+        instagram: '',
+        twitter: '',
+      },
     };
-    return { profileData };
   },
 };
 </script>
@@ -79,31 +61,26 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 62px;
+  margin-top: 3.875rem;
 
   img {
-    width: 1316px;
-    height: 592px;
+    width: 82.25rem;
+    height: 37rem;
   }
 
   h1 {
-    font-family: 'Libre Baskerville',serif;
-    font-style: normal;
     font-weight: 700;
-    font-size: 42px;
-    margin: 54px 0 17px 0;
+    font-size: 2.6rem;
+    margin: 3.4rem 0 1.1rem 0;
   }
 
   .tag {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     margin-top: 0.9rem;
     color: rgba(28, 28, 28, 0.5);
   }
   p {
-    width: 652px;
+    width: 40.75rem;
   }
 }
 
@@ -111,22 +88,19 @@ export default {
   display: flex;
   flex-direction: row;
   height: content-box;
-  font-family: 'Open Sans',serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
 
   span {
     color: rgba(28, 28, 28, 0.5);
-    margin-left: 10px;
+    margin-left: 0.6rem;
 
     &:not(:first-child) {
-      margin-left: 10px;
+      margin-left: 0.6rem;
     }
 
     &:first-child::after {
       content: '•';
-      margin-left: 10px;
+      margin-left: 0.6rem;
     }
   }
 }
@@ -134,18 +108,15 @@ export default {
 .about-the-author {
   display: flex;
   flex-direction: column;
-  width: 718px;
-  height: 200px;
-  margin-top: 75px;
+  width: 44.9rem;
+  height: 12.5rem;
+  margin-top: 4.7rem;
 
   span {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: rgba(28, 28, 28, 0.5);
     text-transform: uppercase;
-    margin-bottom: 15px;
+    margin-bottom: 0.9rem;
   }
 }
 
@@ -162,13 +133,13 @@ export default {
 }
 
 .author-info {
-  margin-left: 75px;
+  margin-left: 4.7rem;
 
   h2 {
     font-family: 'Libre Baskerville',serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 42px;
+    font-size: 2.6rem;
     margin: 0 ;
   }
 
@@ -176,10 +147,10 @@ export default {
     font-family: 'Open Sans',serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     text-transform: none !important;
     color: rgba(28, 28, 28, 0.5);
-    margin: 5px 0 8px 0;
+    margin: 0.3rem 0 0.5rem 0;
   }
 
   p {
@@ -198,26 +169,25 @@ export default {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  margin-top: 163px;
+  margin-top: 10.2rem;
 
   a {
     img {
-      width: 150px;
-      height: 150px;
+      width: 9.4rem;
+      height: 9.4rem;
     }
   }
 
   p, p  span {
     font-family: 'Libre Baskerville',serif;
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   p {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-weight: 400;
 
     span {
       font-weight: 700;

@@ -28,71 +28,72 @@ export default {
   components: { RpArticle },
 
   data() {
-    const tags = ['technology', 'lifeandlove', 'essentialism', 'webdevelopment', 'fashion', 'lifestyle',
-      'architecture', 'sports', 'entertainment', 'culinaryarts', 'travel', 'worldhistory',
-      'aeronautics', 'games', 'minimalism', 'finearts', 'graphicdesign', 'filmmaking',
-      'bitcoin', 'computers', 'machinelearning'];
-    const articles = [
-      {
-        tag: 'Nature',
-        articleTitle: 'Tempor deserunt Sunt Qui',
-        aboutArticle: { author: 'Connie Robertson', date: 'November 3, 2012' },
-        articleText: 'Ea qui dolor aute cupidatat ad pariatur proident. Mollit nulla tempor aute reprehenderit ut dolore mollit nisi consequat excepteur ex officia pariatur irure.',
-        image: 'nature',
-      },
-      {
-        tag: 'Plants',
-        articleTitle: 'Occaecat Anim eu Qui',
-        aboutArticle: { author: 'Eleanor Williamson', date: 'September 28, 2014' },
-        articleText: 'Qui ipsum consectetur ad incididunt et aliquip exercitation laboris nisi reprehenderit. Et excepteur commodo esse enim ea aliqua officia reprehenderit.',
-        image: 'plants',
-      },
-      {
-        tag: 'Food',
-        articleTitle: 'Fugiat Incididunt Voluptate Consequat',
-        aboutArticle: { author: 'Bessie Watson', date: 'June 13, 2012' },
-        articleText: 'Mollit ea culpa ipsum pariatur eiusmod. Irure et.',
-        image: 'food',
-      },
-      {
-        tag: 'Colorful',
-        articleTitle: 'Occaecat Anim eu Qui',
-        aboutArticle: { author: 'Ted Simmmons', date: 'June 21, 2015' },
-        articleText: 'Amet ipsum occaecat aliqua aute nisi laboris nostrud culpa est do. Aliqua esse velit in excepteur esse qui voluptate laboris adipisicing qui irure elit amet excepteur.',
-        image: 'colorful',
-      },
-      {
-        tag: 'Minimalism',
-        articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
-        aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
-        articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
-        image: 'minimalism',
-      },
-      {
-        tag: 'Technology',
-        articleTitle: 'Amet non Ex Officia nulla Cupidatat',
-        aboutArticle: { author: 'Jacob Henry', date: 'September 27, 2017 (8 mins read)' },
-        articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
-        image: 'technology',
-      },
-      {
-        tag: 'Minimalism',
-        articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
-        aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
-        articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
-        image: 'article',
-      },
-      {
-        tag: 'Technology',
-        articleTitle: 'Duis aute irure dolor in reprehenderit',
-        aboutArticle: { author: 'Jacob Henry', date: 'September 29, 2017 (4 mins read)' },
-        articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
-        image: 'technology2',
-      },
+    return {
+      tags: ['technology', 'lifeandlove', 'essentialism', 'webdevelopment', 'fashion', 'lifestyle',
+        'architecture', 'sports', 'entertainment', 'culinaryarts', 'travel', 'worldhistory',
+        'aeronautics', 'games', 'minimalism', 'finearts', 'graphicdesign', 'filmmaking',
+        'bitcoin', 'computers', 'machinelearning'],
+      articleTag: null,
+      articles: [
+        {
+          tag: 'Nature',
+          articleTitle: 'Tempor deserunt Sunt Qui',
+          aboutArticle: { author: 'Connie Robertson', date: 'November 3, 2012' },
+          articleText: 'Ea qui dolor aute cupidatat ad pariatur proident. Mollit nulla tempor aute reprehenderit ut dolore mollit nisi consequat excepteur ex officia pariatur irure.',
+          image: 'nature',
+        },
+        {
+          tag: 'Plants',
+          articleTitle: 'Occaecat Anim eu Qui',
+          aboutArticle: { author: 'Eleanor Williamson', date: 'September 28, 2014' },
+          articleText: 'Qui ipsum consectetur ad incididunt et aliquip exercitation laboris nisi reprehenderit. Et excepteur commodo esse enim ea aliqua officia reprehenderit.',
+          image: 'plants',
+        },
+        {
+          tag: 'Food',
+          articleTitle: 'Fugiat Incididunt Voluptate Consequat',
+          aboutArticle: { author: 'Bessie Watson', date: 'June 13, 2012' },
+          articleText: 'Mollit ea culpa ipsum pariatur eiusmod. Irure et.',
+          image: 'food',
+        },
+        {
+          tag: 'Colorful',
+          articleTitle: 'Occaecat Anim eu Qui',
+          aboutArticle: { author: 'Ted Simmmons', date: 'June 21, 2015' },
+          articleText: 'Amet ipsum occaecat aliqua aute nisi laboris nostrud culpa est do. Aliqua esse velit in excepteur esse qui voluptate laboris adipisicing qui irure elit amet excepteur.',
+          image: 'colorful',
+        },
+        {
+          tag: 'Minimalism',
+          articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
+          aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
+          articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
+          image: 'minimalism',
+        },
+        {
+          tag: 'Technology',
+          articleTitle: 'Amet non Ex Officia nulla Cupidatat',
+          aboutArticle: { author: 'Jacob Henry', date: 'September 27, 2017 (8 mins read)' },
+          articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
+          image: 'technology',
+        },
+        {
+          tag: 'Minimalism',
+          articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
+          aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
+          articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
+          image: 'article',
+        },
+        {
+          tag: 'Technology',
+          articleTitle: 'Duis aute irure dolor in reprehenderit',
+          aboutArticle: { author: 'Jacob Henry', date: 'September 29, 2017 (4 mins read)' },
+          articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
+          image: 'technology2',
+        },
 
-    ];
-    const articleTag = null;
-    return { tags, articleTag, articles };
+      ],
+    };
   },
   methods: {
     clickTag(index) {
@@ -129,7 +130,7 @@ div {
       font-size: 1.25rem;
       padding-right: 2.4rem;
       padding-left: 1.25rem;
-      border: solid 0.125rem #1C1C1C;
+      border: 0.125rem solid  #1C1C1C;
       border-radius: 0.6rem;
       background-image: url("@/assets/images/search.svg");
       background-repeat: no-repeat;
@@ -155,10 +156,6 @@ div {
     margin-top: 0.3rem;
     margin-left: 1rem;
     padding: 0.7rem 0.9rem;
-    font-family: 'Libre Baskerville',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
   }
 }
 
