@@ -11,7 +11,7 @@
     <router-link :to="{
          name:'article',
          params: {
-            article: article,
+            article: article
           },
           query: { 'id': `${ index }4` }}" v-for="(article, index) in filter" :key="index">
       <rp-article :article="article"/>
@@ -95,6 +95,12 @@ export default {
       ],
     };
   },
+  props: {
+    tag: {
+      type: String,
+      default: '',
+    },
+  },
   methods: {
     clickTag(index) {
       this.articleTag = this.tags[index];
@@ -111,6 +117,11 @@ export default {
       return null;
     },
   },
+  mounted() {
+    if (this.$props.tag.length !== 0) {
+      this.articleTag = this.$props.tag;
+    }
+  },
 };
 </script>
 
@@ -124,7 +135,6 @@ div {
 
   label {
     input {
-      outline: none;
       width: 44.2rem;
       height: 3.75rem;
       font-size: 1.25rem;
