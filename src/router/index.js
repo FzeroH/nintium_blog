@@ -23,6 +23,7 @@ const routes = [
     path: '/tags',
     name: 'tags',
     component: Tags,
+    props: true,
   },
   {
     path: '/about',
