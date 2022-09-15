@@ -1,66 +1,42 @@
 <template>
-  <header :class="{ 'screenlock-header': $route.path === '/screenlock'}"
-          v-if="$route.path !== '/dashboard' && $route.path !== '/dashboard/chart'">
-    <section class="header-section">
-      <router-link to="/" class="logo">
-        <img src="@/assets/images/logo.svg" alt="logo" class="logo">
-      </router-link>
-      <router-link to="/"
-                   :class="{ active: $route.path  === '/'}"
-                   v-if="$route.path !== '/screenlock'">
-        Home
-      </router-link>
-      <router-link to="/tags"
-                   :class="{ active: $route.path === '/tags'}"
-                   v-if="$route.path !== '/screenlock'">
-        Tags
-      </router-link>
-      <router-link to="/about"
-                   :class="{ active: $route.path === '/about'}"
-                   v-if="$route.path !== '/screenlock'">
-        About
-      </router-link>
-    </section>
-    <section class="header-section" v-if="$route.path !== '/screenlock'">
-      <form action="">
-        <!--eslint-disable-next-line-->
-        <input type="text"/>
-        <button type="submit">
-          <img src="@/assets/images/search.svg" alt="search"/>
-        </button>
-      </form>
-      <router-link to="/login" class="login"  v-if="!isAuth">
-        Login
-      </router-link>
-      <img src="@/assets/images/notification.svg"
-           alt="notification"
-           class="notification-img"
-           v-if="isAuth">
+  <section class="header-section" v-if="$route.path !== '/screenlock'">
+    <form action="">
       <!--eslint-disable-next-line-->
-      <img src="@/assets/images/profile/profile_picture.svg"
-           alt="profile"
-           class="profile-img"
-           v-if="isAuth">
-      <div class="profile-menu">
-        <p>Arthur Black</p>
-        <span>@arthurblack</span>
-        <ul>
-          <!--eslint-disable-next-line-->
-          <li @click="isVisible(index)" v-for="(menuItem, index) in menuItems" :key="index">
-            {{ menuItem }}
-          </li>
-          <!--eslint-disable-next-line-->
-          <li @click="signOut">Sign out</li>
-        </ul>
-      </div>
-    </section>
-  </header>
+      <input type="text"/>
+      <button type="submit">
+        <img src="@/assets/images/search.svg" alt="search"/>
+      </button>
+    </form>
+    <router-link to="/login" class="login"  v-if="!isAuth">
+      Login
+    </router-link>
+    <img src="@/assets/images/notification.svg"
+         alt="notification"
+         class="notification-img"
+         v-if="isAuth">
+    <!--eslint-disable-next-line-->
+    <img src="@/assets/images/profile/profile_picture.svg"
+         alt="profile"
+         class="profile-img"
+         v-if="isAuth">
+    <div class="profile-menu">
+      <p>Arthur Black</p>
+      <span>@arthurblack</span>
+      <ul>
+        <!--eslint-disable-next-line-->
+        <li @click="goTo(index)" v-for="(menuItem, index) in menuItems" :key="index">
+          {{ menuItem }}
+        </li>
+        <!--eslint-disable-next-line-->
+        <li @click="signOut">Sign out</li>
+      </ul>
+    </div>
+  </section>
 </template>
 
 <script>
-
 export default {
-  name: 'NintiumHeader',
+  name: 'isAuthSection',
   props: {
     isAuth: {
       type: Boolean,
@@ -70,11 +46,10 @@ export default {
   data() {
     return {
       menuItems: ['Dashboard', 'Write a post', 'Settings', 'Help'],
-      router: null,
     };
   },
   methods: {
-    isVisible(index) {
+    goTo(index) {
       const menuItems = this.menuItems.map((elem) => elem.replaceAll(' ', '-'));
       const menuItem = menuItems[index].toLowerCase();
       this.$router.push({ path: `/${menuItem}` });
@@ -88,57 +63,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  .header-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: relative;
-
-    .logo {
-      width: 11rem;
-      height: 3.6rem;
-      margin-top: 1.94rem;
-      margin-left: 1.6rem;
-
-      img {
-        margin: 0;
-      }
-    }
-
-    a {
-      font-size: 1.25rem;
-      color: black;
-      margin: 3rem 0 0 1.9rem;
-      text-align: center;
-    }
-  }
+.header-section {
+  align-self: end;
+  justify-content: center;
 }
-
-.screenlock-header {
-  justify-content: flex-start;
-}
-
-.active {
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: black;
-  margin: 3rem 0 0 1.9rem;
-  padding: 0;
-  text-align: center;
-  text-decoration: none;
-}
-
 form {
   position: relative;
   transform: translate(0, 20%);
@@ -182,7 +110,6 @@ form {
     border: none;
     text-align: center;
     transition: all 1s;
-    ;
   }
 
   &:hover {
@@ -225,12 +152,12 @@ form {
   cursor: pointer;
 
   &:hover +.profile-menu {
-      position: absolute;
-      top: 6.2rem;
-      right: 1.6rem;
-      transform: translateY(0%);
-      visibility: visible;
-      opacity: 1;
+    position: absolute;
+    top: 6.2rem;
+    right: 1.6rem;
+    transform: translateY(0%);
+    visibility: visible;
+    opacity: 1;
   }
 }
 
@@ -286,7 +213,6 @@ form {
         text-decoration: underline;
       }
     }
-
   }
 }
 </style>
