@@ -4,38 +4,18 @@
       <router-link to="/" class="logo">
         <img src="@/assets/images/dashboard-nav/dashboard-logo.svg" alt="logo">
       </router-link>
-      <ul>
-        <li>
-          <img src="@/assets/images/dashboard-nav/grid.svg" alt="dashboard">
-          <span>Dashboard</span>
-        </li>
-        <li>
-          <img src="@/assets/images/dashboard-nav/user.svg" alt="profile">
-          <span>Profile</span>
-        </li>
-        <li>
-          <img src="@/assets/images/dashboard-nav/edit.svg" alt="write a post">
-          <span>Write a Post</span>
-        </li>
-        <li>
-          <img src="@/assets/images/dashboard-nav/book-open.svg" alt="all posts">
-          <span>All posts</span>
-        </li>
-        <li>
-          <img src="@/assets/images/dashboard-nav/box.svg" alt="resources">
-          <span>Resources</span>
-        </li>
-        <li>
-          <img src="@/assets/images/dashboard-nav/settings.svg" alt="settings">
-          <span>Settings</span>
-        </li>
-        <li>
-          <img src="@/assets/images/dashboard-nav/help-circle.svg" alt="help">
-          <span>Help</span>
+      <ul v-for="(navItem, index) in navigationItems" :key="index">
+        <!-- eslint-disable-next-line -->
+        <li @click="goTo(index)">
+          <img
+            :src="require(`../../assets/images/dashboard-nav/${navItem.image}.svg`)"
+            alt="navigation">
+          <span>{{ navItem.name }}</span>
         </li>
       </ul>
     </nav>
     <div class="dashboard">
+      <is-auth-section />
       <div class="dashboard-title">
         <h2>Dashboard</h2>
         <button>Customize</button>
@@ -53,7 +33,8 @@
             ref="totalPosts"
             :card-name="'Total Posts'"
             :image="'total-posts'"
-            :count="'214'"/>
+            :count="'214'"
+            :class="{ 'active-card': $route.query.name === 'total-posts' }"/>
         </router-link>
         <router-link :to="{
           name: 'chart',
@@ -66,29 +47,73 @@
         <stat-cards
           :card-name="'Total Views'"
           :image="'total-views'"
-          :count="'113K'"/>
+          :count="'113K'"
+          :class="{ 'active-card': $route.query.name === 'total-views' }"/>
         </router-link>
         <stat-cards
           :card-name="'Most Viewed Article'"
           :count="'The Most Awesome Article Man Has Ever Written'"/>
       </div>
-      <router-view />
+      <router-view :user-data="dataPosts" :chartName="'Total Posts'" />
     </div>
   </div>
 </template>
 
 <script>
 import StatCards from '@/components/dashboard/StatCards.vue';
+import IsAuthSection from '@/components/header/isAuthSection.vue';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Dashboard',
-  components: { StatCards },
+  components: { IsAuthSection, StatCards },
   data() {
     return {
       dataPosts: [200, 119, 50, 40, 164, 33, 98, 40, 164, 33, 98, 500],
       dataViews: [100, 20, 90, 112, 666, 76, 29, 34, 55, 58, 12, 700],
+      navigationItems: [
+        {
+          image: 'grid',
+          name: 'Dashboard',
+        },
+        {
+          image: 'user',
+          name: 'Profile',
+        },
+        {
+          image: 'edit',
+          name: 'Write a Post',
+        },
+        {
+          image: 'book-open',
+          name: 'All posts',
+        },
+        {
+          image: 'box',
+          name: 'Resources',
+        },
+        {
+          image: 'settings',
+          name: 'Settings',
+        },
+        {
+          image: 'help-circle',
+          name: 'Help',
+        },
+      ],
+      nameItems: [],
     };
+  },
+  methods: {
+    goTo(index) {
+      this.navigationItems.map((elem) => this.nameItems.push(elem.name));
+      const navItems = this.nameItems.map((elem) => elem.replaceAll(' ', '-'));
+      const navItem = navItems[index].toLowerCase();
+      this.$router.push({ path: `/${navItem}` });
+    },
+  },
+  mounted() {
+    this.$router.push({ name: 'chart', query: { name: 'total-posts' } });
   },
 };
 </script>
@@ -108,40 +133,33 @@ export default {
       .logo {
         width: 11rem;
         height: 3.6rem;
-        margin: 2rem 1.6rem 3rem 1.6rem;
+        margin: 2rem 1.6rem;
+
+        img {
+          margin-bottom: 3.2rem;
+        }
       }
 
       ul {
         li {
           display: flex;
           align-items: center;
-          padding: 1rem 4.2rem 0.75rem 1.6rem;
-
-          &:first-child {
-            margin-top: 3.2rem;
-          }
-
-          &:nth-child(3) {
-            padding-right: 3.9rem;
-          }
+          padding: 1rem 3.9rem 0.75rem 1.6rem;
 
           &:hover {
             background: #545A61;
           }
 
           span {
-            font-family: 'Open Sans',serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 22px;
+            font-size: 1rem;
+            line-height: 1.4rem;
             color: white;
             margin-left: 0.9rem;
           }
 
           img {
-            width: 30px;
-            height: 30px;
+            width: 1.875rem;
+            height: 1.875rem;
           }
         }
       }
@@ -157,28 +175,25 @@ export default {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-top: 107px;
+        margin-top: 1.4rem;
 
-        h2 {
+        >h2 {
           font-size: 1.6rem;
           font-weight: 400;
           line-height: 2rem;
-          margin: 1.2rem 2.6rem !important;
+          margin: 1.2rem 2.6rem;
         }
 
-        button {
-          border: 2px solid #1C1C1C;
-          border-radius: 5px;
+        >button {
+          border: 0.125rem solid #1C1C1C;
+          border-radius: 0.3rem;
           padding: 0.5rem 0.6rem;
           background: white;
           width: 7rem;
           height: 2.6rem;
           margin: 1.2rem 3rem;
           font-family: 'Open Sans', serif;
-          font-style: normal;
-          font-weight: 400;
-          font-size: 16px;
-          line-height: 22px;
+          line-height: 1.4rem;
         }
 
       }
@@ -189,5 +204,8 @@ export default {
         justify-content: space-around;
       }
     }
+  }
+  .active-card {
+    box-shadow: 0.1rem 0.1rem 1rem #0080ff;
   }
 </style>
