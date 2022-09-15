@@ -1,9 +1,9 @@
 <template>
   <section class="header-section" v-if="$route.path !== '/screenlock'">
-    <form action="">
+    <form action="" v-if="this.$route.name !== 'tags'">
       <!--eslint-disable-next-line-->
-      <input type="text"/>
-      <button type="submit">
+      <input type="text"  @keydown.enter.p.prevent="searchByTag(articleTag)" v-model="articleTag" />
+      <button @click.prevent="searchByTag(articleTag)">
         <img src="@/assets/images/search.svg" alt="search"/>
       </button>
     </form>
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'isAuthSection',
   props: {
@@ -46,6 +47,7 @@ export default {
   data() {
     return {
       menuItems: ['Dashboard', 'Write a post', 'Settings', 'Help'],
+      articleTag: null,
     };
   },
   methods: {
@@ -57,6 +59,10 @@ export default {
     signOut() {
       this.$props.isAuth = false;
       this.$router.push({ name: 'login' });
+    },
+    searchByTag(articleTag) {
+      this.$router.push({ name: 'tags', params: { tag: articleTag } });
+      this.articleTag = '';
     },
   },
 };

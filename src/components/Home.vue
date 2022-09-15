@@ -20,7 +20,8 @@
       <recent-post/>
       <ul>
         <li>tags.</li>
-        <li v-for="(tag, index) in tags" :key="index">{{ tag }}</li>
+        <!--eslint-disable-next-line-->
+        <li v-for="(tag, index) in tags" :key="index" @click="searchByTag(index)">{{ tag }}</li>
       </ul>
     </div>
   </div>
@@ -54,6 +55,11 @@ export default {
         image: 'interior',
       },
     };
+  },
+  methods: {
+    searchByTag(index) {
+      this.$router.push({ name: 'tags', params: { tag: this.tags[index] } });
+    },
   },
 };
 </script>
@@ -90,6 +96,7 @@ div {
 
       li:not(:first-child):hover {
         cursor: pointer;
+        text-decoration: underline;
       }
     }
   }
