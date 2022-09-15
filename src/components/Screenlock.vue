@@ -38,7 +38,6 @@ div {
 
   label {
     input {
-      outline: none;
       max-width: 20.25rem;
       height: 3.6rem;
       border-radius: 0.6rem;

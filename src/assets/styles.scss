@@ -16,7 +16,7 @@ html body {
   height: 100%;
 }
 
-h1,h2,h3,h4,h5,h6,ul,li {
+h1,h2,h3,h4,h5,h6,ul,li, nav {
   margin: 0;
   padding: 0;
 }
@@ -57,6 +57,12 @@ a {
   &:visited {
     color: #1C1C1C;
   }
+  &:active {
+    color: #1C1C1C;
+  }
+  &:link {
+    color: #1C1C1C;
+  }
 }
 
 p, span {
@@ -75,4 +81,12 @@ input {
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
+  outline: none;
+}
+
+.header-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
 }
