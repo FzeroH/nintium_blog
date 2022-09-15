@@ -9,6 +9,7 @@ import Profile from '@/components/Profile.vue';
 import ArticlePage from '@/components/content/ArticlePage.vue';
 import Dashboard from '@/components/dashboard/Dashboard.vue';
 import Chart from '@/components/dashboard/Chart.vue';
+import ErrorPage404 from '@/components/ErrorPage404.vue';
 
 Vue.use(VueRouter);
 
@@ -61,6 +62,11 @@ const routes = [
         props: true,
       },
     ],
+  },
+  {
+    path: '/:catchall(.*)',
+    name: '404',
+    component: ErrorPage404,
   },
 ];
 
