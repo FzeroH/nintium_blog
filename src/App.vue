@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import NintiumHeader from '@/components/NintiumHeader.vue';
+import NintiumHeader from '@/components/header/NintiumHeader.vue';
 
 export default {
 
