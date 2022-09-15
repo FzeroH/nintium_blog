@@ -161,7 +161,6 @@ div {
     }
 
     >p {
-      font-family: 'Open Sans',serif !important;
       color: white;
       text-align: start;
       line-height: 1.5rem;
@@ -230,7 +229,7 @@ div {
   width: 77.8rem;
   height: 6.4rem;
 
-  h2 {
+  >h2 {
     font-weight: 400;
     font-size: 2rem;
     line-height: 3.25rem;
@@ -239,7 +238,7 @@ div {
     height: 6.4rem;
   }
 
-  p {
+  >p {
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -260,14 +259,14 @@ footer {
   width: 77.8rem;
   height: 26.6rem;
 
-  h2 {
+  >h2 {
     color: white;
     font-weight: 400;
     font-size: 2rem;
     line-height: 2.6rem;
   }
 
-  p {
+  >p {
     color: white;
     font-weight: 400;
     font-size: 1rem;
