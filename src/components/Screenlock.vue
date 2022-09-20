@@ -46,6 +46,7 @@ div {
       background-image: url("@/assets/images/key.svg");
       background-repeat: no-repeat;
       background-position: 1.125rem center;
+      background-size: 1.875rem 1.875rem;
       margin-top: 0.85rem;
     }
   }

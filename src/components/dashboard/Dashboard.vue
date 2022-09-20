@@ -4,9 +4,9 @@
       <router-link to="/" class="logo">
         <img src="@/assets/images/dashboard-nav/dashboard-logo.svg" alt="logo">
       </router-link>
-      <ul v-for="(navItem, index) in navigationItems" :key="index">
+      <ul>
         <!-- eslint-disable-next-line -->
-        <li @click="goTo(index)">
+        <li @click="goTo(index)" v-for="(navItem, index) in navigationItems" :key="index">
           <img
             :src="require(`../../assets/images/dashboard-nav/${navItem.image}.svg`)"
             alt="navigation">
@@ -136,6 +136,7 @@ export default {
         margin: 2rem 1.6rem;
 
         img {
+          width: 100%;
           margin-bottom: 3.2rem;
         }
       }
@@ -207,5 +208,19 @@ export default {
   }
   .active-card {
     box-shadow: 0.1rem 0.1rem 1rem #0080ff;
+  }
+
+  @media (max-width: 767px) {
+    nav {
+      display: none;
+    }
+    .stat-cards {
+      flex-direction: column !important;
+      align-items: center;
+
+      a {
+        margin-bottom: 2rem;
+      }
+    }
   }
 </style>

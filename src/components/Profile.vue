@@ -121,7 +121,7 @@ export default {
     height: 12.5rem;
     margin-top: 10.875rem;
 
-    img {
+    >img {
       width: 12.5rem;
       height: 12.5rem;
       border-radius: 50%;
@@ -129,6 +129,12 @@ export default {
 
     .author-info {
       margin-left: 4.7rem;
+
+      >span {
+        color: rgba(28, 28, 28, 0.5);
+        font-size: 1rem;
+        line-height: 1.375rem;
+      }
 
       h2 {
         font-weight: 700;

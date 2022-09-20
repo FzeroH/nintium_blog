@@ -1,7 +1,11 @@
 <template>
   <div class="article-container" :style="{
-   backgroundImage: 'url(' + require(`../../assets/images/articles/${ article.image }.svg`) + ')'}">
-    <div class="article-content" :class="{ 'article-content-right': position==='right' }">
+   backgroundImage: 'url(' + require(`../../assets/images/articles/${ article.image }.svg`) + ')',
+   backgroundRepeat: 'no-repeat', backgroundSize: '100%'}">
+    <!-- eslint-disable-next-line -->
+    <div class="article-content"
+         :class="{ 'article-content-right': position==='right' }"
+         @click="openTheArticle">
       <span class="tag">{{ article.tag }}</span>
       <h2> {{ article.articleTitle }}</h2>
       <div class="about-article-container">
@@ -17,10 +21,18 @@
 export default {
   name: 'FeaturedArticle',
   props: {
-    article: Object,
+    article: {
+      type: Object,
+      default: () => {},
+    },
     position: {
       type: String,
       default: 'left',
+    },
+  },
+  methods: {
+    openTheArticle() {
+      this.$emit('open-the-article');
     },
   },
 };
@@ -32,6 +44,8 @@ export default {
   position: relative;
   width: 82.25rem;
   height: 37rem;
+  align-self: center;
+  margin: 3rem 0;
 }
 
 .article-content {
@@ -42,6 +56,10 @@ export default {
   height: 30.2rem;
   margin: 0 0 6.8rem 2.8rem;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   .tag {
     font-size: 1.25rem;
     color: rgba(28, 28, 28, 0.5);
@@ -50,7 +68,6 @@ export default {
   }
 
   h2 {
-    font-weight: 700;
     font-size: 2.1rem;
     color: black;
     margin: 0 2.5rem 12px 2.5rem;
@@ -70,14 +87,11 @@ export default {
 }
 
 .about-article-container{
-  display: flex;
-  flex-direction: row;
   margin-left: 2.5rem;
   font-size: 1rem;
 
   .about-article {
     color: rgba(28, 28, 28, 0.5);
-    margin-left: 0.6rem;
 
     &:not(:first-child) {
       margin-left: 0.6rem;
@@ -87,6 +101,17 @@ export default {
       content: '•';
       margin-left: 0.6rem;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .article-container {
+    margin: 3rem auto;
+    width: 100%;
+    background-size: auto !important;
+  }
+  .article-content-right {
+    position: static;
   }
 }
 

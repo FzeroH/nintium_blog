@@ -1,5 +1,6 @@
 <template>
-  <div class="article-container">
+  <!-- eslint-disable-next-line -->
+  <div class="article-container" @click="openTheArticle">
     <img :src="require(`../../assets/images/articles/${ article.image }.svg`)" alt="">
     <div class="article-content">
       <span class="tag">{{ article.tag }}</span>
@@ -19,6 +20,11 @@ export default {
   props: {
     article: Object,
   },
+  methods: {
+    openTheArticle() {
+      this.$emit('open-the-article');
+    },
+  },
 };
 </script>
 
@@ -29,6 +35,10 @@ export default {
   margin: 3.125rem 1.56rem;
   width: 53.6rem;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   img {
     width: 23rem;
     height: 18.75rem;
@@ -36,10 +46,6 @@ export default {
 }
 
 .article-content {
-  display: flex;
-  flex-direction: column;
-  width: 53.5rem;
-  height: 19.4rem;
 
   .tag {
     font-size: 1.25rem;
@@ -49,7 +55,6 @@ export default {
   }
 
   h2 {
-    font-weight: 700;
     font-size: 2.1rem;
     color: black;
     margin: 0 4.44rem;
@@ -59,15 +64,13 @@ export default {
   p {
     font-size: 1rem;
     line-height: 1.5rem;
-    margin: 0.9rem 3.44rem;
+    margin: 0.9rem 0 0 4.44rem;
     color: black;
   }
 
 }
 
 .about-article-container {
-  display: flex;
-  flex-direction: row;
   margin: 12px 0 14px 4.44rem;
   font-size: 1rem;
 
@@ -81,6 +84,16 @@ export default {
     &:first-child::after {
       content: '•';
       margin-left: 0.6rem;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .article-container {
+    flex-direction: column;
+    width: 100%;
+    img {
+      margin: 0.8rem auto;
     }
   }
 }

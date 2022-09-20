@@ -75,18 +75,17 @@ form {
     border-radius: 0.6rem;
     border: solid 1px #F8F8F8;
     padding-left: 3.4rem;
+    background-repeat: no-repeat;
+    background-position: 1.125rem center;
+    background-size: 1.875rem 1.875rem;
   }
 
   input[type = text] {
     background-image: url("@/assets/images/user.svg");
-    background-repeat: no-repeat;
-    background-position: 1.125rem center;
   }
 
   input[type = password] {
     background-image: url("@/assets/images/key.svg");
-    background-repeat: no-repeat;
-    background-position: 1.125rem center;
     margin-top: 0.875rem;
   }
 }

@@ -1,15 +1,10 @@
 <template>
   <div class="rp-container">
-    <router-link :to="{
-         name:'article',
-         params: {
-            article: article,
-          },
-          query: { 'id': `${ index }2` }}"
-                 v-for="(article, index) in articles"
-                 :key="index">
-      <rp-article :article="article"/>
-    </router-link>
+      <rp-article
+        :article="article"
+        v-for="(article, index) in articles"
+        :key="index"
+        @open-the-article="openTheArticle(article.id, article)"/>
   </div>
 </template>
 
@@ -23,6 +18,7 @@ export default {
     return {
       articles: [
         {
+          id: 456,
           tag: 'Nature',
           articleTitle: 'Tempor deserunt Sunt Qui',
           aboutArticle: { author: 'Connie Robertson', date: 'November 3, 2012' },
@@ -30,6 +26,7 @@ export default {
           image: 'nature',
         },
         {
+          id: 567,
           tag: 'Plants',
           articleTitle: 'Occaecat Anim eu Qui',
           aboutArticle: { author: 'Eleanor Williamson', date: 'September 28, 2014' },
@@ -37,6 +34,7 @@ export default {
           image: 'plants',
         },
         {
+          id: 789,
           tag: 'Food',
           articleTitle: 'Fugiat Incididunt Voluptate Consequat',
           aboutArticle: { author: 'Bessie Watson', date: 'June 13, 2012' },
@@ -44,6 +42,7 @@ export default {
           image: 'food',
         },
         {
+          id: 890,
           tag: 'Colorful',
           articleTitle: 'Occaecat Anim eu Qui',
           aboutArticle: { author: 'Ted Simmmons', date: 'June 21, 2015' },
@@ -53,19 +52,20 @@ export default {
       ],
     };
   },
+  methods: {
+    openTheArticle(id, article) {
+      this.$router.push({
+        name: 'article',
+        params: {
+          article,
+        },
+        query: { id },
+      });
+    }, // openTheArticle
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-.rp-container {
-  a {
-    &:first-child {
-      margin: 6.5rem 0 0 2.4rem;
-    }
-    &:not(:first-child) {
-      margin: 4rem 0 0 2.4rem;
-    }
-  }
-}
 
 </style>

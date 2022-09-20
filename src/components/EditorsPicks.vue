@@ -4,16 +4,11 @@
     <h2>Editor's Picks</h2>
     <hr>
   </div>
-  <router-link :to="{
-         name:'article',
-         params: {
-            article: article,
-          },
-          query: { 'id': `${ index }1` }}"
-               v-for="(article, index) in articles"
-               :key="index">
-    <ep-article :article="article"/>
-  </router-link>
+    <ep-article
+      :article="article"
+      v-for="(article, index) in articles"
+      :key="index"
+      @open-the-article="openTheArticle(article.id, article)"/>
 </div>
 </template>
 
@@ -27,6 +22,7 @@ export default {
     return {
       articles: [
         {
+          id: 123,
           tag: 'Minimalism',
           articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
           aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
@@ -34,6 +30,7 @@ export default {
           image: 'minimalism',
         },
         {
+          id: 234,
           tag: 'Technology',
           articleTitle: 'Amet non Ex Officia nulla Cupidatat',
           aboutArticle: { author: 'Jacob Henry', date: 'September 27, 2017 (8 mins read)' },
@@ -41,6 +38,7 @@ export default {
           image: 'technology',
         },
         {
+          id: 345,
           tag: 'Minimalism',
           articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
           aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
@@ -49,6 +47,17 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    openTheArticle(id, article) {
+      this.$router.push({
+        name: 'article',
+        params: {
+          article,
+        },
+        query: { id },
+      });
+    }, // openTheArticle
   },
 };
 </script>
@@ -64,18 +73,17 @@ export default {
 
     h2 {
       font-family: 'Open Sans', serif;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 42px;
+      font-size: 2.625rem;
       color: black;
-      margin: 50px 0 17px 0;
+      margin: 3.125rem 0 1.06rem 0;
       text-align: center;
     }
 
     hr {
-      width: 190px;
+      width: 11.875rem;
       height: 0;
-      border: 5px solid #1C1C1C;
+      background: #1C1C1C;
+      border: 0.3rem solid #1C1C1C;
     }
   }
 

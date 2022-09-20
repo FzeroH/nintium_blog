@@ -8,14 +8,12 @@
               :key="index" @click="clickTag(`${index}`)">#{{ tag }}
       </button>
     </div>
-    <router-link :to="{
-         name:'article',
-         params: {
-            article: article
-          },
-          query: { 'id': `${ index }4` }}" v-for="(article, index) in filter" :key="index">
-      <rp-article :article="article"/>
-    </router-link>
+      <rp-article
+      :article="article"
+      v-for="(article, index) in filter"
+      :key="index"
+      @click="openTheArticle(article.id, article)"
+      />
   </div>
 </template>
 
@@ -36,6 +34,7 @@ export default {
       articleTag: null,
       articles: [
         {
+          id: 10,
           tag: 'Nature',
           articleTitle: 'Tempor deserunt Sunt Qui',
           aboutArticle: { author: 'Connie Robertson', date: 'November 3, 2012' },
@@ -43,6 +42,7 @@ export default {
           image: 'nature',
         },
         {
+          id: 11,
           tag: 'Plants',
           articleTitle: 'Occaecat Anim eu Qui',
           aboutArticle: { author: 'Eleanor Williamson', date: 'September 28, 2014' },
@@ -50,6 +50,7 @@ export default {
           image: 'plants',
         },
         {
+          id: 12,
           tag: 'Food',
           articleTitle: 'Fugiat Incididunt Voluptate Consequat',
           aboutArticle: { author: 'Bessie Watson', date: 'June 13, 2012' },
@@ -57,6 +58,7 @@ export default {
           image: 'food',
         },
         {
+          id: 13,
           tag: 'Colorful',
           articleTitle: 'Occaecat Anim eu Qui',
           aboutArticle: { author: 'Ted Simmmons', date: 'June 21, 2015' },
@@ -64,6 +66,7 @@ export default {
           image: 'colorful',
         },
         {
+          id: 14,
           tag: 'Minimalism',
           articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
           aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
@@ -71,6 +74,7 @@ export default {
           image: 'minimalism',
         },
         {
+          id: 15,
           tag: 'Technology',
           articleTitle: 'Amet non Ex Officia nulla Cupidatat',
           aboutArticle: { author: 'Jacob Henry', date: 'September 27, 2017 (8 mins read)' },
@@ -78,6 +82,7 @@ export default {
           image: 'technology',
         },
         {
+          id: 16,
           tag: 'Minimalism',
           articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
           aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
@@ -85,6 +90,7 @@ export default {
           image: 'article',
         },
         {
+          id: 17,
           tag: 'Technology',
           articleTitle: 'Duis aute irure dolor in reprehenderit',
           aboutArticle: { author: 'Jacob Henry', date: 'September 29, 2017 (4 mins read)' },
@@ -106,6 +112,15 @@ export default {
       this.articleTag = this.tags[index];
       return this.articleTag;
     },
+    openTheArticle(id, article) {
+      this.$router.push({
+        name: 'article',
+        params: {
+          article,
+        },
+        query: { id },
+      });
+    }, // openTheArticle
   },
   computed: {
     filter() {
@@ -143,13 +158,10 @@ div {
       border: 0.125rem solid  #1C1C1C;
       border-radius: 0.6rem;
       background-image: url("@/assets/images/search.svg");
+      background-size: 1.875rem 1.875rem;
       background-repeat: no-repeat;
       background-position: 44.3rem center;
     }
-  }
-
-  a {
-    margin-top: 7.3rem;
   }
 }
 
@@ -168,5 +180,11 @@ div {
     padding: 0.7rem 0.9rem;
   }
 }
-
+@media (max-width: 767px) {
+  input {
+    width: 30.2rem !important;
+    padding-right: 3.4rem !important;
+    background-position: 32.3rem center !important;
+  }
+}
 </style>

@@ -72,6 +72,7 @@ export default {
     font-weight: 700;
     font-size: 2.6rem;
     margin: 3.4rem 0 1.1rem 0;
+    text-align: center;
   }
 
   .tag {
@@ -136,17 +137,11 @@ export default {
   margin-left: 4.7rem;
 
   h2 {
-    font-family: 'Libre Baskerville',serif;
-    font-style: normal;
-    font-weight: 700;
     font-size: 2.6rem;
     margin: 0 ;
   }
 
   span {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 1rem;
     text-transform: none !important;
     color: rgba(28, 28, 28, 0.5);
@@ -154,9 +149,6 @@ export default {
   }
 
   p {
-    font-family: 'Open Sans',serif;
-    font-style: normal;
-    font-weight: 400;
     font-size: 1rem;
     color: #1C1C1C;
     width: 27rem;
@@ -195,4 +187,28 @@ export default {
   }
 }
 
+@media (max-width: 767px) {
+  .article-container {
+    >img {
+      width: 41.25rem;
+      height: auto;
+    }
+  }
+  .about-the-author {
+    >span {
+      padding-left: 2rem;
+    }
+  }
+  .pagination {
+    p {
+      margin-left: 1rem;
+    }
+    >a {
+      img {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+  }
+}
 </style>

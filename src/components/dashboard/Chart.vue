@@ -119,4 +119,10 @@ div {
     line-height: 2rem;
   }
 }
+
+@media (max-width: 767px) {
+  div {
+    width: 36rem;
+  }
+}
 </style>

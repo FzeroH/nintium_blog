@@ -1,5 +1,7 @@
 <template>
-  <div class="article-container">
+  <!-- eslint-disable-next-line -->
+  <div class="article-container" @click="openTheArticle"
+       :class="{'tags-style': $route.path=== '/tags'}">
     <img :src="require(`../../assets/images/articles/${ article.image }.svg`)" alt="">
     <div class="article-content">
       <span class="tag">{{ article.tag }}</span>
@@ -19,6 +21,11 @@ export default {
   props: {
     article: Object,
   },
+  methods: {
+    openTheArticle() {
+      this.$emit('open-the-article');
+    },
+  },
 };
 </script>
 
@@ -28,8 +35,17 @@ export default {
   flex-direction: row;
   align-items: center;
   width: 50.75rem;
-  height: 11rem;
-  margin: 0 !important;
+
+  &:first-child {
+    margin: 6.5rem 0 0 2.4rem;
+  }
+  &:not(:first-child) {
+    margin: 4rem 0 0 2.4rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 
   img {
     width: 14.8rem;
@@ -42,34 +58,29 @@ export default {
   flex-direction: column;
   justify-content: center;
   width: 53.5rem;
-  margin: 0 0 0 2.3rem;
+  padding: 0 2.3rem;
 
   .tag {
     font-size: 1.25rem;
     color: rgba(28, 28, 28, 0.5);
     text-transform: uppercase;
-    margin: 0 2.3rem;
   }
 
   h2 {
     font-weight: 700;
-    font-size: 2.1rem;
+    font-size: 2.06rem;
     color: black;
-    margin: 0.25rem 2.5rem 0.2rem 2.3rem;
   }
 
   p {
     font-size: 1rem;
-    margin: 14px 2.5rem;
     color: black;
   }
 }
 
 .about-article-container {
-  display: flex;
-  flex-direction: row;
-  margin-left: 2.3rem;
   font-size: 1rem;
+  padding: 0.2rem 0 0.7rem 0;
 
   .about-article {
     color: rgba(28, 28, 28, 0.5);
@@ -82,6 +93,23 @@ export default {
       content: '•';
       margin-left: 0.6rem;
     }
+  }
+}
+
+.tags-style {
+  margin-top: 10rem !important;
+  &:last-child {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .article-container {
+    flex-direction: column;
+    margin: 0 !important;
+  }
+  .article-content {
+    width: 32.5rem;
   }
 }
 </style>

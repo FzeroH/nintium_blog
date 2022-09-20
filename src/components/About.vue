@@ -78,9 +78,7 @@ div {
   }
 
   >p {
-    font-family: 'Libre Baskerville',serif !important;
-    font-style: normal;
-    font-weight: 400;
+    font-family: 'Libre Baskerville',serif;
     font-size: 1.25rem;
     line-height: 2rem;
     width: 23rem;
@@ -286,6 +284,55 @@ footer {
     &:not(:first-child) {
       margin-left: 0.9rem;
     }
+  }
+}
+
+@media (max-width: 2560px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 993px) {
+  .main-info {
+    align-items: center;
+  }
+  .main-info-section {
+    margin: 0;
+  }
+
+  .people {
+    position: static;
+    margin-top: 3.25rem;
+    margin-left: 24.25rem;
+  }
+
+  .angel {
+    position: static;
+    z-index: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-info {
+    align-items: center;
+  }
+  .main-info-section {
+    margin: 0;
+  }
+
+  .people {
+    position: static;
+    margin-top: 3.25rem;
+    margin-left: 24.25rem;
+  }
+
+  .angel {
+    position: static;
+    margin-top: 3.25rem;
+    margin-left: 24.25rem;
   }
 }
 

@@ -1,19 +1,19 @@
 <template>
   <section class="header-section" v-if="$route.path !== '/screenlock'">
-    <form action="" v-if="this.$route.name !== 'tags'">
+    <form action="" v-if="this.$route.name !== 'tags'"
+          :class="{ 'search-active': isActiveSearch === true }">
       <!--eslint-disable-next-line-->
       <input type="text"  @keydown.enter.p.prevent="searchByTag(articleTag)" v-model="articleTag" />
-      <button @click.prevent="searchByTag(articleTag)">
+      <button @click.prevent="isActiveSearch = !isActiveSearch">
         <img src="@/assets/images/search.svg" alt="search"/>
       </button>
+      <!--eslint-disable-next-line-->
+      <img src="@/assets/images/search.svg" alt="search"
+            @click="isActiveSearch = !isActiveSearch"/>
     </form>
     <router-link to="/login" class="login"  v-if="!isAuth">
       Login
     </router-link>
-    <img src="@/assets/images/notification.svg"
-         alt="notification"
-         class="notification-img"
-         v-if="isAuth">
     <!--eslint-disable-next-line-->
     <img src="@/assets/images/profile/profile_picture.svg"
          alt="profile"
@@ -48,6 +48,7 @@ export default {
     return {
       menuItems: ['Dashboard', 'Write a post', 'Settings', 'Help'],
       articleTag: null,
+      isActiveSearch: false,
     };
   },
   methods: {
@@ -73,65 +74,71 @@ export default {
   align-self: end;
   justify-content: center;
 }
+
 form {
   position: relative;
-  transform: translate(0, 20%);
-  transition: all 1s;
-  right: 3.75rem;
-  width: 1.9rem;
-  height: 1.9rem;
-  margin-right: 1.3rem;
+  right: 10.6rem;
+  width: 22.7rem;
+  height: 2.9rem;
+  margin-right: -4.7rem;
+  margin-top: 2.19rem;
   background: none;
   box-sizing: border-box;
-  border-radius: 1.6rem;
-  border: 0.25rem solid white;
 
   input {
-    position: relative;
-    display: none;
-    float: left;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 22.7rem;
     height: 2.9rem;
     outline: none;
-    border: none;
     font-size: 1rem;
+    border: 0.125rem solid #1C1C1C;
     border-radius: 0.6rem;
     padding: 0 3.13rem 0 1.25rem;
+    visibility: hidden;
   }
 
   button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
     box-sizing: border-box;
+    background: #fff;
     float: right;
     width: 1.9rem;
     height: 1.9rem;
-    position: absolute;
-    top: 0.5rem;
-    right: -3.75rem;
+    top: 0.6rem;
+    right: -3.5rem;
     border-radius: 50%;
     border: none;
-    text-align: center;
-    transition: all 1s;
+    visibility: hidden;
   }
 
-  &:hover {
-    width: 12.5rem;
-    cursor: pointer;
-  }
+  >img {
+    position: absolute;
+    width: 1.875rem;
+    height: 1.875rem;
+    top: 0.68rem;
+    right: -3.5rem;
 
-  &:hover input {
-    display: block;
-    border: 0.125rem solid #1C1C1C;
+    &:hover {
+      cursor: pointer;
+    }
   }
+}
 
-  &:hover img {
-    color: white;
+.search-active {
+
+  input {
+    visibility: visible;
   }
+  button {
+    visibility: visible;
 
+    img {
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+  }
+  >img {
+    display: none;
+  }
 }
 
 .login {
@@ -142,13 +149,6 @@ form {
   border: 0.125rem solid #1C1C1C;
   border-radius: 0.6rem;
   font-size: 1.25rem;
-}
-
-.notification-img {
-  margin: 2.57rem 2.19rem 0 2.75rem;
-  cursor: pointer;
-  width: 1.87rem;
-  height: 1.87rem;
 }
 
 .profile-img {
@@ -221,4 +221,79 @@ form {
     }
   }
 }
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+  form {
+    >img {
+      top: 0.6rem;
+      right: -3.8rem;
+    }
+  }
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  form {
+    >img {
+      top: 0.6rem;
+      right: -3.5rem;
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+    button {
+      top: 0.5rem;
+      right: -2.9rem;
+      img {
+        width: 1.875rem;
+        height: 1.875rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 993px) {
+  form {
+    >img {
+      top: 0.6rem;
+      right: -3.8rem;
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+    button {
+      top: 0.5rem;
+      right: -2.9rem;
+      img {
+        width: 1.875rem;
+        height: 1.875rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  form {
+    width: 100%;
+    >img {
+      top: 0.6rem;
+      right: -3.8rem;
+      width: 1.875rem;
+      height: 1.875rem;
+    }
+    input {
+      width: 5rem;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    button {
+      top: 0.5rem;
+      right: -2.9rem;
+      img {
+        width: 1.875rem;
+        height: 1.875rem;
+      }
+    }
+  }
+}
+
 </style>

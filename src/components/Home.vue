@@ -1,25 +1,17 @@
 <template>
   <div>
-     <router-link
-       :to="{ name:'article',
-         params: {
-            article: featuredArticle,
-          },
-          query: { 'id': '14513451345' }}">
-       <featured-article :article="featuredArticle"/>
-     </router-link>
+    <featured-article
+      :article="featuredArticle"
+      @open-the-article="openTheArticle(1, featuredArticle)"/>
     <editors-picks />
-    <router-link :to="{ name:'article',
-         params: {
-            article: articleInterior,
-          },
-          query: { 'id': '12351' }}">
-      <featured-article :article="articleInterior" :position="'right'"/>
-    </router-link>
+    <featured-article
+      :article="articleInterior"
+      :position="'right'"
+      @open-the-article="openTheArticle(3, articleInterior)"/>
     <div class="recent-posts">
       <recent-post/>
       <ul>
-        <li>tags.</li>
+        <li>tags:</li>
         <!--eslint-disable-next-line-->
         <li v-for="(tag, index) in tags" :key="index" @click="searchByTag(index)">{{ tag }}</li>
       </ul>
@@ -60,6 +52,15 @@ export default {
     searchByTag(index) {
       this.$router.push({ name: 'tags', params: { tag: this.tags[index] } });
     },
+    openTheArticle(id, article) {
+      this.$router.push({
+        name: 'article',
+        params: {
+          article,
+        },
+        query: { id },
+      });
+    }, // openTheArticle
   },
 };
 </script>
@@ -69,11 +70,6 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  >a {
-    align-self: center;
-    margin: 3rem 0;
-  }
 
   .recent-posts {
     display: flex;
@@ -97,6 +93,24 @@ div {
       li:not(:first-child):hover {
         cursor: pointer;
         text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .recent-posts {
+    flex-direction: column !important;
+    ul {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      border-top: 0.01rem solid #1c1c1c;
+      margin: 0 1rem 0.5rem 1rem;
+      li {
+        margin-left: 1rem;
       }
     }
   }

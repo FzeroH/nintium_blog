@@ -10,6 +10,14 @@
         <router-link to="/tags">Tags</router-link>
         <router-link to="/about">About</router-link>
       </nav>
+<!--      <slide noOverlay :width="200">-->
+<!--        <router-link to="/" class="logo">-->
+<!--          <img src="@/assets/images/logo.svg" alt="logo" class="logo">-->
+<!--        </router-link>-->
+<!--        <router-link to="/" exact class="burger-item">Home</router-link>-->
+<!--        <router-link to="/tags" class="burger-item">Tags</router-link>-->
+<!--        <router-link to="/about" class="burger-item">About</router-link>-->
+<!--      </slide>-->
     </section>
     <is-auth-section />
   </header>
@@ -17,6 +25,7 @@
 
 <script>
 import IsAuthSection from '@/components/header/isAuthSection.vue';
+// import { Slide } from 'vue-burger-menu';
 
 export default {
   name: 'NintiumHeader',
@@ -35,6 +44,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 0.5rem;
 
   .header-section {
 
@@ -72,4 +82,23 @@ header {
   text-decoration: none;
 }
 
+ div .bm-menu {
+   background-color: white !important;
+
+  nav {
+    padding:0;
+    * {
+      color: white !important;
+    }
+  }
+}
+
+//.burger-item {
+//  color: white !important;
+//  margin: 0;
+//
+//  &:active {
+//    margin: 0;
+//  }
+//}
 </style>

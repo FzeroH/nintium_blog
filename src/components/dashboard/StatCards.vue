@@ -40,11 +40,9 @@ export default {
   justify-content: center;
   border: 0.125rem solid rgba(28, 28, 28, 0.35);
   border-radius: 0.6rem;
-  width: fit-content;
-  height: 6.7rem;
   margin: 0 1.5rem;
 
-  p {
+  >p {
     font-family: 'Roboto',serif;
     font-style: normal;
     font-weight: 400;
@@ -55,13 +53,10 @@ export default {
   }
   span {
     font-family: 'Roboto',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 0.875rem;
+    line-height: 1rem;
     color: rgba(28, 28, 28, 0.5);
-    margin-bottom: 0.9rem;
-    margin-right: 0.5rem;
+    margin: 0.9rem 0.5rem 0.65rem;
     align-self: end;
   }
 }
@@ -81,18 +76,15 @@ export default {
 
   .count {
     font-family: 'Libre Baskerville',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 33px;
-    line-height: 41px;
+    font-size: 2.06rem;
+    line-height: 2.56rem;
+    margin: 0;
   }
 
   .most-viewed-article {
     font-family: 'Libre Baskerville',serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 27px;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
   }
 
 }

@@ -9,7 +9,7 @@
   font-family: "Open Sans";
   src: url("@/assets/fonts/OpenSans.ttf");
 }
-html body {
+html, body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -89,4 +89,29 @@ input {
   flex-direction: row;
   align-items: center;
   position: relative;
+}
+
+@media (min-width: 1441px) and (max-width: 2560px) {
+  html {
+    font-size: 2vh;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  html {
+    font-size: 1.4vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 993px) {
+  html {
+    font-size: 1vh;
+  }
+}
+
+
+@media (max-width: 767px) {
+  html {
+    font-size: 1.5vh;
+  }
 }
