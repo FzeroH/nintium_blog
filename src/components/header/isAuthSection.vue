@@ -279,12 +279,6 @@ form {
       width: 1.875rem;
       height: 1.875rem;
     }
-    input {
-      width: 5rem;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
     button {
       top: 0.5rem;
       right: -2.9rem;
