@@ -12,7 +12,7 @@
       :article="article"
       v-for="(article, index) in filter"
       :key="index"
-      @click="openTheArticle(article.id, article)"
+      @open-the-article="openTheArticle(article.id, article)"
       />
   </div>
 </template>
@@ -162,6 +162,7 @@ div {
       background-repeat: no-repeat;
       background-position: 44.3rem center;
     }
+    margin-bottom: 1rem;
   }
 }
 
