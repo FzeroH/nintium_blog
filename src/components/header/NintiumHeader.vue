@@ -1,7 +1,7 @@
 <template>
   <header :class="{ 'screenlock-header': $route.path === '/screenlock'}"
           v-if="$route.path !== '/dashboard' && $route.path !== '/dashboard/chart'">
-    <section class="header-section">
+    <section class="header-section" v-if="!small">
       <router-link to="/" class="logo">
         <img src="@/assets/images/logo.svg" alt="logo" class="logo">
       </router-link>
@@ -10,26 +10,43 @@
         <router-link to="/tags">Tags</router-link>
         <router-link to="/about">About</router-link>
       </nav>
-<!--      <slide noOverlay :width="200">-->
-<!--        <router-link to="/" class="logo">-->
-<!--          <img src="@/assets/images/logo.svg" alt="logo" class="logo">-->
-<!--        </router-link>-->
-<!--        <router-link to="/" exact class="burger-item">Home</router-link>-->
-<!--        <router-link to="/tags" class="burger-item">Tags</router-link>-->
-<!--        <router-link to="/about" class="burger-item">About</router-link>-->
-<!--      </slide>-->
     </section>
+    <slide noOverlay :width="200" v-else >
+      <router-link to="/" class="logo">
+        <img src="@/assets/images/logo.svg" alt="logo" class="logo">
+      </router-link>
+      <router-link to="/" exact class="burger-item">Home</router-link>
+      <router-link to="/tags" class="burger-item">Tags</router-link>
+      <router-link to="/about" class="burger-item">About</router-link>
+    </slide>
     <is-auth-section />
   </header>
 </template>
 
 <script>
 import IsAuthSection from '@/components/header/isAuthSection.vue';
-// import { Slide } from 'vue-burger-menu';
+import { Slide } from 'vue-burger-menu';
 
 export default {
   name: 'NintiumHeader',
-  components: { IsAuthSection },
+  components: { IsAuthSection, Slide },
+  data() {
+    return {
+      small: false,
+    };
+  },
+  methods: {
+    onResize() {
+      this.small = window.innerWidth <= 767;
+    },
+  },
+  created() {
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.onResize);
+  },
 };
 </script>
 
@@ -74,31 +91,12 @@ header {
 
 .router-link-active {
   font-weight: 700;
-  font-size: 1.25rem;
   color: black;
-  margin: 3rem 0 0 1.9rem;
-  padding: 0;
-  text-align: center;
-  text-decoration: none;
 }
 
- div .bm-menu {
-   background-color: white !important;
+.burger-item {
+  color: white;
+  font-size: 2rem;
 
-  nav {
-    padding:0;
-    * {
-      color: white !important;
-    }
-  }
 }
-
-//.burger-item {
-//  color: white !important;
-//  margin: 0;
-//
-//  &:active {
-//    margin: 0;
-//  }
-//}
 </style>

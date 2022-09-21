@@ -1,6 +1,6 @@
 <template>
   <div class="menu-container">
-    <nav>
+    <nav v-if="!small">
       <router-link to="/" class="logo">
         <img src="@/assets/images/dashboard-nav/dashboard-logo.svg" alt="logo">
       </router-link>
@@ -14,6 +14,22 @@
         </li>
       </ul>
     </nav>
+    <slide noOverlay :width="200" v-else>
+      <nav>
+        <router-link to="/" class="logo">
+          <img src="@/assets/images/dashboard-nav/dashboard-logo.svg" alt="logo">
+        </router-link>
+        <ul>
+          <!-- eslint-disable-next-line -->
+          <li @click="goTo(index)" v-for="(navItem, index) in navigationItems" :key="index">
+            <img
+              :src="require(`../../assets/images/dashboard-nav/${navItem.image}.svg`)"
+              alt="navigation">
+            <span>{{ navItem.name }}</span>
+          </li>
+        </ul>
+      </nav>
+    </slide>
     <div class="dashboard">
       <is-auth-section />
       <div class="dashboard-title">
@@ -62,11 +78,12 @@
 <script>
 import StatCards from '@/components/dashboard/StatCards.vue';
 import IsAuthSection from '@/components/header/isAuthSection.vue';
+import { Slide } from 'vue-burger-menu';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Dashboard',
-  components: { IsAuthSection, StatCards },
+  components: { IsAuthSection, StatCards, Slide },
   data() {
     return {
       dataPosts: [200, 119, 50, 40, 164, 33, 98, 40, 164, 33, 98, 500],
@@ -102,6 +119,7 @@ export default {
         },
       ],
       nameItems: [],
+      small: false,
     };
   },
   methods: {
@@ -111,9 +129,19 @@ export default {
       const navItem = navItems[index].toLowerCase();
       this.$router.push({ path: `/${navItem}` });
     },
+    onResize() {
+      this.small = window.innerWidth <= 767;
+    },
   },
   mounted() {
     this.$router.push({ name: 'chart', query: { name: 'total-posts' } });
+  },
+  created() {
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.onResize);
   },
 };
 </script>
@@ -126,6 +154,8 @@ export default {
     height: 100%;
 
     nav {
+      display: flex;
+      flex-direction: column;
       background: #3B3F44;
       width: 14rem;
       height: 100vh;
@@ -211,9 +241,6 @@ export default {
   }
 
   @media (max-width: 767px) {
-    nav {
-      display: none;
-    }
     .stat-cards {
       flex-direction: column !important;
       align-items: center;
