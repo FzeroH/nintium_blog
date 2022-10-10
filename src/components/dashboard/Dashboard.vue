@@ -14,8 +14,7 @@
         </li>
       </ul>
     </nav>
-    <slide noOverlay :width="200" v-else>
-      <nav>
+    <burger-menu :background-color="'#3B3F44'" v-else>
         <router-link to="/" class="logo">
           <img src="@/assets/images/dashboard-nav/dashboard-logo.svg" alt="logo">
         </router-link>
@@ -28,8 +27,7 @@
             <span>{{ navItem.name }}</span>
           </li>
         </ul>
-      </nav>
-    </slide>
+    </burger-menu>
     <div class="dashboard">
       <is-auth-section />
       <div class="dashboard-title">
@@ -78,12 +76,12 @@
 <script>
 import StatCards from '@/components/dashboard/StatCards.vue';
 import IsAuthSection from '@/components/header/isAuthSection.vue';
-import { Slide } from 'vue-burger-menu';
+import BurgerMenu from '@/components/BurgerMenu.vue';
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Dashboard',
-  components: { IsAuthSection, StatCards, Slide },
+  components: { BurgerMenu, IsAuthSection, StatCards },
   data() {
     return {
       dataPosts: [200, 119, 50, 40, 164, 33, 98, 40, 164, 33, 98, 500],

@@ -11,25 +11,25 @@
         <router-link to="/about">About</router-link>
       </nav>
     </section>
-    <slide noOverlay :width="200" v-else >
+    <burger-menu v-else >
       <router-link to="/" class="logo">
         <img src="@/assets/images/logo.svg" alt="logo" class="logo">
       </router-link>
-      <router-link to="/" exact class="burger-item">Home</router-link>
-      <router-link to="/tags" class="burger-item">Tags</router-link>
-      <router-link to="/about" class="burger-item">About</router-link>
-    </slide>
+      <router-link to="/" exact>Home</router-link>
+      <router-link to="/tags">Tags</router-link>
+      <router-link to="/about">About</router-link>
+    </burger-menu>
     <is-auth-section />
   </header>
 </template>
 
 <script>
 import IsAuthSection from '@/components/header/isAuthSection.vue';
-import { Slide } from 'vue-burger-menu';
+import BurgerMenu from '@/components/BurgerMenu.vue';
 
 export default {
   name: 'NintiumHeader',
-  components: { IsAuthSection, Slide },
+  components: { BurgerMenu, IsAuthSection },
   data() {
     return {
       small: false,
@@ -53,7 +53,7 @@ export default {
 <style lang="scss" scoped>
 header {
   width: 100%;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 5;
   background: white;
@@ -92,11 +92,5 @@ header {
 .router-link-active {
   font-weight: 700;
   color: black;
-}
-
-.burger-item {
-  color: white;
-  font-size: 2rem;
-
 }
 </style>
