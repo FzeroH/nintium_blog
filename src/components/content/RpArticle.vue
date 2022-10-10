@@ -107,6 +107,18 @@ export default {
   .article-container {
     flex-direction: column;
     margin: 0 !important;
+    width: auto;
+  }
+  .article-content {
+    width: 32.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .article-container {
+    flex-direction: column;
+    margin: 0 !important;
+    width: auto;
+    text-align: center;
   }
   .article-content {
     width: 32.5rem;

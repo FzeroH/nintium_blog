@@ -108,7 +108,7 @@ div {
       justify-content: center;
       align-items: center;
       border-top: 0.01rem solid #1c1c1c;
-      margin: 0 1rem 0.5rem 1rem;
+      margin-bottom:0.5rem;
       li {
         margin-left: 1rem;
       }

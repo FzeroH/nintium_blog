@@ -123,6 +123,20 @@ div {
 @media (max-width: 767px) {
   div {
     width: 36rem;
+    margin: 0;
+    h2 {
+      margin: 2.6rem;
+    }
+  }
+}
+
+@media (max-width: 321px) {
+  div {
+    width: 30rem;
+    margin: 0;
+    h2 {
+      margin: 2.6rem;
+    }
   }
 }
 </style>

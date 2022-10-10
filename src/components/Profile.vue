@@ -139,7 +139,6 @@ export default {
       h2 {
         font-weight: 700;
         font-size: 2.6rem;
-        margin: 0 ;
       }
 
       p {
@@ -170,7 +169,6 @@ export default {
           width: 1.5rem;
           height: 1.5rem;
         }
-
         a {
           text-decoration: none;
           font-family: 'Open Sans',serif;
@@ -186,6 +184,19 @@ export default {
     &:last-child {
       margin-bottom: 4.5rem;
     }
+  }
+
+}
+
+@media (max-width: 767px) {
+  .author {
+    width: 35.875rem !important;
+  }
+  .author-info {
+    margin-left: 0 !important;
+  }
+  .website {
+    margin-right: 1.1rem !important;
   }
 }
 

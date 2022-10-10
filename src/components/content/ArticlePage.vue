@@ -191,7 +191,6 @@ export default {
   .article-container {
     >img {
       width: 41.25rem;
-      height: auto;
     }
   }
   .about-the-author {

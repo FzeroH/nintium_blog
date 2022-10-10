@@ -92,8 +92,12 @@ export default {
   .article-container {
     flex-direction: column;
     width: 100%;
+    text-align: center;
     img {
       margin: 0.8rem auto;
+    }
+    .tag {
+      margin-left: 0;
     }
   }
 }
