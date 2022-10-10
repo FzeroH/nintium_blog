@@ -20,8 +20,11 @@
          class="profile-img"
          v-if="isAuth">
     <div class="profile-menu">
-      <p>Arthur Black</p>
-      <span>@arthurblack</span>
+      <!--eslint-disable-next-line-->
+      <div class="profile-menu-author" @click="$router.push('/profile')">
+        <p>Arthur Black</p>
+        <span>@arthurblack</span>
+      </div>
       <ul>
         <!--eslint-disable-next-line-->
         <li @click="goTo(index)" v-for="(menuItem, index) in menuItems" :key="index">
@@ -138,6 +141,8 @@ form {
   }
   >img {
     display: none;
+    width: 1.875rem;
+    height: 1.875rem;
   }
 }
 
@@ -222,6 +227,10 @@ form {
   }
 }
 
+.profile-menu-author {
+  cursor: pointer;
+}
+
 @media (min-width: 1441px) and (max-width: 2560px) {
   form {
     >img {
@@ -229,7 +238,6 @@ form {
       right: -3.8rem;
     }
   }
-
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -243,10 +251,6 @@ form {
     button {
       top: 0.5rem;
       right: -2.9rem;
-      img {
-        width: 1.875rem;
-        height: 1.875rem;
-      }
     }
   }
 }
@@ -256,16 +260,10 @@ form {
     >img {
       top: 0.6rem;
       right: -3.8rem;
-      width: 1.875rem;
-      height: 1.875rem;
     }
     button {
       top: 0.5rem;
       right: -2.9rem;
-      img {
-        width: 1.875rem;
-        height: 1.875rem;
-      }
     }
   }
 }
@@ -273,19 +271,17 @@ form {
 @media (max-width: 767px) {
   form {
     width: 100%;
+    margin-right: -7rem;
+    input {
+      width: 12.7rem;
+    }
     >img {
       top: 0.6rem;
-      right: -3.8rem;
-      width: 1.875rem;
-      height: 1.875rem;
+      right: 1.1rem;
     }
     button {
       top: 0.5rem;
-      right: -2.9rem;
-      img {
-        width: 1.875rem;
-        height: 1.875rem;
-      }
+      right: 1.1rem;
     }
   }
 }
