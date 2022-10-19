@@ -181,11 +181,28 @@ div {
     padding: 0.7rem 0.9rem;
   }
 }
+
+@media (min-width: 1024px) and (max-width: 2560px) {
+  input {
+    width: 44.2rem !important;
+    padding-right: 3.4rem !important;
+    background-position: 45.6rem center !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  input {
+    width: 45rem !important;
+    padding-right: 3.4rem !important;
+    background-position: 46.8rem center !important;
+  }
+}
+
 @media (max-width: 767px) {
   input {
-    width: 30.2rem !important;
+    width: 25rem !important;
     padding-right: 3.4rem !important;
-    background-position: 32.3rem center !important;
+    background-position: 26.6rem center !important;
   }
 }
 </style>

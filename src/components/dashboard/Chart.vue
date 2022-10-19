@@ -120,6 +120,12 @@ div {
   }
 }
 
+@media (max-width: 1023px) {
+  div {
+    width: 50rem;
+  }
+}
+
 @media (max-width: 767px) {
   div {
     width: 36rem;

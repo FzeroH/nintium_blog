@@ -100,5 +100,11 @@ export default {
       margin-left: 0;
     }
   }
+  .article-content {
+    >p {
+      margin: 0;
+      text-align: center;
+    }
+  }
 }
 </style>

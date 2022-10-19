@@ -14,7 +14,7 @@
         </li>
       </ul>
     </nav>
-    <burger-menu :background-color="'#3B3F44'" v-else>
+    <burger-menu :background-color="'#3B3F44'" :inverseBtnColor="true" v-else>
         <router-link to="/" class="logo">
           <img src="@/assets/images/dashboard-nav/dashboard-logo.svg" alt="logo">
         </router-link>
@@ -237,6 +237,8 @@ export default {
   .active-card {
     box-shadow: 0.1rem 0.1rem 1rem #0080ff;
   }
+
+  @media (max-width: 1023px) {}
 
   @media (max-width: 767px) {
     .stat-cards {

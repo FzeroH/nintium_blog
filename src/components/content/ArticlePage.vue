@@ -190,17 +190,29 @@ export default {
 @media (max-width: 767px) {
   .article-container {
     >img {
-      width: 41.25rem;
+      width: 33.25rem;
+    }
+    >p {
+      width: initial;
+      padding: 1rem;
     }
   }
   .about-the-author {
+    width: initial;
     >span {
       padding-left: 2rem;
     }
   }
+
+  .author-info {
+    >p {
+      width: initial;
+    }
+  }
   .pagination {
     p {
-      margin-left: 1rem;
+      display: none;
+      //margin-left: 1rem;
     }
     >a {
       img {
