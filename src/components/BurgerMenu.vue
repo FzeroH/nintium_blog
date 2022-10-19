@@ -3,7 +3,9 @@
 <!--    eslint-disable-next-line-->
     <div
       class="burger-menu"
-      :class="{ 'burger-menu__active': active }"
+      :class="{
+      'burger-menu__active': active,
+      'burger-menu__inverse': inverseBtnColor && active }"
       @click="active = !active">
       <span></span>
     </div>
@@ -25,6 +27,10 @@ export default {
     buttonColor: {
       type: String,
       default: '#222',
+    },
+    inverseBtnColor: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -52,7 +58,7 @@ export default {
   height: 100%;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  background: none;
   margin-bottom: 1rem;
   transition: transform 0.4s ease;
 }
@@ -84,7 +90,13 @@ export default {
 }
 
 .burger-menu__active {
-  transform: translateX(11rem);
+  transform: translateX(9.5rem);
+}
+
+.burger-menu__inverse span,
+.burger-menu__inverse span::before,
+.burger-menu__inverse span::after{
+  background: white;
 }
 
 .burger-menu__active span {
@@ -109,7 +121,7 @@ nav {
   background: white;
   width: fit-content;
   height: 100vh;
-  transition: 0.5s ease;
+  transition: 0.4s ease;
   opacity: 0;
   transform: translateX(-100%);
   z-index: -1;
