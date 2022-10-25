@@ -1,15 +1,15 @@
 <template>
   <div>
     <featured-article
-      :article="featuredArticle"
-      @open-the-article="openTheArticle(1, featuredArticle)"/>
+      :article="articlesList[0]"
+      @open-the-article="openTheArticle(articlesList[0].id)"/>
     <editors-picks />
     <featured-article
-      :article="articleInterior"
+      :article="articlesList[1]"
       :position="'right'"
-      @open-the-article="openTheArticle(3, articleInterior)"/>
+      @open-the-article="openTheArticle(articlesList[1].id)"/>
     <div class="recent-posts">
-      <recent-post/>
+      <recent-post />
       <ul>
         <li>tags:</li>
         <!--eslint-disable-next-line-->
@@ -32,35 +32,25 @@ export default {
       tags: ['Technology', 'Open Source', 'JavaScript', 'Minimalism', 'Self-help', 'Animals',
         'Herbivores', 'HTML', 'CSS', 'PHP', 'Web Technologies', 'Career', 'Life', 'Spirituality',
         'Food', 'Cooking', 'Sports', 'Racing', 'Mountain Hiking', 'Cruising'],
-      featuredArticle: {
-        tag: 'Featured Article',
-        articleTitle: 'World’s Most Dangerous Technology Ever Made.',
-        articleText: 'Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.',
-        aboutArticle: { author: 'Ralph Hawkins', date: 'May 7, 2019 (10 mins read)' },
-        image: 'first_article_image',
-      },
-      articleInterior: {
-        tag: 'Interior',
-        articleTitle: 'Laborum Ullamco Sunt id ut Sunt',
-        articleText: 'Proident aliquip velit qui commodo officia qui consectetur dolor ullamco aliquip elit incididunt. Ea minim ex consectetur excepteur. Ex laborum nostrud mollit sint consectetur Lorem amet aliqua do enim. Commodo duis dolor anim excepteur. In aliquip mollit nulla consequat velit magna.',
-        aboutArticle: { author: 'Bessie Hawkins', date: 'May 7, 2019 (10 mins read)' },
-        image: 'interior',
-      },
+      articlesList: [],
     };
   },
   methods: {
     searchByTag(index) {
       this.$router.push({ name: 'tags', params: { tag: this.tags[index] } });
     },
-    openTheArticle(id, article) {
+    openTheArticle(id) {
       this.$router.push({
         name: 'article',
-        params: {
-          article,
-        },
         query: { id },
       });
     }, // openTheArticle
+  },
+  async created() {
+    await this.$store.dispatch('loadArticleList');
+    this.articlesList = this.$store.getters.getArticleList;
+    this.articlesList.sort((article1, article2) => (
+      article1.rate < article2.rate ? 1 : -1));
   },
 };
 </script>

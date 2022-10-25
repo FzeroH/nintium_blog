@@ -12,7 +12,7 @@
       :article="article"
       v-for="(article, index) in filter"
       :key="index"
-      @open-the-article="openTheArticle(article.id, article)"
+      @open-the-article="openTheArticle(article.id)"
       />
   </div>
 </template>
@@ -32,73 +32,6 @@ export default {
         'aeronautics', 'games', 'minimalism', 'finearts', 'graphicdesign', 'filmmaking',
         'bitcoin', 'computers', 'machinelearning'],
       articleTag: null,
-      articles: [
-        {
-          id: 10,
-          tag: 'Nature',
-          articleTitle: 'Tempor deserunt Sunt Qui',
-          aboutArticle: { author: 'Connie Robertson', date: 'November 3, 2012' },
-          articleText: 'Ea qui dolor aute cupidatat ad pariatur proident. Mollit nulla tempor aute reprehenderit ut dolore mollit nisi consequat excepteur ex officia pariatur irure.',
-          image: 'nature',
-        },
-        {
-          id: 11,
-          tag: 'Plants',
-          articleTitle: 'Occaecat Anim eu Qui',
-          aboutArticle: { author: 'Eleanor Williamson', date: 'September 28, 2014' },
-          articleText: 'Qui ipsum consectetur ad incididunt et aliquip exercitation laboris nisi reprehenderit. Et excepteur commodo esse enim ea aliqua officia reprehenderit.',
-          image: 'plants',
-        },
-        {
-          id: 12,
-          tag: 'Food',
-          articleTitle: 'Fugiat Incididunt Voluptate Consequat',
-          aboutArticle: { author: 'Bessie Watson', date: 'June 13, 2012' },
-          articleText: 'Mollit ea culpa ipsum pariatur eiusmod. Irure et.',
-          image: 'food',
-        },
-        {
-          id: 13,
-          tag: 'Colorful',
-          articleTitle: 'Occaecat Anim eu Qui',
-          aboutArticle: { author: 'Ted Simmmons', date: 'June 21, 2015' },
-          articleText: 'Amet ipsum occaecat aliqua aute nisi laboris nostrud culpa est do. Aliqua esse velit in excepteur esse qui voluptate laboris adipisicing qui irure elit amet excepteur.',
-          image: 'colorful',
-        },
-        {
-          id: 14,
-          tag: 'Minimalism',
-          articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
-          aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
-          articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
-          image: 'minimalism',
-        },
-        {
-          id: 15,
-          tag: 'Technology',
-          articleTitle: 'Amet non Ex Officia nulla Cupidatat',
-          aboutArticle: { author: 'Jacob Henry', date: 'September 27, 2017 (8 mins read)' },
-          articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
-          image: 'technology',
-        },
-        {
-          id: 16,
-          tag: 'Minimalism',
-          articleTitle: 'Culpa sit Laboris Exercitation ea Fugiat',
-          aboutArticle: { author: 'Leslie Pena', date: 'April 25, 2012 (6 mins read)' },
-          articleText: 'Incididunt occaecat et qui dolore consectetur magna. Lorem veniam ut et labore consequat ut ex sunt. Ut et nostrud aliquip do anim proident ad nulla consectetur eu aute ex anim mollit. Anim aute exercitation nisi fugiat. Dolor velit excepteur commodo proident nulla commodo ullamco labore et esse.',
-          image: 'article',
-        },
-        {
-          id: 17,
-          tag: 'Technology',
-          articleTitle: 'Duis aute irure dolor in reprehenderit',
-          aboutArticle: { author: 'Jacob Henry', date: 'September 29, 2017 (4 mins read)' },
-          articleText: 'Sint anim Lorem aute duis Lorem incididunt. Nulla nostrud irure id ipsum aute excepteur duis sint. Do occaecat sit dolor magna esse. Mollit incididunt cillum consectetur fugiat adipisicing dolor est id minim amet cillum esse Lorem. Deserunt non duis excepteur aliqua duis eu reprehenderit.',
-          image: 'technology2',
-        },
-
-      ],
     };
   },
   props: {
@@ -123,6 +56,9 @@ export default {
     }, // openTheArticle
   },
   computed: {
+    articles() {
+      return this.$store.getters.getArticleList;
+    },
     filter() {
       if (this.articleTag) {
         return this.articles.filter(

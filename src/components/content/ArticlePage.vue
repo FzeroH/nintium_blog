@@ -1,13 +1,13 @@
 <template>
   <div class="article-container">
-    <img :src="require(`../../assets/images/articles/${ article.image }.svg`)" alt="article">
-    <h1>{{ article.articleTitle }}</h1>
+    <img :src="require(`../../assets/images/articles/${ article[0].image }.svg`)" alt="article">
+    <h1>{{ article[0].articleTitle }}</h1>
     <div class="about-article">
-      <span>{{ article.aboutArticle.author }}</span>
-      <span>{{ article.aboutArticle.date }}</span>
+      <span>{{ article[0].aboutArticle.author }}</span>
+      <span>{{ article[0].aboutArticle.date }}</span>
     </div>
-    <span class="tag">{{ article.tag }}</span>
-    <p>{{ article.articleText }}</p>
+    <span class="tag">{{ article[0].tag }}</span>
+    <p>{{ article[0].articleText }}</p>
     <div class="about-the-author">
       <span>About the author</span>
       <div class="author-profile">
@@ -32,12 +32,12 @@
 <script>
 export default {
   name: 'ArticlePage',
-  props: {
-    article: {
-      type: Object,
-      default: () => {},
-    },
-  },
+  // props: {
+  //   article: {
+  //     type: Object,
+  //     default: () => {},
+  //   },
+  // },
   data() {
     return {
       profileData: {
@@ -50,7 +50,12 @@ export default {
         instagram: '',
         twitter: '',
       },
+      article: [],
     };
+  },
+  created() {
+    this.$store.dispatch('addCurrentArticle', this.$route.query);
+    this.article.push(this.$store.getters.getCurrentArticle);
   },
 };
 </script>
