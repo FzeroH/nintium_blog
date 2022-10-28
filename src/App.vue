@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nintium-header/>
-    <router-view/>
+    <router-view v-if="!isLoading"/>
   </div>
 </template>
 
@@ -9,8 +9,17 @@
 import NintiumHeader from '@/components/header/NintiumHeader.vue';
 
 export default {
-
   components: { NintiumHeader },
+  data() {
+    return {
+      isLoading: true,
+    };
+  },
+
+  async created() {
+    await this.$store.dispatch('loadArticleList');
+    this.isLoading = false;
+  },
 
 };
 </script>
