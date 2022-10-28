@@ -1,5 +1,5 @@
 <template>
-  <div class="article-container">
+  <div class="article-container" v-if="article[0]">
     <img :src="require(`../../assets/images/articles/${ article[0].image }.svg`)" alt="article">
     <h1>{{ article[0].articleTitle }}</h1>
     <div class="about-article">
@@ -21,10 +21,14 @@
       </div>
     </div>
     <div class="pagination">
-      <router-link to="/"><img src="@/assets/images/back_button.svg" alt="back"></router-link>
+      <button @click="changeArticle(+id - 1)">
+        <img src="@/assets/images/back_button.svg" alt="back">
+      </button>
       <p>Go back: <span>Boom boom pow is et Letstrade.</span></p>
       <p>Next up: <span>Lorem ipsum so Ceat Riak</span></p>
-      <router-link to="/"><img src="@/assets/images/next_button.svg" alt="next"></router-link>
+      <button @click="changeArticle(+id + 1)">
+        <img src="@/assets/images/next_button.svg" alt="next">
+      </button>
     </div>
   </div>
 </template>
@@ -32,12 +36,12 @@
 <script>
 export default {
   name: 'ArticlePage',
-  // props: {
-  //   article: {
-  //     type: Object,
-  //     default: () => {},
-  //   },
-  // },
+  props: {
+    id: {
+      type: () => Number || String,
+      required: true,
+    },
+  },
   data() {
     return {
       profileData: {
@@ -53,9 +57,23 @@ export default {
       article: [],
     };
   },
-  created() {
-    this.$store.dispatch('addCurrentArticle', this.$route.query);
-    this.article.push(this.$store.getters.getCurrentArticle);
+  methods: {
+    changeArticle(id) {
+      if (id < 1 || id > this.$store.getters.getArticleList.length) return;
+      this.$router.push({
+        name: 'article',
+        params: { id },
+      });
+    },
+  },
+  watch: {
+    id: {
+      handler() {
+        this.$store.dispatch('addCurrentArticle', Number(this.id));
+        this.article = [this.$store.getters.getCurrentArticle];
+      },
+      immediate: true,
+    },
   },
 };
 </script>
@@ -168,7 +186,8 @@ export default {
   align-items: center;
   margin-top: 10.2rem;
 
-  a {
+  button {
+    border: none;
     img {
       width: 9.4rem;
       height: 9.4rem;
