@@ -46,7 +46,7 @@ const routes = [
     component: Profile,
   },
   {
-    path: '/article',
+    path: '/article/:id',
     name: 'article',
     component: ArticlePage,
     props: true,

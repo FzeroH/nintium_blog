@@ -42,12 +42,11 @@ export default {
     openTheArticle(id) {
       this.$router.push({
         name: 'article',
-        query: { id },
+        params: { id },
       });
     }, // openTheArticle
   },
-  async created() {
-    await this.$store.dispatch('loadArticleList');
+  created() {
     this.articlesList = this.$store.getters.getArticleList;
     this.articlesList.sort((article1, article2) => (
       article1.rate < article2.rate ? 1 : -1));

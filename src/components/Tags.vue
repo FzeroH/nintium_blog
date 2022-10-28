@@ -45,13 +45,10 @@ export default {
       this.articleTag = this.tags[index];
       return this.articleTag;
     },
-    openTheArticle(id, article) {
+    openTheArticle(id) {
       this.$router.push({
         name: 'article',
-        params: {
-          article,
-        },
-        query: { id },
+        params: { id },
       });
     }, // openTheArticle
   },

@@ -24,7 +24,7 @@ export default {
     openTheArticle(id) {
       this.$router.push({
         name: 'article',
-        query: { id },
+        params: { id },
       });
     }, // openTheArticle
   },
