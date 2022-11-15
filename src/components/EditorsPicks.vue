@@ -2,7 +2,6 @@
 <div class="ep-container">
   <div class="ep-title">
     <h2>Editor's Picks</h2>
-    <hr>
   </div>
     <ep-article
       :article="article"
@@ -50,6 +49,7 @@ export default {
       color: black;
       margin: 3.125rem 0 1.06rem 0;
       text-align: center;
+      border-bottom: 0.5rem black solid;
     }
 
     hr {
