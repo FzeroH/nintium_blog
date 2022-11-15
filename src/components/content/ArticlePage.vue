@@ -21,13 +21,15 @@
       </div>
     </div>
     <div class="pagination">
-      <button @click="changeArticle(+id - 1)">
-        <img src="@/assets/images/back_button.svg" alt="back">
+      <button @click="changeArticle(+id - 1)" :style="{
+   backgroundImage: 'url(' + require(`../../assets/images/back_button.svg`) + ')',
+   backgroundRepeat: 'no-repeat', backgroundSize: '100%'}">
       </button>
       <p>Go back: <span>Boom boom pow is et Letstrade.</span></p>
       <p>Next up: <span>Lorem ipsum so Ceat Riak</span></p>
-      <button @click="changeArticle(+id + 1)">
-        <img src="@/assets/images/next_button.svg" alt="next">
+      <button @click="changeArticle(+id + 1)" :style="{
+   backgroundImage: 'url(' + require(`../../assets/images/next_button.svg`) + ')',
+   backgroundRepeat: 'no-repeat', backgroundSize: '100%'}">
       </button>
     </div>
   </div>
@@ -188,10 +190,8 @@ export default {
 
   button {
     border: none;
-    img {
-      width: 9.4rem;
-      height: 9.4rem;
-    }
+    width: 6.4rem;
+    height: 6.4rem;
   }
 
   p, p  span {
@@ -211,13 +211,13 @@ export default {
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 426px) and (max-width: 767px) {
   .article-container {
     >img {
       width: 33.25rem;
     }
     >p {
-      width: initial;
+      width: auto;
       padding: 1rem;
     }
   }
@@ -236,14 +236,46 @@ export default {
   .pagination {
     p {
       display: none;
-      //margin-left: 1rem;
     }
-    >a {
-      img {
-        width: 4rem;
-        height: 4rem;
-      }
+    >button {
+      width: 4rem;
+      height: 4rem;
     }
   }
 }
+
+@media (max-width: 425px) {
+  .article-container {
+    & > img {
+      width: 30rem;
+    }
+
+    & > p {
+      width: 28rem;
+    }
+  }
+  .about-the-author {
+    width: auto;
+    >span {
+      padding-left: 2rem;
+    }
+  }
+
+  .author-info {
+    >p {
+      width: auto;
+      padding-right: 1rem;
+    }
+  }
+  .pagination {
+    p {
+      display: none;
+    }
+    >button {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}
+// 320 375 425 768
 </style>
