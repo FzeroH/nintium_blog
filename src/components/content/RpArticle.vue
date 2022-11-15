@@ -103,7 +103,7 @@ export default {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px){
   .article-container {
     flex-direction: column;
     margin: 0 !important;
@@ -113,15 +113,19 @@ export default {
     width: 32.5rem;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .article-container {
     flex-direction: column;
-    margin: 0 !important;
-    width: auto;
     text-align: center;
+    margin-top: 2rem !important;
+    width: auto;
   }
   .article-content {
-    width: 32.5rem;
+    padding: 0;
+    width: 30rem;
+    >p {
+      text-align: start;
+    }
   }
 }
 </style>
