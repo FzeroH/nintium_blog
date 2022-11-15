@@ -156,15 +156,18 @@ export default {
 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   .author {
-    width: 35.875rem !important;
+    width: 31.875rem !important;
   }
   .author-info {
     margin-left: 0 !important;
   }
   .website {
     margin-right: 1.1rem !important;
+  }
+  .social-networks {
+    margin-top: 1rem;
   }
 }
 

@@ -59,6 +59,7 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 4rem;
 
   .recent-posts {
     display: flex;

@@ -104,6 +104,13 @@ export default {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .article-container {
+    margin: 3rem auto;
+    width: 73rem;
+    background-size: auto !important;
+  }
+}
 @media (max-width: 767px) {
   .article-container {
     margin: 3rem auto;
@@ -112,6 +119,11 @@ export default {
   }
   .article-content-right {
     position: static;
+  }
+}
+@media (max-width: 425px) {
+  .article-content {
+    margin: auto;
   }
 }
 

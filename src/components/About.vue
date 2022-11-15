@@ -336,12 +336,12 @@ footer {
   section {
     margin-left: 0 !important;
     align-self: center !important;
-    width: initial;
-    &:nth-child(5) {
-      width: 36rem !important;
-      >h2 {
-        width: initial !important;
-      }
+    width: 28rem !important;
+    >h2 {
+      width: auto !important;
+    }
+    >p {
+      width: auto !important;
     }
   }
 
@@ -349,6 +349,9 @@ footer {
     position: static !important;
     align-self: center !important;
     margin-left: 0 !important;
+  }
+  .people, .angel {
+    width: 28rem !important;
   }
 }
 
