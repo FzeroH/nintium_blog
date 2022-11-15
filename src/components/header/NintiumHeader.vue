@@ -13,7 +13,7 @@
     </section>
     <burger-menu v-else >
       <router-link to="/" class="logo">
-        <img src="@/assets/images/logo.svg" alt="logo" class="logo">
+        <img src="@/assets/images/logo.svg" alt="logo">
       </router-link>
       <router-link to="/" exact>Home</router-link>
       <router-link to="/tags">Tags</router-link>
@@ -66,12 +66,11 @@ header {
   .header-section {
 
     .logo {
-      width: 11rem;
-      height: 3.6rem;
       margin-top: 1.94rem;
       margin-left: 1.6rem;
-
       img {
+        width: 11rem !important;
+        height: 3.6rem !important;
         margin: 0;
       }
     }

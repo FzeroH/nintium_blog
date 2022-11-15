@@ -13,6 +13,7 @@
          :style="{ backgroundColor: backgroundColor }">
       <slot />
     </nav>
+<!--    <div :class="{ back: active }"></div>-->
   </div>
 </template>
 
@@ -44,6 +45,7 @@ export default {
 <style lang="scss" scoped>
 .burger {
   position: relative;
+  top: 0;
   width: 3.125rem;
   height: 3.125rem;
   border-radius: 50%;
@@ -111,6 +113,18 @@ export default {
   transform: rotate(-45deg);
 }
 
+//.back::after{
+//  content:'';
+//  display:block;
+//  position:fixed;
+//  top:0;
+//  left:0;
+//  width: 100%;
+//  z-index: -10;
+//  height:100vh;
+//  background-color:rgba(50, 50, 50, 0.6);
+//}
+
 nav {
   position: absolute;
   display: flex;
@@ -119,7 +133,7 @@ nav {
   top: 1rem;
   flex-direction: column;
   background: white;
-  width: fit-content;
+  width: 16rem;
   height: 100vh;
   transition: 0.4s ease;
   opacity: 0;

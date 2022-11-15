@@ -287,14 +287,6 @@ footer {
   }
 }
 
-@media (max-width: 2560px) {
-
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-
-}
-
 @media (min-width: 768px) and (max-width: 993px)  {
 
   .main-info {

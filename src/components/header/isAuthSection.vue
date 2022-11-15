@@ -237,20 +237,24 @@ form {
       top: 0.6rem;
       right: -3.8rem;
     }
+    button {
+      top: 0.6rem;
+      right: -3.8rem;
+    }
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   form {
     >img {
-      top: 0.6rem;
-      right: -3.5rem;
+      top: 0.5rem;
+      right: -3.4rem;
       width: 1.875rem;
       height: 1.875rem;
     }
     button {
       top: 0.5rem;
-      right: -2.9rem;
+      right: -3.4rem;
     }
   }
 }
@@ -258,17 +262,17 @@ form {
 @media (min-width: 768px) and (max-width: 993px) {
   form {
     >img {
-      top: 0.6rem;
-      right: -3.8rem;
+      top: 0.5rem;
+      right: -3.2rem;
     }
     button {
       top: 0.5rem;
-      right: -2.9rem;
+      right: -3.2rem;
     }
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 425px) {
   form {
     width: 100%;
     margin-right: -7rem;
@@ -276,12 +280,12 @@ form {
       width: 12.7rem;
     }
     >img {
-      top: 0.6rem;
-      right: 1.1rem;
+      top: 0.5rem;
+      right: -0.7rem;
     }
     button {
       top: 0.5rem;
-      right: 1.1rem;
+      right: -0.7rem;
     }
   }
 }
