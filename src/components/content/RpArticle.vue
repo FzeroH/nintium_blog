@@ -12,6 +12,7 @@
       </div>
       <p>{{ article.articleText }}</p>
     </div>
+    <button class="update-file" @click="updatePost" v-if="$route.path=== '/profile'"></button>
   </div>
 </template>
 
@@ -25,6 +26,12 @@ export default {
     openTheArticle() {
       this.$emit('open-the-article');
     },
+    updatePost() {
+      this.$router.push({
+        path: '/write-a-post',
+        query: { update: this.article.id },
+      });
+    },
   },
 };
 </script>
@@ -32,6 +39,7 @@ export default {
 <style lang="scss" scoped>
 .article-container {
   display: flex;
+  position: relative;
   flex-direction: row;
   align-items: center;
   width: 50.75rem;
@@ -103,6 +111,20 @@ export default {
   }
 }
 
+.update-file {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  background-color: rgba(255,255,255,0);
+  background-image: url("/src/assets/images/settings.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
 @media (max-width: 767px){
   .article-container {
     flex-direction: column;
@@ -124,7 +146,8 @@ export default {
     padding: 0;
     width: 30rem;
     >p {
-      text-align: start;
+      text-align: center;
+      padding: 0 1rem;
     }
   }
 }

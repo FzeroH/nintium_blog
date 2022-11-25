@@ -13,6 +13,7 @@
         <span class="about-article">{{ article.aboutArticle.date }}</span>
       </div>
       <p>{{ article.articleText }}</p>
+      <button class="update-file" @click="updatePost" v-if="$route.path=== '/profile'"></button>
     </div>
   </div>
 </template>
@@ -34,6 +35,12 @@ export default {
     openTheArticle() {
       this.$emit('open-the-article');
     },
+    updatePost() {
+      this.$router.push({
+        path: '/write-a-post',
+        query: { update: this.article.id },
+      });
+    },
   },
 };
 </script>
@@ -49,6 +56,7 @@ export default {
 }
 
 .article-content {
+  position: relative;
   background: white;
   display: flex;
   flex-direction: column;
@@ -103,15 +111,28 @@ export default {
     }
   }
 }
+.update-file {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+  background-color: rgba(255,255,255,0);
+  background-image: url("/src/assets/images/settings.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1023px) {
   .article-container {
     margin: 3rem auto;
     width: 73rem;
     background-size: auto !important;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .article-container {
     margin: 3rem auto;
     width: 100%;
@@ -121,9 +142,13 @@ export default {
     position: static;
   }
 }
-@media (max-width: 425px) {
+@media (max-width: 428px) {
+  .article-container {
+    background-position: center center;
+  }
   .article-content {
     margin: auto;
+    width: auto;
   }
 }
 
