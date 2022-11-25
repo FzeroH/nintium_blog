@@ -103,6 +103,7 @@ export default {
   .article-content {
     >p {
       margin: 0;
+      padding: 0 1rem;
       text-align: center;
     }
   }
