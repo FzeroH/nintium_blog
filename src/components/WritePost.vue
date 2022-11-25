@@ -70,7 +70,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 10rem;
+    padding-top: 10rem;
 
     label {
       display: flex;

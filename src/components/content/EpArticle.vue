@@ -71,7 +71,7 @@ export default {
 }
 
 .about-article-container {
-  margin: 12px 0 14px 4.44rem;
+  margin: 0.6rem 0 0.85rem 4.44rem;
   font-size: 1rem;
 
   .about-article {
@@ -106,6 +106,9 @@ export default {
       padding: 0 1rem;
       text-align: center;
     }
+  }
+  .about-article-container {
+    margin-left: 0;
   }
 }
 </style>

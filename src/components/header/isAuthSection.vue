@@ -272,7 +272,7 @@ form {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 468px) {
   form {
     width: 100%;
     margin-right: -7rem;

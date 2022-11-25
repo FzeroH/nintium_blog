@@ -136,9 +136,9 @@ div {
   }
 }
 
-@media (max-width: 321px) {
+@media (max-width: 468px) {
   div {
-    width: 30rem;
+    width: 26rem;
     margin: 0;
     h2 {
       margin: 2.6rem;
