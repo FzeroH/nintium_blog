@@ -10,6 +10,7 @@ import ArticlePage from '@/components/content/ArticlePage.vue';
 import Dashboard from '@/components/dashboard/Dashboard.vue';
 import Chart from '@/components/dashboard/Chart.vue';
 import ErrorPage404 from '@/components/ErrorPage404.vue';
+import WritePost from '@/components/WritePost.vue';
 
 Vue.use(VueRouter);
 
@@ -44,6 +45,12 @@ const routes = [
     path: '/profile',
     name: 'profile',
     component: Profile,
+  },
+  {
+    path: '/write-a-post',
+    name: 'write-a-post',
+    component: WritePost,
+    props: true,
   },
   {
     path: '/article/:id',
