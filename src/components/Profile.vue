@@ -158,7 +158,8 @@ export default {
 
 @media (max-width: 425px) {
   .author {
-    width: 31.875rem !important;
+    width: auto !important;
+    margin-bottom: 6rem;
   }
   .author-info {
     margin-left: 0 !important;

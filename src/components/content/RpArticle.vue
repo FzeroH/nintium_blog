@@ -113,7 +113,7 @@ export default {
 
 .update-file {
   position: absolute;
-  right: 0;
+  right: 0.5rem;
   top: 0;
   width: 1.5rem;
   height: 1.5rem;
@@ -145,6 +145,9 @@ export default {
   .article-content {
     padding: 0;
     width: auto;
+    >h {
+      padding: 0 1rem;
+    }
     >p {
       text-align: center;
       padding: 0 1rem;

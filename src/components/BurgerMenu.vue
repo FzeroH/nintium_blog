@@ -103,6 +103,7 @@ export default {
 
 .burger-menu__active span {
   height: 0;
+  margin: 0;
 }
 
 .burger-menu__active span::before {

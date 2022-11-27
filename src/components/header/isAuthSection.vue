@@ -1,17 +1,16 @@
 <template>
   <section class="header-section" v-if="$route.path !== '/screenlock'">
-<!--    <form action="" v-if="this.$route.name !== 'tags'"-->
-<!--          :class="{ 'search-active': isActiveSearch === true }">-->
-<!--      &lt;!&ndash;eslint-disable-next-line&ndash;&gt;-->
-<!--    eslint-disable-next-line-->
-<!--      <input type="text"  @keydown.enter.p.prevent="searchByTag(articleTag)" v-model="articleTag" />-->
-<!--      <button @click.prevent="isActiveSearch = !isActiveSearch">-->
-<!--        <img src="@/assets/images/search.svg" alt="search"/>-->
-<!--      </button>-->
-<!--      &lt;!&ndash;eslint-disable-next-line&ndash;&gt;-->
-<!--      <img src="@/assets/images/search.svg" alt="search"-->
-<!--            @click="isActiveSearch = !isActiveSearch"/>-->
-<!--    </form>-->
+    <form action="" v-if="this.$route.name !== 'tags'"
+          :class="{ 'search-active': isActiveSearch === true }">
+      <!--eslint-disable-next-line-->
+      <input type="text"  @keydown.enter.p.prevent="searchByTag(articleTag)" v-model="articleTag" />
+      <button @click.prevent="isActiveSearch = !isActiveSearch">
+        <img src="@/assets/images/search.svg" alt="search"/>
+      </button>
+      <!--eslint-disable-next-line-->
+      <img src="@/assets/images/search.svg" alt="search"
+            @click="isActiveSearch = !isActiveSearch"/>
+    </form>
     <router-link to="/login" class="login"  v-if="!isAuth">
       Login
     </router-link>
@@ -267,7 +266,8 @@ form {
     width: 100%;
     margin-right: -7rem;
     input {
-      width: 12.7rem;
+      width: auto;
+      padding-left: 0.55rem;
     }
     >img {
       top: 0.5rem;

@@ -133,9 +133,9 @@ div {
 
 @media (max-width: 767px) {
   input {
-    width: 25rem !important;
+    width: auto !important;
     padding-right: 3.4rem !important;
-    background-position: 26.6rem center !important;
+    background-position: 16.6rem center !important;
   }
 }
 </style>

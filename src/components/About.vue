@@ -297,7 +297,7 @@ footer {
   .vertical-left, .vertical-right {
     display: none;
   }
-  section {
+  .main-info-section {
     margin-left: 0 !important;
     align-self: center !important;
   }
@@ -306,6 +306,9 @@ footer {
     position: static !important;
     align-self: center !important;
     margin-left: 0 !important;
+  }
+  .under-main, footer {
+    width: 100%;
   }
 }
 
@@ -325,10 +328,11 @@ footer {
   .vertical-left, .vertical-right {
     display: none;
   }
-  section {
+  .main-info-section {
     margin-left: 0 !important;
     align-self: center !important;
-    width: 28rem !important;
+    width: auto !important;
+    padding: 0 1rem;
     >h2 {
       width: auto !important;
     }
