@@ -1,16 +1,17 @@
 <template>
   <section class="header-section" v-if="$route.path !== '/screenlock'">
-    <form action="" v-if="this.$route.name !== 'tags'"
-          :class="{ 'search-active': isActiveSearch === true }">
-      <!--eslint-disable-next-line-->
-      <input type="text"  @keydown.enter.p.prevent="searchByTag(articleTag)" v-model="articleTag" />
-      <button @click.prevent="isActiveSearch = !isActiveSearch">
-        <img src="@/assets/images/search.svg" alt="search"/>
-      </button>
-      <!--eslint-disable-next-line-->
-      <img src="@/assets/images/search.svg" alt="search"
-            @click="isActiveSearch = !isActiveSearch"/>
-    </form>
+<!--    <form action="" v-if="this.$route.name !== 'tags'"-->
+<!--          :class="{ 'search-active': isActiveSearch === true }">-->
+<!--      &lt;!&ndash;eslint-disable-next-line&ndash;&gt;-->
+<!--    eslint-disable-next-line-->
+<!--      <input type="text"  @keydown.enter.p.prevent="searchByTag(articleTag)" v-model="articleTag" />-->
+<!--      <button @click.prevent="isActiveSearch = !isActiveSearch">-->
+<!--        <img src="@/assets/images/search.svg" alt="search"/>-->
+<!--      </button>-->
+<!--      &lt;!&ndash;eslint-disable-next-line&ndash;&gt;-->
+<!--      <img src="@/assets/images/search.svg" alt="search"-->
+<!--            @click="isActiveSearch = !isActiveSearch"/>-->
+<!--    </form>-->
     <router-link to="/login" class="login"  v-if="!isAuth">
       Login
     </router-link>
@@ -164,9 +165,6 @@ form {
 
   &:hover +.profile-menu {
     position: absolute;
-    top: 6.2rem;
-    right: 1.6rem;
-    transform: translateY(0%);
     visibility: visible;
     opacity: 1;
   }
@@ -175,21 +173,15 @@ form {
 .profile-menu {
   position: absolute;
   background: white;
-  width: 10.6rem;
-  height: 13.9rem;
-  top: 6.2rem;
+  top: 100%;
   right: 1.6rem;
   border-radius: 0.95rem;
-  transform: translateY(20%);
   visibility: hidden;
   opacity: 0;
   transition: all 0.5s ease;
+  box-shadow: 2px 2px 4px #3B3F44;
 
   &:hover {
-    position: absolute;
-    top: 6.2rem;
-    right: 1.6rem;
-    transform: translateY(0%);
     visibility: visible;
     opacity: 1;
   }
@@ -213,12 +205,10 @@ form {
     margin-top: 0.5rem;
     padding: 0 3.1rem 0 1.4rem;
     border-top: 1px solid rgba(28, 28, 28, 0.1);
-    width: 98px;
-    height: 8.1rem;
 
     li {
       height: 1.4rem;
-      margin: 0.3rem 0;
+      padding: 0.3rem 0;
 
       &:hover {
         text-decoration: underline;

@@ -113,24 +113,12 @@ export default {
   transform: rotate(-45deg);
 }
 
-//.back::after{
-//  content:'';
-//  display:block;
-//  position:fixed;
-//  top:0;
-//  left:0;
-//  width: 100%;
-//  z-index: -10;
-//  height:100vh;
-//  background-color:rgba(50, 50, 50, 0.6);
-//}
-
 nav {
   position: absolute;
   display: flex;
   align-items: center;
   left: -2rem;
-  top: 1rem;
+  top: 0;
   flex-direction: column;
   background: white;
   width: 16rem;

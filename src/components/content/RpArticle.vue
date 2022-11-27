@@ -132,7 +132,7 @@ export default {
     width: auto;
   }
   .article-content {
-    width: 32.5rem;
+    width: auto;
   }
 }
 @media (max-width: 425px) {
@@ -144,7 +144,7 @@ export default {
   }
   .article-content {
     padding: 0;
-    width: 30rem;
+    width: auto;
     >p {
       text-align: center;
       padding: 0 1rem;
